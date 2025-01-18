@@ -1,8 +1,4 @@
 ﻿  main.c
-C:\Users\Titania\Desktop\test_conv1d\test_conv1d\main.c(12,16): warning C4101: 'm': variabile locale senza riferimenti
-C:\Users\Titania\Desktop\test_conv1d\test_conv1d\main.c(17,9): warning C4101: 'R': variabile locale senza riferimenti
-C:\Users\Titania\Desktop\test_conv1d\test_conv1d\main.c(19,9): warning C4101: 'app': variabile locale senza riferimenti
-C:\Users\Titania\Desktop\test_conv1d\test_conv1d\main.c(12,12): warning C4101: 'fg': variabile locale senza riferimenti
-C:\Users\Titania\Desktop\test_conv1d\test_conv1d\main.c(12,9): warning C4101: 's': variabile locale senza riferimenti
-C:\Users\Titania\Desktop\test_conv1d\test_conv1d\main.c(18,9): warning C4101: 'ACC': variabile locale senza riferimenti
-  test_conv1d.vcxproj -> C:\Users\Titania\Desktop\test_conv1d\x64\Debug\test_conv1d.exe
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(85,15): warning C4048: indici di matrice differenti: 'uint32_t (*)[124]' e 'int [8][4]'
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(22,9): warning C4101: 'ACC': variabile locale senza riferimenti
+  test_conv1d.vcxproj -> C:\Users\Titania\Desktop\ms\lab3\test_conv1d\x64\Debug\test_conv1d.exe
