@@ -7,12 +7,20 @@
       "RelativeMoniker": "D:0:0:{420B0A75-1B8A-4F4F-865C-E3DA436D5839}|test_conv1d\\test_conv1d.vcxproj|solutionrelative:test_conv1d\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
+      "AbsoluteMoniker": "D:0:0:{420B0A75-1B8A-4F4F-865C-E3DA436D5839}|test_conv1d\\test_conv1d.vcxproj|C:\\Users\\Titania\\Desktop\\ms\\lab3\\test_conv1d\\test_conv1d\\data.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{420B0A75-1B8A-4F4F-865C-E3DA436D5839}|test_conv1d\\test_conv1d.vcxproj|solutionrelative:test_conv1d\\data.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{420B0A75-1B8A-4F4F-865C-E3DA436D5839}|test_conv1d\\test_conv1d.vcxproj|C:\\Users\\Titania\\Desktop\\ms\\lab3\\test_conv1d\\test_conv1d\\data.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{420B0A75-1B8A-4F4F-865C-E3DA436D5839}|test_conv1d\\test_conv1d.vcxproj|solutionrelative:test_conv1d\\data.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{420B0A75-1B8A-4F4F-865C-E3DA436D5839}|test_conv1d\\test_conv1d.vcxproj|C:\\Users\\Titania\\Desktop\\ms\\lab3\\test_conv1d\\test_conv1d\\data.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{420B0A75-1B8A-4F4F-865C-E3DA436D5839}|test_conv1d\\test_conv1d.vcxproj|solutionrelative:test_conv1d\\data.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Titania\\Desktop\\ms\\lab3\\test_conv1d\\test_conv1d\\FUNZIONI.C||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test_conv1d\\FUNZIONI.C||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Titania\\Desktop\\ms\\lab3\\test_conv1d\\test_conv1d\\FUNZIONI_H.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:test_conv1d\\FUNZIONI_H.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,34 +38,58 @@
               "Title": "main.c",
               "DocumentMoniker": "C:\\Users\\Titania\\Desktop\\ms\\lab3\\test_conv1d\\test_conv1d\\main.c",
               "RelativeDocumentMoniker": "test_conv1d\\main.c",
-              "ToolTip": "C:\\Users\\Titania\\Desktop\\ms\\lab3\\test_conv1d\\test_conv1d\\main.c",
-              "RelativeToolTip": "test_conv1d\\main.c",
-              "ViewState": "AgIAAC0AAAAAAAAAAAAAADkAAAAPAAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\Titania\\Desktop\\ms\\lab3\\test_conv1d\\test_conv1d\\main.c*",
+              "RelativeToolTip": "test_conv1d\\main.c*",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAADcAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-01-17T22:35:32.535Z",
+              "WhenOpened": "2025-01-18T10:41:03.989Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
+              "Title": "FUNZIONI.C",
+              "DocumentMoniker": "C:\\Users\\Titania\\Desktop\\ms\\lab3\\test_conv1d\\test_conv1d\\FUNZIONI.C",
+              "RelativeDocumentMoniker": "test_conv1d\\FUNZIONI.C",
+              "ToolTip": "C:\\Users\\Titania\\Desktop\\ms\\lab3\\test_conv1d\\test_conv1d\\FUNZIONI.C",
+              "RelativeToolTip": "test_conv1d\\FUNZIONI.C",
+              "ViewState": "AgIAAIYAAAAAAAAAAAAAABcAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-01-18T10:27:29.737Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FUNZIONI_H.h",
+              "DocumentMoniker": "C:\\Users\\Titania\\Desktop\\ms\\lab3\\test_conv1d\\test_conv1d\\FUNZIONI_H.h",
+              "RelativeDocumentMoniker": "test_conv1d\\FUNZIONI_H.h",
+              "ToolTip": "C:\\Users\\Titania\\Desktop\\ms\\lab3\\test_conv1d\\test_conv1d\\FUNZIONI_H.h",
+              "RelativeToolTip": "test_conv1d\\FUNZIONI_H.h",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAvwBAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-01-18T10:26:26.541Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "data.c",
               "DocumentMoniker": "C:\\Users\\Titania\\Desktop\\ms\\lab3\\test_conv1d\\test_conv1d\\data.c",
               "RelativeDocumentMoniker": "test_conv1d\\data.c",
               "ToolTip": "C:\\Users\\Titania\\Desktop\\ms\\lab3\\test_conv1d\\test_conv1d\\data.c",
               "RelativeToolTip": "test_conv1d\\data.c",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAANAAAAAAAAAA==",
+              "ViewState": "AgIAABYAAAAAAAAAAAAvwBoAAAAEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-01-17T20:43:08.025Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "data.h",
               "DocumentMoniker": "C:\\Users\\Titania\\Desktop\\ms\\lab3\\test_conv1d\\test_conv1d\\data.h",
               "RelativeDocumentMoniker": "test_conv1d\\data.h",
               "ToolTip": "C:\\Users\\Titania\\Desktop\\ms\\lab3\\test_conv1d\\test_conv1d\\data.h",
               "RelativeToolTip": "test_conv1d\\data.h",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
               "WhenOpened": "2025-01-17T20:42:54.54Z"
             }

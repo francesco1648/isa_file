@@ -1,119 +1,10 @@
-#include <stdio.h>
 #include "data.h"
-
-// Definizione corretta delle costanti
-#define COLONNE_MEM 4
-#define RIGHE_MEM 128
-
-void conv1d_testa(); // Dichiarazione della funzione
-void replace_sample();
-void replace_filter();
-void print_out(uint32_t matrix[8][124], int rows, int cols);
-void print_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename);
-
-int main() {
-    // con1d_testa();
-    int s, fg, m, j,z, i = 0;
-    int inc = 0;  // Indice per accedere a F
-    int bk = 0;
-    int w_c = 0;
-    int w_r = 0;
-    int acc[5];
-    int R[16];
-    int ACC[4];
-    int app;
-    int out_mat[8][4];
-
-    // Dichiarazione della matrice mem con le dimensioni definite
-    int mem[RIGHE_MEM][COLONNE_MEM] = { 0 };
-
-    // Ciclo per copiare i dati dalla matrice F a mem
-    for (int bk = 0; bk < 16; bk++) {
-        for (int w_c = 0; w_c < 4; w_c++) {
-            for (int w_r = 0; w_r < 5; w_r++) {
-
-                mem[w_r + bk * 5][w_c] = F[inc];
-                inc++;
-            }
-        }
-    }
-    inc = 0;
-    bk = 0;
-    w_c = 0;
-    for (bk = 0; bk < 4; bk++) {
-        for (w_c = 0; w_c < 4; w_c++) {
-            inc = w_c * 128 + bk * 512;
-            for (w_r = 80; w_r < 80 + 9; w_r++) {
-
-                mem[w_r + bk * 9][w_c] = A[inc];
-                inc++;
-            }
-        }
-
-    }
-
-    conv1d_testa();
-    print_mem_to_file(mem, "mem.txt");
-    //---------------------------------------------------------
-    // qui faccio la convoluzione
-    for(z=0;z<1;z++){
-    for (s = 0; s < 3; s++) {
-        for (fg = 0; fg < 2; fg++) {
-            for (m = 0; m < 3; m++) {
-                for (j = 0; j - 5; j++) {
-                    for (i = 0; i < 3; i++) {
-                         R[0 + 4 * i] = mem[i * 5 + j + m * 20][0] * mem[80 + i * 9 + j + s][0] ;
-                         R[1 + 4 * i] = mem[i * 5 + j + m * 20][1] * mem[80 + i * 9 + j + s][1] ;
-                         R[2 + 4 * i] = mem[i * 5 + j + m * 20][2] * mem[80 + i * 9 + j + s][2] ;
-                         R[3 + 4 * i] =  mem[i * 5 + j + m * 20][3] * mem[80 + i * 9 + j + s][3] ;
-                        acc[i] = R[0 + 4 * i] + R[1 + 4 * i] + R[2 + 4 * i] + R[3 + 4 * i];
-                    }
-                    app = acc[0] + acc[1] + acc[2] + acc[3] + acc[4];
-                    out_mat[m][s] += app;
-                    i = 0;
-                }
-                j = 0;
-                i = 0;
-            }
-
-            m = 0;
-
-        }
-        replace_filter();
-       
-    }
-    replace_sample();
-    print_out(out_mat, 8, 1);
-}
-    
-
-
-
-     
-    
-    //---------------------------------------------------------
-
-
-    // Stampa della matrice mem per vedere i dati copiati
-    i = 0;
-    printf("%d :  ", i);
-    for (i = 0; i < RIGHE_MEM; i++) {
-        for (j = 0; j < COLONNE_MEM; j++) {
-            printf("%d ", mem[i][j]);  // Stampa ogni elemento
-        }
-        
-        printf("\n");  // Nuova riga per ogni riga della matrice
-        printf("%d :  ", i+1);
-    }
-
-    return 0;
-}
-
-
+#include <stdio.h>
+#include "FUNZIONI_H.h"
 
 
 void replace_filter() {
- 
+
 }
 
 void replace_sample() {
@@ -143,7 +34,7 @@ void conv1d_testa() {
     int f6[16][5] = { 0 };
     int f7[16][5] = { 0 };
     uint32_t out_matrix[8][124] = { 0 };
-    
+
 
 
     // Riempie il campione con i dati da A
@@ -206,11 +97,11 @@ void conv1d_testa() {
 
 
     //---------------------------
-    
+
 //convoluzione
     for (int j = 0; j < 124; j++) {
         for (int i = 0; i < 15; i++) {
-            out_matrix[0][j] += f0[i][0] * sample[i][0 + j] + f0[i][1] * sample[i][1 + j] + f0[i][2] * sample[i][2+j] + f0[i][3] * sample[i][3+j] + f0[0][4] * sample[i][4+j];
+            out_matrix[0][j] += f0[i][0] * sample[i][0 + j] + f0[i][1] * sample[i][1 + j] + f0[i][2] * sample[i][2 + j] + f0[i][3] * sample[i][3 + j] + f0[0][4] * sample[i][4 + j];
         }
 
         for (int i = 0; i < 15; i++) {
@@ -250,7 +141,7 @@ void conv1d_testa() {
 
 
 
-  
+
     for (int i = 0; i < 8; i++) {  // Righe di out_matrix
         for (int j = 0; j < 128; j++) {  // Colonne di out_matrix
             fprintf(filePtr, "%d ", out_matrix[i][j]);
@@ -276,30 +167,3 @@ void print_out(uint32_t matrix[8][124], int rows, int cols) {
     }
 }
 
-
-
-void print_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename) {
-    FILE* filePtr;
-    errno_t err;
-
-    // Apri il file in modalità scrittura
-    err = fopen_s(&filePtr, filename, "w");
-
-    if (err != 0) {
-        // Se fopen_s fallisce, mostra un errore
-        printf("Impossibile aprire il file per la scrittura.\n");
-        return;
-    }
-
-    // Scrivi i dati di mem nel file
-    for (int i = 0; i < RIGHE_MEM; i++) {
-        for (int j = 0; j < COLONNE_MEM; j++) {
-            fprintf(filePtr, "%d ", mem[i][j]);  // Scrive ogni valore
-        }
-        fprintf(filePtr, "\n");  // Nuova riga dopo ogni riga della matrice
-    }
-
-    // Chiudi il file
-    fclose(filePtr);
-    printf("Matrice mem scritta correttamente nel file %s\n", filename);
-}
