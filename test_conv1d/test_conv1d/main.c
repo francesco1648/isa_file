@@ -8,7 +8,7 @@
 int mem[RIGHE_MEM][COLONNE_MEM] = { 0 };
 
 void conv1d_testa(); // Dichiarazione della funzione
-void replace_sample();
+void replace_sample(int sample_block);
 void replace_filter(int filter_block); // il blocco di filti puo essere o 0 o 1 nel caso in cui sto usando i primi 4 filtri o gli                                                                                                                       altri 4
 void print_out(uint32_t matrix[8][124], int rows, int cols);
 void print_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename);
@@ -22,10 +22,12 @@ int main() {
     int w_r = 0;
     int acc[4];
     int R[16];
+    int done = 0;
    
     int app;
-    int out_mat[8][4] = { 0 };
-
+    int out_mat[8] = { 0 };
+    int conv1d_calcolato[8][128];
+    int col = 0;
     // Dichiarazione della matrice mem con le dimensioni definite
   
 
@@ -57,11 +59,20 @@ int main() {
     i = 0;
 
     conv1d_testa(); // calcolo via sw la convoluzione e la salvo in un file outpiut.txt
-   // print_mem_to_file(mem, "mem.txt");
+   print_mem_to_file(mem, "mem.txt");
     //---------------------------------------------------------
     // qui faccio la convoluzione
-   // for(z=0;z<1;z++){
-    //for (s = 0; s < 3; s++) {
+    for(z=0;z<16;z++){
+    for (s = 0; s < 4; s++) {
+        out_mat[0] =  0 ;
+        out_mat[1] =  0 ;
+        out_mat[2] =  0 ;
+        out_mat[3] =  0 ;
+        out_mat[4] =  0 ;
+        out_mat[5] =  0 ;
+        out_mat[6] =  0 ;
+        out_mat[7] =  0 ;
+        done = 0;
         for (fg = 0; fg < 2; fg++) {
          
             for (m = 0; m < 4; m++) {
@@ -74,7 +85,7 @@ int main() {
                         acc[i] = R[0 + 4 * i] + R[1 + 4 * i] + R[2 + 4 * i] + R[3 + 4 * i];
                     }
                     app = acc[0] + acc[1] + acc[2] + acc[3];
-                    out_mat[m+fg*4][s] = out_mat[m][s] + app;
+                    out_mat[m+fg*4] = out_mat[m + fg * 4]+ app;
                     i = 0;
                 }
                 j = 0;
@@ -87,15 +98,22 @@ int main() {
                 seq_filter = 0;
             }
             replace_filter(seq_filter);
+        //    print_mem_to_file(mem, "mem.txt");
             m = 0;
 
         }
-      //  
+        done = 1;
+
+        
+            for (int riga = 0; riga < 8 ; riga++) {
+                conv1d_calcolato[riga][col] = out_mat[riga];
+            }
+            col++;
        
-   // }
-   // replace_sample();
+    }
+    replace_sample(z+1);
    // print_out(out_mat, 8, 1);
-//}
+}
     
 
 
@@ -105,17 +123,28 @@ int main() {
     //---------------------------------------------------------
 
 
-    // Stampa della matrice mem per vedere i dati copiati
-    i = 0;
-    printf("%d :  ", i);
-    for (i = 0; i < RIGHE_MEM; i++) {
-        for (j = 0; j < COLONNE_MEM; j++) {
-            printf("%d ", mem[i][j]);  // Stampa ogni elemento
-        }
-        
-        printf("\n");  // Nuova riga per ogni riga della matrice
-        printf("%d :  ", i+1);
+
+    FILE* filePtr;
+    filePtr = fopen("matrice_risultante.txt", "w");  // Apre il file in modalità scrittura
+
+    if (filePtr == NULL) {
+        printf("Errore: impossibile aprire il file.\n");
+        return 1;  // Esce con codice di errore
     }
+
+    // Scrive la matrice nel file
+    fprintf(filePtr, "Matrice risultante:\n");
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 128; j++) {
+            fprintf(filePtr, "%d ", conv1d_calcolato[i][j]);
+        }
+        fprintf(filePtr, "\n");
+    }
+
+    fclose(filePtr);  // Chiude il file
+
+
+ 
 
     return 0;
 }
@@ -149,8 +178,19 @@ void replace_filter(int filter_block) {
     }
 }
 //scambio i sample
-void replace_sample() {
+void replace_sample(int sample_block) {
+    int inc=0;
+    for (int bk = 0; bk < 4; bk++) {
+        for (int w_c = 0; w_c < 4; w_c++) {
+            inc = w_c * 128 + bk * 512 + sample_block * 8;
+            for (int w_r = 80; w_r < 80 + 9; w_r++) {
 
+                mem[w_r + bk * 9][w_c] = A[inc];
+                inc++;
+            }
+        }
+
+    }
 }
 
 
@@ -246,11 +286,12 @@ void conv1d_testa() {
 //convoluzione
     for (int j = 0; j < 124; j++) {
         for (int i = 0; i < 16; i++) {
-       //     cm1 = f0[i][0] * sample[i][0 + j];
-         //   cm2 = f0[i][1] * sample[i][1 + j];
-          //  cm3 = f0[i][2] * sample[i][2 + j];
-           // cm4 = f0[i][3] * sample[i][3 + j];
-          //  cm5= f0[i][4] * sample[i][4 + j];
+            cm1 = f0[i][0] * sample[i][0 + j];
+            cm2 = f0[i][1] * sample[i][1 + j];
+            cm3 = f0[i][2] * sample[i][2 + j];
+            cm4 = f0[i][3] * sample[i][3 + j];
+            cm5 = f0[i][4] * sample[i][4 + j];
+            pr_acc[i] = cm1 + cm2 + cm3 + cm4 + cm5;
             out_matrix[0][j] += f0[i][0] * sample[i][0 + j] + f0[i][1] * sample[i][1 + j] + f0[i][2] * sample[i][2 + j] + f0[i][3] * sample[i][3 + j] + f0[i][4] * sample[i][4 + j];
         }
 
@@ -259,10 +300,12 @@ void conv1d_testa() {
         }
 
         for (int i = 0; i < 16; i++) {
+            
             out_matrix[2][j] += f2[i][0] * sample[i][0 + j] + f2[i][1] * sample[i][1 + j] + f2[i][2] * sample[i][2 + j] + f2[i][3] * sample[i][3 + j] + f2[i][4] * sample[i][4 + j];
         }
 
-        for (int i = 0; i < 15; i++) {
+        for (int i = 0; i < 16; i++) {
+        
             out_matrix[3][j] += f3[i][0] * sample[i][0 + j] + f3[i][1] * sample[i][1 + j] + f3[i][2] * sample[i][2 + j] + f3[i][3] * sample[i][3 + j] + f3[i][4] * sample[i][4 + j];
         }
 
@@ -311,7 +354,7 @@ void print_out(uint32_t matrix[8][124], int rows, int cols) {
     for (int i = 0; i < rows; i++) {
         // Ciclo sulle colonne
         for (int j = 0; j < cols; j++) {
-            printf("%u ", matrix[i][j]);  // Stampa ogni elemento come unsigned int
+            printf("%u ", matrix[i][j]);  
         }
         printf("\n");  // A capo dopo ogni riga
     }

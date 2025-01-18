@@ -32,7 +32,7 @@
               "RelativeDocumentMoniker": "test_conv1d\\main.c",
               "ToolTip": "C:\\Users\\Titania\\Desktop\\ms\\lab3\\test_conv1d\\test_conv1d\\main.c",
               "RelativeToolTip": "test_conv1d\\main.c",
-              "ViewState": "AgIAAEYAAAAAAAAAAAAAAFAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAEwAAAAAAAAAAAApwFkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
               "WhenOpened": "2025-01-18T10:41:03.989Z",
               "EditorCaption": ""
@@ -47,8 +47,7 @@
               "RelativeToolTip": "test_conv1d\\data.c",
               "ViewState": "AgIAAJ0AAAAAAAAAAAAvwD0AAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2025-01-17T20:43:08.025Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-17T20:43:08.025Z"
             },
             {
               "$type": "Document",
@@ -60,8 +59,7 @@
               "RelativeToolTip": "test_conv1d\\data.h",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2025-01-17T20:42:54.54Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-01-17T20:42:54.54Z"
             }
           ]
         }
