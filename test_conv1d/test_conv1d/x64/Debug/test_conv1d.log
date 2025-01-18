@@ -1,4 +1,9 @@
 ﻿  main.c
-C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(86,15): warning C4048: indici di matrice differenti: 'uint32_t (*)[124]' e 'int [8][4]'
-C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(23,9): warning C4101: 'ACC': variabile locale senza riferimenti
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(18,27): warning C4101: 'z': variabile locale senza riferimenti
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(170,10): warning C4101: 'pr_acc': variabile locale senza riferimenti
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(183,9): warning C4101: 'cm1': variabile locale senza riferimenti
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(183,29): warning C4101: 'cm5': variabile locale senza riferimenti
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(183,14): warning C4101: 'cm2': variabile locale senza riferimenti
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(183,19): warning C4101: 'cm3': variabile locale senza riferimenti
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(183,24): warning C4101: 'cm4': variabile locale senza riferimenti
   test_conv1d.vcxproj -> C:\Users\Titania\Desktop\ms\lab3\test_conv1d\x64\Debug\test_conv1d.exe
