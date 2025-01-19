@@ -1,0 +1,43 @@
+# Reading pref.tcl
+# OpenFile C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.mpf
+# Loading project conv1d_core
+# Compile of conv1d_core.vhd was successful.
+# Compile of counter.vhd was successful.
+# Compile of mux_2.vhd was successful.
+# Compile of mux_4.vhd was successful.
+# Compile of RAM.vhd was successful.
+# Compile of reg.vhd was successful.
+# Compile of tb_conv.vhd was successful.
+# 7 compiles, 0 failed with no errors.
+# Compile of conv1d_core.vhd was successful.
+# Compile of conv1d_core.vhd failed with 3 errors.
+# Compile of conv1d_core.vhd failed with 1 errors.
+# Compile of conv1d_core.vhd failed with 1 errors.
+# Compile of conv1d_core.vhd was successful.
+# Compile of conv1d_core.vhd failed with 2 errors.
+# Compile of conv1d_core.vhd failed with 1 errors.
+# Compile of conv1d_core.vhd was successful.
+# Compile of conv1d_core.vhd failed with 40 errors.
+# Compile of conv1d_core.vhd failed with 20 errors.
+# Compile of conv1d_core.vhd failed with 17 errors.
+# Compile of conv1d_core.vhd failed with 21 errors.
+# Compile of conv1d_core.vhd failed with 25 errors.
+# Compile of conv1d_core.vhd failed with 24 errors.
+# Compile of conv1d_core.vhd failed with 8 errors.
+# Compile of conv1d_core.vhd failed with 13 errors.
+# Compile of conv1d_core.vhd failed with 8 errors.
+# Compile of conv1d_core.vhd failed with 7 errors.
+# Compile of conv1d_core.vhd failed with 8 errors.
+# Compile of conv1d_core.vhd failed with 7 errors.
+# Compile of conv1d_core.vhd failed with 6 errors.
+# Compile of conv1d_core.vhd failed with 4 errors.
+# Compile of conv1d_core.vhd failed with 4 errors.
+# Compile of conv1d_core.vhd failed with 3 errors.
+# Compile of conv1d_core.vhd failed with 3 errors.
+# Compile of conv1d_core.vhd failed with 10 errors.
+# Compile of conv1d_core.vhd failed with 3 errors.
+# Compile of conv1d_core.vhd failed with 1 errors.
+# Compile of conv1d_core.vhd was successful.
+# Compile of conv1d_core.vhd failed with 3 errors.
+# Compile of conv1d_core.vhd failed with 1 errors.
+# Compile of conv1d_core.vhd was successful.

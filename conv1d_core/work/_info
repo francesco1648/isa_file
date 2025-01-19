@@ -1,0 +1,320 @@
+m255
+K4
+z2
+!s11e MIXED_VERSIONS
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/20.1
+Econv1d_core
+Z0 w1737248837
+Z1 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
+Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
+Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
+Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
+!i122 62
+Z6 dC:/Users/Titania/Desktop/ms/lab3/conv1d_core
+Z7 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd
+Z8 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd
+l0
+L10 1
+VRY:;`MJMKJ<cJD6T9K@zB2
+!s100 ;j[oWN:kzZmKUM]n<KB@j3
+Z9 OV;C;2020.1;71
+32
+Z10 !s110 1737248838
+!i10b 1
+Z11 !s108 1737248838.000000
+Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd|
+Z13 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd|
+!i113 1
+Z14 o-work work -2002 -explicit
+Z15 tExplicit 1 CvgOpt 0
+Abeh
+R1
+R2
+R3
+R4
+R5
+Z16 DEx4 work 11 conv1d_core 0 22 RY:;`MJMKJ<cJD6T9K@zB2
+!i122 62
+l131
+L45 201
+VS`GzLHXI4ZYnQaUjg4W362
+!s100 J8d`zjTeOH55YN]n>XPC>0
+R9
+32
+R10
+!i10b 1
+R11
+R12
+R13
+!i113 1
+R14
+R15
+Ecounter
+Z17 w1737228595
+R2
+R3
+R4
+R5
+!i122 25
+R6
+Z18 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd
+Z19 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd
+l0
+L7 1
+VM6D9FG6aijim@<Kn9mUXM2
+!s100 1lFmeG]74I;WKOe>^<ERf3
+R9
+32
+Z20 !s110 1737243083
+!i10b 1
+Z21 !s108 1737243083.000000
+Z22 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd|
+Z23 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd|
+!i113 1
+R14
+R15
+Abehavioral
+R2
+R3
+R4
+R5
+DEx4 work 7 counter 0 22 M6D9FG6aijim@<Kn9mUXM2
+!i122 25
+l23
+L20 31
+V=e_mg<l@MEB8=L8hSOc5K2
+!s100 ?W:3j23Xf5:dea6AVOY1n2
+R9
+32
+R20
+!i10b 1
+R21
+R22
+R23
+!i113 1
+R14
+R15
+Emux_2
+Z24 w1737228150
+Z25 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R4
+R5
+!i122 26
+R6
+Z26 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd
+Z27 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd
+l0
+L6 1
+V52BFSUd2jZndJQ;H3lZP32
+!s100 U5]fiJ6UgAfCcmzkVofC61
+R9
+32
+R20
+!i10b 1
+R21
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd|
+Z29 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd|
+!i113 1
+R14
+R15
+Abehavioral
+R25
+R4
+R5
+DEx4 work 5 mux_2 0 22 52BFSUd2jZndJQ;H3lZP32
+!i122 26
+l19
+L18 12
+VEIUE@EJAKY=lgDn4z_gll2
+!s100 j?P9T360STFb?L3cV6:4>1
+R9
+32
+R20
+!i10b 1
+R21
+R28
+R29
+!i113 1
+R14
+R15
+Emux_4
+Z30 w1737228277
+R2
+R3
+R4
+R5
+!i122 27
+R6
+Z31 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_4.vhd
+Z32 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_4.vhd
+l0
+L7 1
+VbNoPi7H>;PaAc]>X=h2N_3
+!s100 jlcSe9@elgAG0[G>dcdDS0
+R9
+32
+R20
+!i10b 1
+R21
+Z33 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_4.vhd|
+Z34 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_4.vhd|
+!i113 1
+R14
+R15
+Abehavioral
+R2
+R3
+R4
+R5
+DEx4 work 5 mux_4 0 22 bNoPi7H>;PaAc]>X=h2N_3
+!i122 27
+l22
+L21 13
+V<kX087[<<_R4B@HHFY@z13
+!s100 VnBl55B1DHRUXJOe6eMYn0
+R9
+32
+R20
+!i10b 1
+R21
+R33
+R34
+!i113 1
+R14
+R15
+Eram
+Z35 w1736941599
+R25
+R4
+R5
+!i122 28
+R6
+Z36 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/RAM.vhd
+Z37 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/RAM.vhd
+l0
+L5 1
+VQZ];5W0`U`4ioJY5n1IGT2
+!s100 Ig@Dc]DlfC3WiMEL9G>eD3
+R9
+32
+Z38 !s110 1737243084
+!i10b 1
+Z39 !s108 1737243084.000000
+Z40 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/RAM.vhd|
+Z41 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/RAM.vhd|
+!i113 1
+R14
+R15
+Abehavioral
+R25
+R4
+R5
+DEx4 work 3 ram 0 22 QZ];5W0`U`4ioJY5n1IGT2
+!i122 28
+l23
+L19 17
+VWDgc[@:j9;[7b^f<2dC8d2
+!s100 j1[EUz<4cLJc_FEzhZ4G@0
+R9
+32
+R38
+!i10b 1
+R39
+R40
+R41
+!i113 1
+R14
+R15
+Ereg
+Z42 w1737227954
+R25
+R4
+R5
+!i122 29
+R6
+Z43 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/reg.vhd
+Z44 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/reg.vhd
+l0
+L5 1
+VGolT3fO0Y52EgJ7a<2<gD2
+!s100 NYo2BGgi;lDMiDCQ<_d<@0
+R9
+32
+R38
+!i10b 1
+R39
+Z45 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/reg.vhd|
+Z46 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/reg.vhd|
+!i113 1
+R14
+R15
+Abehavioral
+R25
+R4
+R5
+DEx4 work 3 reg 0 22 GolT3fO0Y52EgJ7a<2<gD2
+!i122 29
+l20
+L18 18
+V<lD2`hdd7b5lGLN`F?_3d0
+!s100 <DZ]iK=BP?a6zD7dI2P7K2
+R9
+32
+R38
+!i10b 1
+R39
+R45
+R46
+!i113 1
+R14
+R15
+Etb_conv
+Z47 w1736942064
+R25
+R4
+R5
+!i122 30
+R6
+Z48 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd
+Z49 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd
+l0
+L5 1
+V<GcVDUNKTl5QaEJ45CjGE2
+!s100 GLT;==HFUeG>HW@oIa:Xn3
+R9
+32
+R38
+!i10b 1
+R39
+Z50 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd|
+Z51 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd|
+!i113 1
+R14
+R15
+Abehavioral
+R25
+R4
+R5
+DEx4 work 7 tb_conv 0 22 <GcVDUNKTl5QaEJ45CjGE2
+!i122 30
+l38
+L9 80
+VP^RSCP>NnAFB7<RaZ;2m?2
+!s100 YI>QV5LW7lX8AO20_QL5@1
+R9
+32
+R38
+!i10b 1
+R39
+R50
+R51
+!i113 1
+R14
+R15
