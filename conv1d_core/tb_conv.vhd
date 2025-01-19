@@ -1,19 +1,19 @@
-library IEEE;
-use IEEE.STD_LOGIC_1164.ALL;
-use IEEE.NUMERIC_STD.ALL;
-use std.textio.all;  -- Libreria per leggere i file
+library ieee;
+use ieee.std_logic_1164.all;
+use std.textio.all;
+use std.STANDARD.all;
+use IEEE.numeric_std.all;
+use ieee.std_logic_textio.all;
+
 
 entity tb_conv is
 end entity;
 
 architecture Behavioral of tb_conv is
 
-    -- Parametri per la RAM
-    constant DATA_WIDTH : integer := 32;  -- Larghezza dati
-    constant ADDR_WIDTH : integer := 8;   -- Larghezza indirizzi
 
     -- Clock period
-    constant CLK_PERIOD : time := 10 ns;
+
 
     -- Segnali per il DUT (Device Under Test)
     signal clk              : std_logic := '0';
@@ -22,6 +22,7 @@ architecture Behavioral of tb_conv is
     signal ext_mem_gnt       : std_logic;
     signal req_i             : std_logic;
     signal we_i              : std_logic;
+signal we_i_pr :std_logic;
     signal be                : std_logic_vector(3 downto 0);
     signal add_i             : std_logic_vector(31 downto 0);
     signal wdata             : std_logic_vector(31 downto 0);
@@ -31,29 +32,28 @@ architecture Behavioral of tb_conv is
     signal done_tot          : std_logic;
     signal done_OUT_SAMPLE          : std_logic;
 
-    signal accepted_OUT_sample :  std_logic;
-signal replaced_IN_sample  :  std_logic;
-	signal REPLACE_FILTER :  STD_LOGIC;
+    	signal accepted_OUT_sample :  std_logic;
+	signal replaced_IN_sample  :  std_logic;
+	signal REPLACE_FILTER :   STD_LOGIC_VECTOR(0 DOWNTO 0);
 	 signal REPLACED_FILTER :  STD_LOGIC;
-	signal REPLACE_INPUT:  STD_LOGIC_VECTOR(3 DOWNTO 0);
-
+	signal REPLACE_INPUT:  STD_LOGIC_VECTOR(4 DOWNTO 0);
+	SIGNAL SEL_MUX_DATA : STD_LOGIC;
+	SIGNAL SEL_MUX_ADD : STD_LOGIC;
+	SIGNAL add_i_CONV1D ,add_i_PROCESS : STD_LOGIC_VECTOR(31 DOWNTO 0 );
+	
+	SIGNAL wdata_CONV1D,wdata_PROCESS : STD_LOGIC_VECTOR (31 DOWNTO 0);
     -- Segnali per la RAM
     signal ram_data_out      : std_logic_vector(31 downto 0);
 
     -- Istanza della RAM
-    COMPONENT RAM is
-        Generic (
-            DATA_WIDTH : integer;
-            ADDR_WIDTH : integer
-        );
-        Port (
-            clk     : in  std_logic;
-            we      : in  std_logic;
-            addr    : in  std_logic_vector(ADDR_WIDTH-1 downto 0);
-            data_in : in  std_logic_vector(DATA_WIDTH-1 downto 0);
-            data_out: out std_logic_vector(DATA_WIDTH-1 downto 0)
-        );
-    end component;
+COMPONENT RAM IS
+port(
+     data_in_RAM: IN std_logic_vector(31 downto 0);
+     address_RAM : IN std_logic_vector(31 downto 0);
+      clock,WE: IN std_logic;
+     data_out_RAM: OUT std_logic_vector(31 downto 0)
+ );
+END COMPONENT;
 
     -- Istanza di conv1d_core
     component conv1d_core is
@@ -76,80 +76,94 @@ signal replaced_IN_sample  :  std_logic;
 	
 	accepted_OUT_sample : in std_logic;
 	replaced_IN_sample  : in std_logic;
-	REPLACE_FILTER : OUT STD_LOGIC;
+	REPLACE_FILTER : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
 	REPLACED_FILTER : IN STD_LOGIC;
-	REPLACE_INPUT: OUT STD_LOGIC_VECTOR(3 DOWNTO 0)
+	REPLACE_INPUT: OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
         );
     end component;
 
+component mux_2 is
+  generic (
+    n_bit : integer := 8  -- Numero di bit dei segnali in ingresso, valore di default 8
+  );
+  port (
+    sel   : in  std_logic;          -- Segnale di selezione
+    d0    : in  std_logic_vector(n_bit-1 downto 0); -- Ingresso 0
+    d1    : in  std_logic_vector(n_bit-1 downto 0); -- Ingresso 1
+    y     : out std_logic_vector(n_bit-1 downto 0)  -- Uscita del multiplexer
+  );
+end component mux_2;
+    
+-- Dichiarazione della variabile per memorizzare i dati letti dal file
+FILE C_FILE_NAME : TEXT  ;
+SIGNAL a :  std_logic;
+
 begin
+
+------------------------------------------------------------
+mux_DATA : MUX_2 GENERIC MAP (n_bit => 32 ) PORT MAP (SEL=>SEL_MUX_DATA,D0=>wdata_CONV1D,D1=>wdata_PROCESS, Y=> wdata  );
+mux_ADD : MUX_2 GENERIC MAP (n_bit => 32 ) PORT MAP (SEL=>SEL_MUX_ADD,D0=>add_i_CONV1D,D1=>add_i_PROCESS, Y=> ADD_I  );
+--mux_we_i : MUX_2 GENERIC MAP (n_bit => 1 ) PORT MAP (SEL=>SEL_MUX_we_i,D0=>we_i,D1=>we_i_PROCESS, Y=> we_i  );
+
 ---------------------------------------------------------------
     -- Processo di scrittura in RAM dal file
 
 
 
 
-
 ----------------------------------------------------------------
-    LOAD_MATRIX : process
-        -- Dichiarazione per leggere il file
-        file input_file : text open read_mode is "matrix_.txt";  -- Nome del file da cui leggere
-        variable line_buffer : line;  -- Buffer per leggere una riga
-        variable matrix_value : integer;  -- Valore letto dalla matrice
-        variable addr_counter : integer := 0;  -- Indirizzo corrente nella RAM
-    begin
-        wait for 20 ns;  -- Attendere l'inizializzazione
 
-        -- Imposta il reset
-        RST_n <= '0';
-        wait for 20 ns;
-        RST_n <= '1';
-        wait for 20 ns;
+  WriteData_proc: process
+	variable var_data3     :std_logic_vector(31 downto 0);
+   	variable fstatus       :file_open_status;
+   	variable file_line     :line;
+	VARIABLE CARICAMENTO : INTEGER :=0;
+ begin
+file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_bin2.txt", READ_mode); -- mettere il punto dove si trova il file
+	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
+   
+ 	
+  
+ 	READLINE(C_FILE_NAME, file_line);
+	READ(file_line, var_data3);
+       	we_i<='1';
+	wdata_PROCESS<=var_data3;
+	add_i_PROCESS<=std_logic_vector(to_unsigned(CARICAMENTO, 32));
+	CARICAMENTO := CARICAMENTO +1;
+	
 
-        -- Lettura del file e scrittura in RAM
-        while not endfile(input_file) loop
-            readline(input_file, line_buffer);  -- Leggi una riga del file
-            -- Per ogni valore della matrice (34 colonne)
-            for i in 0 to 33 loop
-                read(line_buffer, matrix_value);  -- Leggi un valore della matrice
-                -- Scrivi nella RAM
-                add_i <= std_logic_vector(to_unsigned(addr_counter, ADDR_WIDTH));  -- Imposta l'indirizzo
-                wdata <= std_logic_vector(to_unsigned(matrix_value, DATA_WIDTH));  -- Imposta il dato
-                we_i <= '1';  -- Abilita la scrittura
-                wait for CLK_PERIOD;  -- Aspetta un ciclo di clock
-                addr_counter := addr_counter + 1;  -- Incrementa l'indirizzo
-            end loop;
-        end loop;
+	
+	wait for 1 ns;
+	END LOOP;
+	
+	FILE_CLOSE(C_FILE_NAME);
+	start<='1';
 
-        -- Termina la simulazione dopo aver scritto tutti i dati
-        wait for 100 ns;
-        assert false report "Testbench completed!" severity failure;
-    end process;
+WAIT ;
 
+END PROCESS;
 ---------------------------------------------------------------
     -- Clock generation
-    clk_process : process
-    begin
-        clk <= '0';
-        wait for CLK_PERIOD / 2;
-        clk <= '1';
-        wait for CLK_PERIOD / 2;
-    end process;
 
-    -- Istanza della RAM
-    ram_inst : RAM
-        generic map (
-            DATA_WIDTH => DATA_WIDTH,
-            ADDR_WIDTH => ADDR_WIDTH
-        )
-        port map (
-            clk     => clk,
-            we      => we_i,
-            addr    => add_i(ADDR_WIDTH-1 downto 0),
-            data_in => wdata,
-            data_out=> ram_data_out
-        );
+process
+   
+begin
+    clk <= '0';
+    wait for 10 ns;
+    clk <= '1';
+    wait for 10 ns;
+end process;
 
+
+R1: RAM port MAP(
+     data_in_RAM=> wdata,
+     address_RAM =>add_i,
+      clock=> clk,
+	WE=> we_i,
+     data_out_RAM=>ram_data_out
+ );
+
+    
     -- Istanza di conv1d_core
     conv1d_core_inst : conv1d_core
         port map (
@@ -158,10 +172,10 @@ begin
 
             ext_mem_gnt       => ext_mem_gnt,
             req_i             => req_i,
-            we_i              => we_i,
+            we_i              => we_i_pr,
             be                => be,
-            add_i             => add_i,
-            wdata             => wdata,
+            add_i             => add_i_CONV1D,
+            wdata             => wdata_CONV1D,
             data              => ram_data_out,
 
             start             => start,
@@ -176,7 +190,8 @@ begin
         );
 
     -- Stimolo della testbench
-
-
+START<='1' AFTER 201 NS;
+SEL_MUX_DATA<='1', '0' AFTER 2100 NS;
+SEL_MUX_ADD<='1', '0' AFTER 2100 NS;
 end Behavioral;
 

@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include "data.h"
+#include <errno.h>
 
 // Definizione corretta delle costanti
 #define COLONNE_MEM 4
@@ -12,6 +13,9 @@ void replace_sample(int sample_block);
 void replace_filter(int filter_block); // il blocco di filti puo essere o 0 o 1 nel caso in cui sto usando i primi 4 filtri o gli                                                                                                                       altri 4
 void print_out(uint32_t matrix[8][124], int rows, int cols);
 void print_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename);
+void print_bin_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename);
+void remove_spaces(const char* filename1, const char* filename2);
+void decimalToBinary(int num, char* binaryStr);
 
 int main() {
     int seq_filter = 0;
@@ -57,9 +61,14 @@ int main() {
     }
     j = 0;
     i = 0;
-
     conv1d_testa(); // calcolo via sw la convoluzione e la salvo in un file outpiut.txt
-   print_mem_to_file(mem, "mem.txt");
+    print_mem_to_file(mem, "mem.txt");
+
+    print_bin_mem_to_file(mem, "mem_bin.txt");
+ 
+    remove_spaces("mem_bin.txt", "mem_bin2.txt");
+ 
+
     //---------------------------------------------------------
     // qui faccio la convoluzione
     for(z=0;z<16;z++){
@@ -98,7 +107,7 @@ int main() {
                 seq_filter = 0;
             }
             replace_filter(seq_filter);
-        //    print_mem_to_file(mem, "mem.txt");
+        
             m = 0;
 
         }
@@ -112,7 +121,7 @@ int main() {
        
     }
     replace_sample(z+1);
-   // print_out(out_mat, 8, 1);
+   
 }
     
 
@@ -123,7 +132,7 @@ int main() {
     //---------------------------------------------------------
 
 
-
+    /*
     FILE* filePtr;
     filePtr = fopen("matrice_risultante.txt", "w");  // Apre il file in modalità scrittura
 
@@ -142,7 +151,7 @@ int main() {
     }
 
     fclose(filePtr);  // Chiude il file
-
+    */
 
  
 
@@ -387,4 +396,85 @@ void print_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename) {
     // Chiudi il file
     fclose(filePtr);
     printf("Matrice mem scritta correttamente nel file %s\n", filename);
+}
+
+
+
+void decimalToBinary(int num, char* binaryStr) {
+    // Conversione di un numero in binario e memorizzazione in una stringa
+    for (int i = 7; i >= 0; i--) {
+        binaryStr[7 - i] = (num % 2) + '0';
+        num /= 2;
+    }
+    binaryStr[8] = '\0'; // Aggiunge il terminatore di stringa
+}
+
+void print_bin_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename) {
+    FILE* filePtr;
+    errno_t err;
+
+    // Apri il file in modalità scrittura
+    err = fopen_s(&filePtr, filename, "w");
+
+    if (err != 0) {
+        // Se fopen_s fallisce, mostra un errore
+        printf("Impossibile aprire il file per la scrittura.\n");
+        return;
+    }
+
+    // Scrivi i dati di mem nel file in formato binario
+    char binaryStr[9]; // Per contenere la rappresentazione binaria di 8 bit
+    for (int i = 0; i < RIGHE_MEM; i++) {
+        for (int j = 0; j < COLONNE_MEM; j++) {
+            decimalToBinary(mem[i][j], binaryStr); // Converte il numero in binario
+            fprintf(filePtr, "%s ", binaryStr);  // Scrive il valore binario
+        }
+        fprintf(filePtr, "\n");  // Nuova riga dopo ogni riga della matrice
+    }
+
+    // Chiudi il file
+    fclose(filePtr);
+    printf("Matrice mem scritta correttamente nel file %s\n", filename);
+   
+}
+void remove_spaces(const char* filename1, const char* filename2) {
+   
+    char ch;
+    FILE* filePtr1;
+    FILE* filePtr2;
+    errno_t err;
+
+    // Apri il primo file in modalità lettura
+    err = fopen_s(&filePtr1, filename1, "r");
+    if (err != 0) {
+        // Se fopen_s fallisce, mostra un errore
+        printf("Impossibile aprire il file di input.\n");
+        return;
+    }
+
+    // Apri il secondo file in modalità scrittura
+    err = fopen_s(&filePtr2, filename2, "w");
+    if (err != 0) {
+        // Se fopen_s fallisce, mostra un errore
+        printf("Impossibile aprire il file di output.\n");
+        fclose(filePtr1); // Chiudi il primo file se il secondo fallisce
+        return;
+    }
+  
+    // Leggi ogni carattere dal file di input
+    while (fscanf_s(filePtr1, "%c", &ch) != EOF) {
+        //printf("Lettura carattere: %c\n", ch);  // Debug: stampa ogni carattere letto
+        if (ch != ' ') {
+            // Scrivi il carattere nel file di output se non è uno spazio
+            fprintf(filePtr2, "%c", ch);
+        }
+    }
+
+    // Controllo se il file di output contiene qualcosa
+    fflush(filePtr2);  // Assicurati che tutti i dati siano scritti nel file
+    printf("Scrittura completata.\n");
+
+    // Chiudi entrambi i file
+    fclose(filePtr1);
+    fclose(filePtr2);
 }
