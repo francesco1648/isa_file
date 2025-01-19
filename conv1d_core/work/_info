@@ -10,25 +10,25 @@ z2
 cModel Technology
 dC:/intelFPGA/20.1
 Econv1d_core
-Z0 w1737248837
+Z0 w1737278550
 Z1 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
 Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 62
+!i122 134
 Z6 dC:/Users/Titania/Desktop/ms/lab3/conv1d_core
 Z7 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd
 Z8 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd
 l0
 L10 1
-VRY:;`MJMKJ<cJD6T9K@zB2
-!s100 ;j[oWN:kzZmKUM]n<KB@j3
+VI40Z=WHJamdJ^c;^F<oo^0
+!s100 QMEORb3OGILVI6>a5EZB53
 Z9 OV;C;2020.1;71
 32
-Z10 !s110 1737248838
+Z10 !s110 1737278551
 !i10b 1
-Z11 !s108 1737248838.000000
+Z11 !s108 1737278551.000000
 Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd|
 Z13 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd|
 !i113 1
@@ -40,12 +40,12 @@ R2
 R3
 R4
 R5
-Z16 DEx4 work 11 conv1d_core 0 22 RY:;`MJMKJ<cJD6T9K@zB2
-!i122 62
-l131
-L45 201
-VS`GzLHXI4ZYnQaUjg4W362
-!s100 J8d`zjTeOH55YN]n>XPC>0
+Z16 DEx4 work 11 conv1d_core 0 22 I40Z=WHJamdJ^c;^F<oo^0
+!i122 134
+l152
+L46 250
+VMV`8@A?7Cl9[l^QJD4V=<0
+!s100 4ldF6PD5PnWQ^A1>@]_PG0
 R9
 32
 R10
@@ -276,25 +276,25 @@ R46
 R14
 R15
 Etb_conv
-Z47 w1736942064
+Z47 w1737278135
 R25
 R4
 R5
-!i122 30
+!i122 131
 R6
 Z48 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd
 Z49 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd
 l0
-L5 1
-V<GcVDUNKTl5QaEJ45CjGE2
-!s100 GLT;==HFUeG>HW@oIa:Xn3
+L6 1
+VRKTOiJfi<@i5mjNKgYSaf1
+!s100 HeQF4n5R=B6d13LQec:m`2
 R9
 32
-R38
+Z50 !s110 1737278136
 !i10b 1
-R39
-Z50 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd|
-Z51 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd|
+Z51 !s108 1737278136.000000
+Z52 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd|
+Z53 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd|
 !i113 1
 R14
 R15
@@ -302,19 +302,19 @@ Abehavioral
 R25
 R4
 R5
-DEx4 work 7 tb_conv 0 22 <GcVDUNKTl5QaEJ45CjGE2
-!i122 30
-l38
-L9 80
-VP^RSCP>NnAFB7<RaZ;2m?2
-!s100 YI>QV5LW7lX8AO20_QL5@1
+DEx4 work 7 tb_conv 0 22 RKTOiJfi<@i5mjNKgYSaf1
+!i122 131
+l85
+L9 173
+VckBkFPVYoze>KP^2jg@0V2
+!s100 az]9]B<dV0mnb4XhPQRzV2
 R9
 32
-R38
-!i10b 1
-R39
 R50
+!i10b 1
 R51
+R52
+R53
 !i113 1
 R14
 R15

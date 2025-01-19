@@ -1,43 +1,847 @@
 # Reading pref.tcl
 # OpenFile C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.mpf
 # Loading project conv1d_core
-# Compile of conv1d_core.vhd was successful.
-# Compile of counter.vhd was successful.
-# Compile of mux_2.vhd was successful.
-# Compile of mux_4.vhd was successful.
-# Compile of RAM.vhd was successful.
-# Compile of reg.vhd was successful.
-# Compile of tb_conv.vhd was successful.
-# 7 compiles, 0 failed with no errors.
-# Compile of conv1d_core.vhd was successful.
-# Compile of conv1d_core.vhd failed with 3 errors.
-# Compile of conv1d_core.vhd failed with 1 errors.
-# Compile of conv1d_core.vhd failed with 1 errors.
-# Compile of conv1d_core.vhd was successful.
-# Compile of conv1d_core.vhd failed with 2 errors.
-# Compile of conv1d_core.vhd failed with 1 errors.
-# Compile of conv1d_core.vhd was successful.
-# Compile of conv1d_core.vhd failed with 40 errors.
 # Compile of conv1d_core.vhd failed with 20 errors.
-# Compile of conv1d_core.vhd failed with 17 errors.
-# Compile of conv1d_core.vhd failed with 21 errors.
-# Compile of conv1d_core.vhd failed with 25 errors.
-# Compile of conv1d_core.vhd failed with 24 errors.
-# Compile of conv1d_core.vhd failed with 8 errors.
-# Compile of conv1d_core.vhd failed with 13 errors.
+# Compile of conv1d_core.vhd failed with 20 errors.
+# Compile of conv1d_core.vhd failed with 20 errors.
+# Compile of conv1d_core.vhd failed with 14 errors.
+# Compile of conv1d_core.vhd failed with 12 errors.
 # Compile of conv1d_core.vhd failed with 8 errors.
 # Compile of conv1d_core.vhd failed with 7 errors.
-# Compile of conv1d_core.vhd failed with 8 errors.
 # Compile of conv1d_core.vhd failed with 7 errors.
 # Compile of conv1d_core.vhd failed with 6 errors.
 # Compile of conv1d_core.vhd failed with 4 errors.
+# Compile of conv1d_core.vhd was successful.
+# Compile of tb_conv.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 08:26:44 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# ** Fatal: (vsim-3350) Generic "kernel_size" has not been given a value.
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd Line: 12
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 08:26:45 on Jan 19,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 13
+# Compile of conv1d_core.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 08:27:47 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# ** Fatal: (vsim-3348) Port length (32) does not match actual length (3) for port "/tb_conv/conv1d_core_inst/MUX3/d0".
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst/MUX3 File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd Line: 12
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 08:27:47 on Jan 19,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 2
+# Compile of conv1d_core.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 08:30:41 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# ** Fatal: (vsim-3348) Port length (32) does not match actual length (3) for port "/tb_conv/conv1d_core_inst/MUX4/in2".
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst/MUX4 File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_4.vhd Line: 15
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 08:30:42 on Jan 19,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 2
+# Compile of conv1d_core.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 08:32:45 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# ** Fatal: (vsim-3348) Port length (32) does not match actual length (5) for port "/tb_conv/conv1d_core_inst/MUX5/in2".
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst/MUX5 File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_4.vhd Line: 15
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 08:32:46 on Jan 19,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 2
+# Compile of conv1d_core.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 08:34:01 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# ** Fatal: (vsim-3348) Port length (32) does not match actual length (3) for port "/tb_conv/conv1d_core_inst/MUX7/d0".
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst/MUX7 File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd Line: 12
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 08:34:02 on Jan 19,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 2
+# Compile of conv1d_core.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 08:35:37 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# ** Fatal: (vsim-3348) Port length (8) does not match actual length (3) for port "/tb_conv/conv1d_core_inst/MUX10/d0".
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst/MUX10 File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd Line: 12
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 08:35:37 on Jan 19,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 2
+# Compile of conv1d_core.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 08:37:17 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# ** Fatal: (vsim-3348) Port length (8) does not match actual length (32) for port "/tb_conv/conv1d_core_inst/MUX10/d0".
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst/MUX10 File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd Line: 12
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 08:37:18 on Jan 19,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 2
+# Compile of conv1d_core.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 08:38:17 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# ** Fatal: (vsim-3348) Port length (8) does not match actual length (9) for port "/tb_conv/conv1d_core_inst/MUX10/d1".
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst/MUX10 File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd Line: 13
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 08:38:17 on Jan 19,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 2
+# Compile of conv1d_core.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 08:39:48 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# ** Fatal: (vsim-3348) Port length (8) does not match actual length (3) for port "/tb_conv/conv1d_core_inst/MUX12/d0".
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst/MUX12 File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd Line: 12
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 08:39:48 on Jan 19,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 2
+# Compile of conv1d_core.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 08:40:58 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# ** Fatal: (vsim-3348) Port length (8) does not match actual length (3) for port "/tb_conv/conv1d_core_inst/MUX14/d0".
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst/MUX14 File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd Line: 12
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 08:40:58 on Jan 19,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 2
+# Compile of conv1d_core.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 08:41:19 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# Loading work.counter(behavioral)
+# ** Fatal: (vsim-3348) Port length (5) does not match actual length (3) for port "/tb_conv/conv1d_core_inst/COUNTER_I/count".
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst/COUNTER_I File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd Line: 16
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 08:41:19 on Jan 19,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 2
+# Compile of conv1d_core.vhd failed with 1 errors.
+# Compile of conv1d_core.vhd failed with 1 errors.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 08:45:37 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# Loading work.counter(behavioral)
+# ** Fatal: (vsim-3348) Port length (5) does not match actual length (3) for port "/tb_conv/conv1d_core_inst/COUNTER_I/count".
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst/COUNTER_I File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd Line: 16
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 08:45:38 on Jan 19,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 3
+# Compile of conv1d_core.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 08:45:55 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# Loading work.counter(behavioral)
+# ** Fatal: (vsim-3348) Port length (5) does not match actual length (3) for port "/tb_conv/conv1d_core_inst/COUNTER_I/count".
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst/COUNTER_I File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd Line: 16
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 08:45:56 on Jan 19,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 2
+# Compile of conv1d_core.vhd failed with 3 errors.
+# Compile of conv1d_core.vhd failed with 3 errors.
+# Compile of conv1d_core.vhd was successful.
+# Compile of conv1d_core.vhd failed with 4 errors.
+# Compile of conv1d_core.vhd failed with 4 errors.
+# Compile of conv1d_core.vhd failed with 4 errors.
+# Compile of conv1d_core.vhd failed with 4 errors.
+# Compile of conv1d_core.vhd failed with 1 errors.
+# Compile of conv1d_core.vhd failed with 1 errors.
+# Compile of conv1d_core.vhd failed with 1 errors.
+# Compile of conv1d_core.vhd failed with 1 errors.
+# Compile of conv1d_core.vhd failed with 1 errors.
+# Compile of conv1d_core.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 08:56:23 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# Loading work.counter(behavioral)
+# ** Fatal: (vsim-3348) Port length (2) does not match actual length (3) for port "/tb_conv/conv1d_core_inst/COUNTER_I/count".
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst/COUNTER_I File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd Line: 16
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 08:56:24 on Jan 19,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 14
+# Compile of tb_conv.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 08:57:46 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# Loading work.counter(behavioral)
+# ** Fatal: (vsim-3348) Port length (2) does not match actual length (3) for port "/tb_conv/conv1d_core_inst/COUNTER_I/count".
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst/COUNTER_I File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd Line: 16
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 08:57:46 on Jan 19,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 2
+# Compile of conv1d_core.vhd failed with 5 errors.
 # Compile of conv1d_core.vhd failed with 4 errors.
 # Compile of conv1d_core.vhd failed with 3 errors.
+# Compile of conv1d_core.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 09:04:15 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# Loading work.counter(behavioral)
+# ** Fatal: (vsim-3348) Port length (2) does not match actual length (3) for port "/tb_conv/conv1d_core_inst/COUNTER_I/count".
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst/COUNTER_I File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd Line: 16
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 09:04:16 on Jan 19,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 5
+# Compile of conv1d_core.vhd failed with 1 errors.
+# Compile of conv1d_core.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 09:09:57 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# Loading work.counter(behavioral)
+# ** Fatal: (vsim-3348) Port length (3) does not match actual length (4) for port "/tb_conv/conv1d_core_inst/COUNTER_J/count".
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst/COUNTER_J File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd Line: 16
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 09:09:57 on Jan 19,2025, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 3
+# Compile of conv1d_core.vhd failed with 1 errors.
+# Compile of conv1d_core.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 09:10:38 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# Loading work.counter(behavioral)
+# ** Fatal: (vsim-3348) Port length (2) does not match actual length (1) for port "/tb_conv/conv1d_core_inst/COUNTER_FG/count".
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv/conv1d_core_inst/COUNTER_FG File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd Line: 16
+# FATAL ERROR while loading design
+# Error loading design
+# End time: 09:10:39 on Jan 19,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 3
+# Compile of conv1d_core.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 09:10:58 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# Loading work.counter(behavioral)
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/ext_mem_gnt has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/req_i has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/we_i has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/be(3 downto 0) has no driver.
+# This port will contribute value (UUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(31 downto 8) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(7 downto 0) has no driver.
+# This port will contribute value (UUUUUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(31 downto 0) has no driver.
+# This port will contribute value (UUUUUUUUUUUUUUUUUUUUUUUUUUUUUUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/done_tot has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/done_row has no driver.
+# This port will contribute value (U) to the signal network.
+quit -sim
+# End time: 09:11:13 on Jan 19,2025, Elapsed time: 0:00:15
+# Errors: 0, Warnings: 11
+# Compile of tb_conv.vhd failed with 14 errors.
+# Compile of tb_conv.vhd failed with 14 errors.
+# Compile of tb_conv.vhd failed with 14 errors.
+# Compile of tb_conv.vhd failed with 14 errors.
+# Compile of tb_conv.vhd failed with 7 errors.
+# Compile of tb_conv.vhd failed with 1 errors.
+# Compile of tb_conv.vhd was successful with warnings.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 09:20:19 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# ** Warning: (vsim-7) Failed to open VHDL file "matrix.txt" in rb mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# Loading work.counter(behavioral)
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/ext_mem_gnt has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/req_i has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/we_i has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/be(3 downto 0) has no driver.
+# This port will contribute value (UUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(31) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(30) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(29) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(28) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(27) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(26) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(25) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(24) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(23) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(22) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(21) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(20) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(19) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(18) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(17) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(16) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(15) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(14) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(13) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(12) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(11) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(10) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(9) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(8) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(7) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(6) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(5) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(4) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(3) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(2) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(0) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(31) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(30) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(29) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(28) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(27) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(26) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(25) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(24) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(23) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(22) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(21) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(20) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(19) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(18) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(17) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(16) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(15) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(14) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(13) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(12) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(11) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(10) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(9) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(8) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(7) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(6) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(5) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(4) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(3) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(2) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(0) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/done_tot has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/done_row has no driver.
+# This port will contribute value (U) to the signal network.
+quit -sim
+# End time: 09:20:37 on Jan 19,2025, Elapsed time: 0:00:18
+# Errors: 0, Warnings: 79
+# Compile of conv1d_core.vhd was successful.
 # Compile of conv1d_core.vhd failed with 3 errors.
-# Compile of conv1d_core.vhd failed with 10 errors.
+# Compile of conv1d_core.vhd failed with 3 errors.
 # Compile of conv1d_core.vhd failed with 3 errors.
 # Compile of conv1d_core.vhd failed with 1 errors.
 # Compile of conv1d_core.vhd was successful.
-# Compile of conv1d_core.vhd failed with 3 errors.
+# Compile of conv1d_core.vhd was successful.
+# Compile of conv1d_core.vhd was successful.
+# Compile of tb_conv.vhd failed with 21 errors.
+# Compile of tb_conv.vhd failed with 19 errors.
+# Compile of tb_conv.vhd failed with 17 errors.
+# Compile of tb_conv.vhd failed with 8 errors.
+# Compile of tb_conv.vhd failed with 10 errors.
+# Compile of tb_conv.vhd failed with 14 errors.
+# Compile of tb_conv.vhd failed with 16 errors.
+# Compile of tb_conv.vhd failed with 12 errors.
+# Compile of tb_conv.vhd failed with 12 errors.
+# Compile of tb_conv.vhd was successful with warnings.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 10:15:44 on Jan 19,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.tb_conv(behavioral)
+# ** Warning: (vsim-7) Failed to open VHDL file "matrix_.txt" in rb mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv
+# Loading work.ram(behavioral)
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.conv1d_core(beh)
+# Loading work.reg(behavioral)
+# Loading work.mux_2(behavioral)
+# Loading work.mux_4(behavioral)
+# Loading work.counter(behavioral)
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/ext_mem_gnt has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/req_i has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/we_i has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/be(3 downto 0) has no driver.
+# This port will contribute value (UUUU) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(31) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(30) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(29) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(28) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(27) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(26) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(25) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(24) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(23) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(22) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(21) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(20) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(19) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(18) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(17) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(16) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(15) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(14) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(13) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(12) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(11) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(10) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(9) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(8) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(7) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(6) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(5) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(4) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(3) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(2) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/add_i(0) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(31) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(30) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(29) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(28) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(27) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(26) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(25) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(24) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(23) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(22) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(21) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(20) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(19) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(18) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(17) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(16) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(15) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(14) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(13) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(12) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(11) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(10) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(9) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(8) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(7) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(6) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(5) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(4) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(3) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(2) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(1) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/wdata(0) has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/done_tot has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/done_OUT_SAMPLE has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/REPLACE_FILTER has no driver.
+# This port will contribute value (U) to the signal network.
+# ** Warning: (vsim-8683) Uninitialized out port /tb_conv/conv1d_core_inst/REPLACE_INPUT(3 downto 0) has no driver.
+# This port will contribute value (UUUU) to the signal network.
+quit -sim
+# End time: 10:15:53 on Jan 19,2025, Elapsed time: 0:00:09
+# Errors: 0, Warnings: 92
+# Compile of conv1d_core.vhd failed with 2 errors.
 # Compile of conv1d_core.vhd failed with 1 errors.
 # Compile of conv1d_core.vhd was successful.
