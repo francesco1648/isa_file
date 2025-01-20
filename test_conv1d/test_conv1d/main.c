@@ -62,7 +62,11 @@ int main() {
     j = 0;
     i = 0;
     conv1d_testa(); // calcolo via sw la convoluzione e la salvo in un file outpiut.txt
+    //print_mem_to_file(mem, "mem.txt");
 
+    //print_bin_mem_to_file(mem, "mem_bin.txt");
+
+    //remove_spaces("mem_bin.txt", "mem_bin2_SETF2.txt");
  
 
     //---------------------------------------------------------
@@ -103,13 +107,14 @@ int main() {
                 seq_filter = 0;
             }
             replace_filter(seq_filter);
-        
+
             m = 0;
             print_mem_to_file(mem, "mem.txt");
 
             print_bin_mem_to_file(mem, "mem_bin.txt");
 
             remove_spaces("mem_bin.txt", "mem_bin2_SETF2.txt");
+
 
         }
         done = 1;
@@ -121,8 +126,11 @@ int main() {
             col++;
        
     }
+ 
+
     replace_sample(z+1);
-   
+
+  
 }
     
 
@@ -192,7 +200,7 @@ void replace_sample(int sample_block) {
     int inc=0;
     for (int bk = 0; bk < 4; bk++) {
         for (int w_c = 0; w_c < 4; w_c++) {
-            inc = w_c * 128 + bk * 512 + sample_block * 8;
+            inc = w_c * 128 + bk * 512 + sample_block * 4;
             for (int w_r = 80; w_r < 80 + 9; w_r++) {
 
                 mem[w_r + bk * 9][w_c] = A[inc];
@@ -206,11 +214,12 @@ void replace_sample(int sample_block) {
 
 //stampa nel file output.txt il risultato della convoluzione calcolato via sw
 void conv1d_testa() {
-    FILE* filePtr1;
+    int i=0;
+    FILE* filePtr5;
     errno_t err;
 
     // Utilizza fopen_s per aprire il file in modalità scrittura
-    err = fopen_s(&filePtr1, "output.txt", "w");
+    err = fopen_s(&filePtr5, "output.txt", "w");
 
     if (err != 0) {
         // Se fopen_s fallisce, restituisce un errore
@@ -335,7 +344,7 @@ void conv1d_testa() {
             out_matrix[7][j] += f7[i][0] * sample[i][0 + j] + f7[i][1] * sample[i][1 + j] + f7[i][2] * sample[i][2 + j] + f7[i][3] * sample[i][3 + j] + f7[i][4] * sample[i][4 + j];
         }
 
-
+        i = 0;
     }
 
     //----------------------------
@@ -347,13 +356,13 @@ void conv1d_testa() {
   
     for (int i = 0; i < 8; i++) {  // Righe di out_matrix
         for (int j = 0; j < 128; j++) {  // Colonne di out_matrix
-            fprintf(filePtr1, "%d ", out_matrix[i][j]);
+            fprintf(filePtr5, "%d ", out_matrix[i][j]);
         }
         // Non c'è bisogno di fprintf(filePtr, "\n"); per scrivere una nuova riga nel formato binario
     }
 
     // Chiude il file
-    fclose(filePtr1);
+    fclose(filePtr5);
 
 
 }

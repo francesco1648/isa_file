@@ -10,13 +10,13 @@ z2
 cModel Technology
 dC:/intelFPGA/20.1
 Econv1d_core
-Z0 w1737395944
+Z0 w1737412057
 Z1 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
 Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 503
+!i122 538
 Z6 dC:/Users/Titania/Desktop/ms/lab3/conv1d_core
 Z7 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd
 Z8 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd
@@ -26,9 +26,9 @@ V5_DQa]a2mf8aUXV=;H_j81
 !s100 F^aQ9m=:5i@RiG2D3SmaE0
 Z9 OV;C;2020.1;71
 32
-Z10 !s110 1737395961
+Z10 !s110 1737412064
 !i10b 1
-Z11 !s108 1737395961.000000
+Z11 !s108 1737412063.000000
 Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd|
 Z13 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd|
 !i113 1
@@ -41,11 +41,11 @@ R3
 R4
 R5
 DEx4 work 11 conv1d_core 0 22 5_DQa]a2mf8aUXV=;H_j81
-!i122 503
+!i122 538
 l158
-L46 565
-V9o2MlLb5=<JW52`[NPhE^3
-!s100 ``2CEOYz3P_5]cK3bz2dg2
+L46 568
+V[g;fP72O4V1`JdYZ7FN=]3
+!s100 JoIGLbCEieYhddZjn9BO]2
 R9
 32
 R10
@@ -341,12 +341,12 @@ R56
 R14
 R15
 Etb_conv
-Z57 w1737396922
+Z57 w1737414934
 R1
 R24
 R4
 R5
-!i122 507
+!i122 551
 R6
 Z58 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd
 Z59 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd
@@ -356,9 +356,9 @@ V4iFWE9LJ915hjzQ^KZe3?1
 !s100 Ij[V5QW4EQURPj=^MoV<:1
 R9
 32
-Z60 !s110 1737396925
+Z60 !s110 1737414936
 !i10b 1
-Z61 !s108 1737396925.000000
+Z61 !s108 1737414936.000000
 Z62 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd|
 Z63 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd|
 !i113 1
@@ -370,11 +370,11 @@ R24
 R4
 R5
 Z64 DEx4 work 7 tb_conv 0 22 4iFWE9LJ915hjzQ^KZe3?1
-!i122 507
+!i122 551
 l115
-Z65 L12 521
-Vck[`U@8nP0TYD:coHc<dk1
-!s100 XO9GD]_58[[b@UG9g19D^2
+Z65 L12 564
+Vc[EFL>>MCjXn:zl1Wi;6R3
+!s100 PF=b_KT?1XFIlhlEgga;G3
 R9
 32
 R60
