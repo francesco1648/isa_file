@@ -13,7 +13,7 @@ END ENTITY;
 
 ARCHITECTURE BEH OF RAM IS
 
-TYPE REG_TYP IS ARRAY (0 TO 127) OF STD_LOGIC_VECTOR(31 DOWNTO 0);
+TYPE REG_TYP IS ARRAY (0 TO 129) OF STD_LOGIC_VECTOR(31 DOWNTO 0);
 SIGNAL MEM : REG_TYP;
 begin
 
@@ -21,11 +21,11 @@ PROCESS(CLOCK)
 BEGIN
 if(CLOCK' EVENT AND CLOCK='1') THEN
 
-	if  WE='0' then
+	if  WE='1' then
 	MEM(to_integer(unsigned(address_RAM)))<=data_in_RAM;
 	end if;
 
-	if WE='1' then
+	if WE='0' then
 	data_out_RAM<=MEM(to_integer(unsigned(address_RAM)));
 	end if;
 

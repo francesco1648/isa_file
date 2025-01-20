@@ -62,11 +62,7 @@ int main() {
     j = 0;
     i = 0;
     conv1d_testa(); // calcolo via sw la convoluzione e la salvo in un file outpiut.txt
-    print_mem_to_file(mem, "mem.txt");
 
-    print_bin_mem_to_file(mem, "mem_bin.txt");
- 
-    remove_spaces("mem_bin.txt", "mem_bin2.txt");
  
 
     //---------------------------------------------------------
@@ -109,6 +105,11 @@ int main() {
             replace_filter(seq_filter);
         
             m = 0;
+            print_mem_to_file(mem, "mem.txt");
+
+            print_bin_mem_to_file(mem, "mem_bin.txt");
+
+            remove_spaces("mem_bin.txt", "mem_bin2_SETF2.txt");
 
         }
         done = 1;
@@ -402,11 +403,19 @@ void print_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename) {
 
 void decimalToBinary(int num, char* binaryStr) {
     // Conversione di un numero in binario e memorizzazione in una stringa
+    binaryStr[8] = '\0'; // Aggiunge il terminatore di stringa
     for (int i = 7; i >= 0; i--) {
         binaryStr[7 - i] = (num % 2) + '0';
         num /= 2;
     }
-    binaryStr[8] = '\0'; // Aggiunge il terminatore di stringa
+    int len = 8;
+    for (int i = 0; i < len / 2; i++) {
+        // Scambia gli elementi agli estremi opposti
+        char temp = binaryStr[i];
+        binaryStr[i] = binaryStr[len - i - 1];
+        binaryStr[len - i - 1] = temp;
+    }
+    
 }
 
 void print_bin_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename) {
@@ -423,7 +432,7 @@ void print_bin_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename
     }
 
     // Scrivi i dati di mem nel file in formato binario
-    char binaryStr[9]; // Per contenere la rappresentazione binaria di 8 bit
+    char binaryStr[9] = { 0 };
     for (int i = 0; i < RIGHE_MEM; i++) {
         for (int j = 0; j < COLONNE_MEM; j++) {
             decimalToBinary(mem[i][j], binaryStr); // Converte il numero in binario

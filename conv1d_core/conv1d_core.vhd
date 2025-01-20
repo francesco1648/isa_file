@@ -44,7 +44,7 @@ port (
 end entity;
 
 architecture beh of conv1d_core is
-type statetype is (IDLE,s0,s1,s2,s3,s4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21,S22,S23,S24,S25 );
+type statetype is (IDLE,s0,s1,s2,s3,s4,S5,S6,S7,S8,S9,S10,S11,S12,S13,S14,S15,S16,S17,S18,S19,S20,S21,S22,S23,S24,S25,S26,S27,S28 );
 signal p_state,n_state : statetype;
 ------------------------------------------------------------------------------------
 component reg is
@@ -123,14 +123,14 @@ signal REG_ADD_CH,REG_ADD_FIL,REG_FILTER,REG_APP_O,REG_OUT_MAT,REG_ACC_O: std_lo
 signal REG_ACC_0,REG_ACC_1,REG_ACC_2,REG_ACC_3,REG_ADD_M_O,REG_OUT_MEM: std_logic_vector(31 downto 0);
 SIGNAL REG_R0_O,REG_R1_O,REG_R2_O,REG_R3_O : STD_LOGIC_VECTOR(31 downto 0);
 
-SIGNAL SEL_ADD1_B,SEL_ADD1_A ,SEL_ADD4_B,SEL_ADD4_A: STD_LOGIC;
-SIGNAL SEL_ADD2_A,SEL_ADD2_B,SEL_ADD3_A,SEL_ADD3_B,SEL_ADD0_A,SEL_ADD0_B :STD_LOGIC_VECTOR(1 DOWNTO 0);
+SIGNAL SEL_ADD4_A: STD_LOGIC;
+SIGNAL SEL_ADD1_B,SEL_ADD1_A ,SEL_ADD2_A,SEL_ADD2_B,SEL_ADD3_A,SEL_ADD3_B,SEL_ADD0_A,SEL_ADD0_B,SEL_ADD4_B:STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL SEL_M0_A,SEL_M0_B,SEL_M1_A,SEL_M1_B,SEL_M2_A,SEL_M2_B,SEL_M3_A,SEL_M3_B : STD_LOGIC;
 
 
 
 SIGNAL RESET_CNT_I ,EN_CNT_I,TC_I: STD_LOGIC;
-SIGNAL CNT_I :STD_LOGIC_VECTOR ( 1 DOWNTO 0 );
+SIGNAL CNT_I :STD_LOGIC_VECTOR ( 2 DOWNTO 0 );
 SIGNAL CNT_I_8  :STD_LOGIC_VECTOR ( 7 DOWNTO 0 );
 --------------------------------------------------
 SIGNAL RESET_CNT_J ,EN_CNT_J,TC_J: STD_LOGIC;
@@ -138,7 +138,7 @@ SIGNAL CNT_J :STD_LOGIC_VECTOR ( 2 DOWNTO 0 );
 signal CNT_J_32 :STD_LOGIC_VECTOR ( 31 DOWNTO 0 );
 --------------------------------------------------
 SIGNAL RESET_CNT_M ,EN_CNT_M,TC_M: STD_LOGIC;
-SIGNAL CNT_M :STD_LOGIC_VECTOR ( 1 DOWNTO 0 );
+SIGNAL CNT_M :STD_LOGIC_VECTOR ( 2 DOWNTO 0 );
 SIGNAL CNT_M_32 :STD_LOGIC_VECTOR ( 31 DOWNTO 0 );
 SIGNAL CNT_M_8 :STD_LOGIC_VECTOR ( 7 DOWNTO 0 );
 --------------------------------------------------
@@ -147,7 +147,7 @@ SIGNAL CNT_S :STD_LOGIC_VECTOR ( 1 DOWNTO 0 );
 SIGNAL CNT_S_32 :STD_LOGIC_VECTOR ( 31 DOWNTO 0 );
 --------------------------------------------------
 SIGNAL RESET_CNT_FG ,EN_CNT_FG,TC_FG: STD_LOGIC;
-SIGNAL CNT_FG :STD_LOGIC_VECTOR(0 DOWNTO 0);
+SIGNAL CNT_FG :STD_LOGIC_VECTOR(1 DOWNTO 0);
 SIGNAL CNT_FG_SHIFT : STD_LOGIC_VECTOR(31 downto 0);
 
 ---------------------------------------------------
@@ -217,9 +217,9 @@ M1_O<=("0000000000000000")&M1_O_SHORT;
 M2_O<=("0000000000000000")&M2_O_SHORT;
 M3_O<=("0000000000000000")&M3_O_SHORT;
 
-R_ADD_CH : REG generic map(n_bit=>32 ) port map (clk=>clk, rst_n=>rst_n,load=>lr_add_ch,d_in=>add1_o,q_out=>REG_ADD_CH);
+R_ADD_CH : REG generic map(n_bit=>32 ) port map (clk=>clk, rst_n=>rst_n,load=>lr_add_ch,d_in=>add4_o,q_out=>REG_ADD_CH);
 
-R_ADD_FIL : REG generic map(n_bit=>32 ) port map (clk=>clk, rst_n=>rst_n,load=>LR_ADD_FIL,d_in=>add4_o,q_out=>REG_ADD_FIL);
+R_ADD_FIL : REG generic map(n_bit=>32 ) port map (clk=>clk, rst_n=>rst_n,load=>LR_ADD_FIL,d_in=>add1_o,q_out=>REG_ADD_FIL);
 
 R_FILTER : REG generic map(n_bit=>32 ) port map (clk=>clk, rst_n=>rst_n,load=>LR_FILTER,d_in=>DATA,q_out=>REG_FILTER);
 
@@ -233,7 +233,7 @@ REGISTER_ACC_3 : REG generic map(n_bit=>32 ) port map (clk=>clk, rst_n=>rst_n,lo
 
 R_APP : REG generic map(n_bit=>32 ) port map (clk=>clk, rst_n=>rst_n,load=>LR_APP,d_in=>ADD4_O,q_out=>REG_APP_O);
 
-R_ADD_M_O : REG generic map(n_bit=>32 ) port map (clk=>clk, rst_n=>rst_n,load=>LR_ADD_M_O,d_in=>ADD4_O,q_out=>REG_ADD_M_O);
+R_ADD_M_O : REG generic map(n_bit=>32 ) port map (clk=>clk, rst_n=>rst_n,load=>LR_ADD_M_O,d_in=>ADD1_O,q_out=>REG_ADD_M_O);
 
 R_OUT_MAT : REG generic map(n_bit=>32 ) port map (clk=>clk, rst_n=>rst_n,load=>LR_OUT_MAT,d_in=>DATA,q_out=>REG_OUT_MAT);
 
@@ -251,9 +251,10 @@ MUX0 : MUX_4 GENERIC MAP (N => 32 ) PORT MAP (SEL=>SEL_ADD0_A,IN0=>M0_O,IN1=>REG
 
 MUX1 : MUX_4 GENERIC MAP (N => 32 ) PORT MAP (SEL=>SEL_ADD0_B,IN0=>M1_O,IN1=>REG_OUT_MAT,IN2=> reg_acc_0 ,IN3=>(OTHERS=>'0'), Y=> ADD0_B  );
 
-MUX2 : MUX_2 GENERIC MAP (n_bit => 32 ) PORT MAP (SEL=>SEL_ADD1_A,D0=>ADD0_O,D1=>M2_O, Y=> ADD1_A  );
+MUX2 : MUX_4 GENERIC MAP (N => 32 ) PORT MAP (SEL=>SEL_ADD1_A,IN0=>ADD0_O,IN1=>M2_O,IN2=> ADD2_O ,IN3=>(OTHERS=>'0'), Y=> ADD1_A  );
 
-MUX3 : MUX_2 GENERIC MAP (n_bit => 32 ) PORT MAP (SEL=>SEL_ADD1_B,D0=>CNT_J_32,D1=>M3_O, Y=> ADD1_B  );
+MUX3 : MUX_4 GENERIC MAP (N => 32 ) PORT MAP (SEL=>SEL_ADD1_B,IN0=>CNT_J_32,IN1=>M3_O,IN2=> "00000000000000000000000001111000" ,IN3=>(OTHERS=>'0'), Y=> ADD1_B  );
+
 
 MUX4 : MUX_4 GENERIC MAP (N => 32 ) PORT MAP (SEL=>SEL_ADD2_A,IN0=>M2_O,IN1=>REG_R2_O,IN2=> CNT_M_32 ,IN3=>(OTHERS=>'0'), Y=> ADD2_A  );
 
@@ -265,7 +266,7 @@ MUX7 : MUX_4 GENERIC MAP (N => 32 ) PORT MAP (SEL=>SEL_ADD3_B,IN0=>CNT_S_32,IN1=
 
 MUX8 : MUX_2 GENERIC MAP (n_bit => 32 ) PORT MAP (SEL=>SEL_ADD4_A,D0=>ADD0_O,D1=>ADD2_O, Y=> ADD4_A  );
 
-MUX9 : MUX_2 GENERIC MAP (n_bit => 32 ) PORT MAP (SEL=>SEL_ADD4_B,D0=>ADD1_O,D1=>ADD3_O, Y=> ADD4_B  );
+MUX9 : MUX_4 GENERIC MAP (N => 32 ) PORT MAP (SEL=>SEL_ADD4_B,IN0=>ADD1_O,IN1=>ADD3_O,IN2=> (OTHERS=>'0') ,IN3=>(OTHERS=>'0'), Y=> ADD4_B  );
 
 MUX10 : MUX_2 GENERIC MAP (n_bit => 8 ) PORT MAP (SEL=>SEL_M0_A,D0=>CNT_I_8,D1=>DATA(31 DOWNTO 24), Y=> M0_A  );
 
@@ -284,26 +285,27 @@ M3_B	<=	REG_FILTER(7 DOWNTO 0);
 
 
 
-COUNTER_I : COUNTER GENERIC MAP ( N=>2) PORT MAP(CLK=>CLK,RESET=>RESET_CNT_I, ENABLE=>EN_CNT_I,terminal_count=>TC_I,COUNT=>CNT_I  );
+COUNTER_I : COUNTER GENERIC MAP ( N=>3) PORT MAP(CLK=>CLK,RESET=>RESET_CNT_I, ENABLE=>EN_CNT_I,terminal_count=>TC_I,COUNT=>CNT_I  );
 
 COUNTER_J : COUNTER GENERIC MAP ( N=>3) PORT MAP(CLK=>CLK,RESET=>RESET_CNT_J, ENABLE=>EN_CNT_J,terminal_count=>TC_J,COUNT=>CNT_J  );
 
-COUNTER_M : COUNTER GENERIC MAP ( N=>2) PORT MAP(CLK=>CLK,RESET=>RESET_CNT_M, ENABLE=>EN_CNT_M,terminal_count=>TC_M,COUNT=>CNT_M  );
+COUNTER_M : COUNTER GENERIC MAP ( N=>3) PORT MAP(CLK=>CLK,RESET=>RESET_CNT_M, ENABLE=>EN_CNT_M,terminal_count=>TC_M,COUNT=>CNT_M  );
 
 COUNTER_S : COUNTER GENERIC MAP ( N=>2) PORT MAP(CLK=>CLK,RESET=>RESET_CNT_S, ENABLE=>EN_CNT_S,terminal_count=>TC_S,COUNT=>CNT_S  );
 
 COUNTER_Z : COUNTER GENERIC MAP ( N=>5) PORT MAP(CLK=>CLK,RESET=>RESET_CNT_Z, ENABLE=>EN_CNT_Z,terminal_count=>TC_Z,COUNT=>CNT_Z  );
 
-COUNTER_FG : COUNTER GENERIC MAP ( N=>1) PORT MAP(CLK=>CLK,RESET=>RESET_CNT_FG , ENABLE=>EN_CNT_FG ,terminal_count=>TC_FG ,COUNT=>CNT_FG   );
+COUNTER_FG : COUNTER GENERIC MAP ( N=>2) PORT MAP(CLK=>CLK,RESET=>RESET_CNT_FG , ENABLE=>EN_CNT_FG ,terminal_count=>TC_FG ,COUNT=>CNT_FG   );
 
 
- WDATA<=ADD0_O;
+WDATA<=ADD0_O;
+--WDATA<=REG_APP_O;
 
-CNT_FG_SHIFT<= ("00000000000000000000000000000") &CNT_FG(0) & "00";
-CNT_I_8<=("000000") & CNT_I;
+CNT_FG_SHIFT<= ("0000000000000000000000000000") &CNT_FG & "00";
+CNT_I_8<=("00000") & CNT_I;
 CNT_J_32<=("00000000000000000000000000000") & CNT_J;
-CNT_M_32<=("000000000000000000000000000000") & CNT_M;
-CNT_M_8<=("000000") & CNT_M;
+CNT_M_32<=("00000000000000000000000000000") & CNT_M;
+CNT_M_8<=("00000") & CNT_M;
 CNT_S_32 <=("000000000000000000000000000000") & CNT_S;
 
 NOT_BLK_FILTER<= NOT(BLK_FILTER);
@@ -319,7 +321,7 @@ P_STATE<=N_STATE;
 END IF;
 END PROCESS;
 
-N_STATE_COMUTE : PROCESS (P_STATE,START,CNT_Z,CNT_S,CNT_FG )
+N_STATE_COMUTE : PROCESS (P_STATE,START,CNT_Z,CNT_S,CNT_FG,CNT_I,CNT_J,ACCEPTED_OUT_SAMPLE,REPLACED_IN_SAMPLE,REPLACED_FILTER )
 BEGIN
 CASE P_STATE IS 
 	WHEN IDLE => IF (START ='1') THEN
@@ -351,16 +353,21 @@ CASE P_STATE IS
 			N_STATE <= S10  ;
 			ELSE N_STATE<= S6;
 			END IF; 
-	WHEN S6 => 	N_STATE <= S7  ;
+	WHEN S6 => 	N_STATE <= S25  ;
+	WHEN S25=> N_STATE<=S7;
 	WHEN S7 => 	N_STATE <= S22  ;
 	WHEN S22 => 	N_STATE <= S8  ;
 	WHEN S8 => 	N_STATE <= S9   ;
 	WHEN S9 => 	N_STATE <= S5  ;
-	WHEN S10 => 	N_STATE <= S11  ;
+	WHEN S10 => 	N_STATE <= S26  ;
+	WHEN S26 => N_STATE<=S11;
 	WHEN S11 => 	N_STATE <= S23  ;
-	WHEN S23 => 	N_STATE <= S4  ;
-	WHEN S12 => 	N_STATE <= S3  ;
+	WHEN S23 => 	N_STATE <= S27  ;
+	WHEN S27=> N_STATE <=S4;
+	WHEN S12 => 	N_STATE <= S28  ;
+	WHEN S28 => 	N_STATE <= S3  ;
 	WHEN S13 => 	N_STATE <= S15  ;
+	WHEN S14 => 	N_STATE <= S15  ;
 	WHEN S15 => 	N_STATE <= S16  ;
 	WHEN S16 => IF (REPLACED_FILTER ='1' ) THEN 
 			N_STATE <= S2   ;
@@ -391,9 +398,82 @@ END PROCESS;
 PROCESS_OUT : PROCESS(P_STATE )
 
 BEGIN
+		WE_I<='0';
+		SEL_M0_A<='0';
+		SEL_M0_B<='0';
+		SEL_M1_A<='0';
+		SEL_M1_B<='0';
+		SEL_M2_A<='0';
+		SEL_M2_B<='0';
+
+		SEL_ADD0_A<="00"; 
+		SEL_ADD0_B<="00"; 
+		SEL_ADD1_A<="00";
+		SEL_ADD1_B<="00";
+		SEL_ADD2_A<="00";
+		SEL_ADD2_B<="00";
+		SEL_ADD3_A<="00";
+		SEL_ADD3_B<="00";
+		SEL_ADD4_A<='0';
+		SEL_ADD4_B<="00";
+		--add_i<=(OTHERS=>'0');
+		
+		EN_CNT_I<='0';
+		EN_CNT_J<='0';
+		EN_CNT_S<='0';
+		EN_CNT_M<='0';
+		EN_CNT_FG<='0';
+		EN_CNT_Z<='0';
+
+		RESET_CNT_I<='0';	
+		RESET_CNT_J<='0';
+		RESET_CNT_S<='0';	
+		RESET_CNT_M<='0';
+		RESET_CNT_FG<='0';	
+		RESET_CNT_Z<='0';
+
+			LR_R0<='0';
+			LR_R1<='0';
+			LR_R2<='0';
+			LR_R3<='0';
+
+			LR_ACC_0<='0';
+			LR_ACC_1<='0';
+			LR_ACC_2<='0';
+			LR_ACC_3<='0';
+			LR_ADD_CH<='0';
+			LR_ADD_FIL<='0';
+			LR_FILTER<='0';
+			LR_APP<='0';
+			LR_ADD_M_O<='0';
+			LR_OUT_MAT<='0';
+			LR_OUT_MAT<='0';
+			LR_BLK_FILTER<='0';
+
+
+
+
 CASE P_STATE IS
-	WHEN IDLE => 	SEL_M0_A<='0';
-			SEL_M0_B<='0';
+	WHEN IDLE => 	
+		WE_I<='0';
+		SEL_M0_A<='0';
+		SEL_M0_B<='0';
+		SEL_M1_A<='0';
+		SEL_M1_B<='0';
+		SEL_M2_A<='0';
+		SEL_M2_B<='0';
+
+		SEL_ADD0_A<="00"; 
+		SEL_ADD0_B<="00"; 
+		SEL_ADD1_A<="00";
+		SEL_ADD1_B<="00";
+		SEL_ADD2_A<="00";
+		SEL_ADD2_B<="00";
+		SEL_ADD3_A<="00";
+		SEL_ADD3_B<="00";
+		SEL_ADD4_A<='0';
+		SEL_ADD4_B<="00";
+		--add_i<=(OTHERS=>'');
 			
 			
 
@@ -404,9 +484,10 @@ CASE P_STATE IS
 			SEL_M1_B<='0';
 			SEL_ADD0_A<="00"; 
 			SEL_ADD0_B<="00"; 
-			SEL_ADD1_A<='0';
-			SEL_ADD1_B<='0';
+			SEL_ADD1_A<="00";
+			SEL_ADD1_B<="00";
 			LR_ADD_CH<='1';
+			LR_ADD_FIL<='1';
 
 			SEL_M2_A<='0';
 			SEL_M2_B<='0';
@@ -415,17 +496,19 @@ CASE P_STATE IS
 			SEL_ADD3_A<="00";
 			SEL_ADD3_B<="00";
 			SEL_ADD4_A<='1';
-			SEL_ADD4_B<='1';
-			LR_FILTER<='1';
+			SEL_ADD4_B<="01";
+			
+			
 
 	WHEN S7 =>	WE_I<='0';	
 			req_i<='1';
 			add_i<=REG_ADD_FIL;
-			LR_FILTER<='1';
+
 
 	WHEN S22 =>	WE_I<='0';	
 			req_i<='1';
 			add_i<=REG_ADD_CH;
+			LR_FILTER<='1';
 			
 	WHEN S8 =>	SEL_M0_A<='1';
 			SEL_M0_B<='1';
@@ -446,31 +529,46 @@ CASE P_STATE IS
 			SEL_ADD3_B<="10";
 	
 			SEL_ADD4_A<='1';
-			SEL_ADD4_B<='1';
-			LR_ACC_0<='1';
+			SEL_ADD4_B<="01";
+			 LR_ACC_0<='1';
 			LR_ACC_1<='1';
 			LR_ACC_2<='1';
-			LR_ACC_3<='1';
+			 LR_ACC_3<='1';
 			
 			
-	WHEN S10 =>	SEL_ADD2_A<="01";
-			SEL_ADD2_B<="01";
+			
+	WHEN S10 =>	SEL_ADD2_A<="10";
+			SEL_ADD2_B<="10";
+			SEL_ADD4_A<='0';
+			SEL_ADD4_B<="01";
 			LR_ADD_M_O<='1';
 			SEL_ADD0_A<="10";
 			SEL_ADD0_B<="10";
 			SEL_ADD3_A<="01";
 			SEL_ADD3_B<="01";
+			SEL_ADD1_A<="10";
+			SEL_ADD1_B<="10";
 			LR_APP<='1';
+			
 
-	WHEN S11 => 	WE_I<='0';	
+	WHEN S26 => 	WE_I<='0';	
 			req_i<='1';
-			add_i<=REG_ADD_M_O;
+			
 			RESET_CNT_I<='1';
 			EN_CNT_J<='1';
 			
-	WHEN S23 =>	WE_I<='1';	
-			req_i<='1';
+	WHEN S11 => 
 			add_i<=REG_ADD_M_O;
+			
+	WHEN S23 =>	LR_OUT_MAT<='1';	
+			add_i<=REG_ADD_M_O;
+			
+			
+	WHEN S27=> 	SEL_ADD0_A<="01"; 
+			SEL_ADD0_B<="01"; 
+			WE_I<='1';	
+			req_i<='1';
+		
 
 	when s12 => 	EN_CNT_M<='1';
 			RESET_CNT_I<='1';	

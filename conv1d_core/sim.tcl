@@ -32,9 +32,24 @@ vsim -gui work.tb_conv
 add wave -position end  sim:/tb_conv/clk
 add wave -position insertpoint /tb_conv/conv1d_uut/p_state
 add wave -position insertpoint /tb_conv/conv1d_uut/wdata
-add wave -position insertpoint /tb_conv/data
+add wave -position insertpoint /tb_conv/conv1d_uut/data
 add wave -position insertpoint /tb_conv/we_i
+add wave -position insertpoint /tb_conv/conv1d_uut/CNT_I
+add wave -position insertpoint /tb_conv/conv1d_uut/CNT_J
+add wave -position insertpoint /tb_conv/conv1d_uut/CNT_M
+add wave -position insertpoint /tb_conv/conv1d_uut/CNT_S
+add wave -position insertpoint /tb_conv/conv1d_uut/CNT_Z
+add wave -position insertpoint /tb_conv/conv1d_uut/CNT_FG
 
+add wave -position insertpoint /tb_conv/conv1d_uut/REG_ACC_0
+add wave -position insertpoint /tb_conv/conv1d_uut/REG_ACC_1
+add wave -position insertpoint /tb_conv/conv1d_uut/REG_ACC_2
+add wave -position insertpoint /tb_conv/conv1d_uut/REG_ACC_3
+
+add wave -position insertpoint /tb_conv/conv1d_uut/REG_R0_O
+add wave -position insertpoint /tb_conv/conv1d_uut/REG_R1_O
+add wave -position insertpoint /tb_conv/conv1d_uut/REG_R2_O
+add wave -position insertpoint /tb_conv/conv1d_uut/REG_R3_O
 
 #############################################################################
 run 100000 ns
