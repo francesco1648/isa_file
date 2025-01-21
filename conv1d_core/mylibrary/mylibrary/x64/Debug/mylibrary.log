@@ -1,4 +1,0 @@
-﻿  pch.cpp
-  dllmain.cpp
-  mylib.c
-C:\Users\Titania\Desktop\ms\lab3\conv1d_core\mylibrary\mylibrary\mylib.c(57,1): error C1010: fine file imprevista durante la ricerca dell'intestazione precompilata. Si è omesso di aggiungere '#include "pch.h"' all'origine?

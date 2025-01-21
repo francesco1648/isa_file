@@ -1,0 +1,1215 @@
+# Reading pref.tcl
+# OpenFile C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core_sv.mpf
+# Loading project conv1d_core_sv
+# Compile of tb_conv.vhd failed with 3 errors.
+# Compile of tb_conv.vhd was successful.
+# Compile of tb_conv.vhd was successful.
+vsim -gui work.tb_conv
+# vsim -gui work.tb_conv 
+# Start time: 19:36:41 on Jan 21,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_conv(behavioral)
+# Loading sv_std.std
+# Loading work.MUX_2
+# Loading work.mux_2_1b
+# Loading work.ram(beh)
+# Loading work.conv1d_core
+# Loading work.REG1
+# Loading work.MUX_4
+# Loading work.COUNTER
+add wave -position insertpoint /tb_conv/conv1d_uut/P_STATE
+run
+run
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of conv1d_core.sv was successful.
+# Compile of tb_conv.vhd failed with 2 errors.
+# Compile of tb_conv.vhd was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_conv(behavioral)
+# Loading work.conv1d_core
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Compile of tb_conv.vhd was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_conv(behavioral)
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint /tb_conv/replaced_IN_sample
+add wave -position insertpoint /tb_conv/REPLACE_FILTER
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint /tb_conv/REPLACE_INPUT
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 306
+# Compile of tb_conv.vhd was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_conv(behavioral)
+# Compile of tb_conv.vhd was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_conv(behavioral)
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 306
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 306
+add wave -position insertpoint /tb_conv/REPLACED_FILTER
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 306
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 306
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 321
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 322
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 323
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 329
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 306
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 321
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 322
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 323
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 329
+run
+# Compile of tb_conv.vhd was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_conv(behavioral)
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 306
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 321
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 322
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 323
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 329
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 332
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 335
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 360
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 366
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 366
+run
+run
+# Compile of tb_conv.vhd was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_conv(behavioral)
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 366
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 369
+run
+# Compile of tb_conv.vhd was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.tb_conv(behavioral)
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 378
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 387
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 387
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 398
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 404
+run
+add wave -position insertpoint /tb_conv/conv1d_uut/CNT_I
+add wave -position insertpoint /tb_conv/conv1d_uut/CNT_J
+add wave -position insertpoint /tb_conv/conv1d_uut/CNT_M
+add wave -position insertpoint /tb_conv/conv1d_uut/CNT_S
+add wave -position insertpoint /tb_conv/conv1d_uut/CNT_Z
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 378
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 398
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 404
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 406
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# Break in Process WriteData_proc at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv.vhd line 406
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv/R1
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+quit -sim
+# End time: 20:08:54 on Jan 21,2025, Elapsed time: 0:32:13
+# Errors: 0, Warnings: 10
+# Compile of conv1d_core.sv was successful.
+# Compile of conv1d_core.sv was successful.

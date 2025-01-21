@@ -1,13 +1,4 @@
-C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity mux_2
--- Compiling architecture Behavioral of mux_2
-
-} {} {}} C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd
+C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
@@ -18,14 +9,23 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity conv1d_core
 -- Compiling architecture beh of conv1d_core
 
-} {} {}} C:/Users/Titania/Desktop/ms/lab3/conv1d_core/signal_exchange.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Titania/Desktop/ms/lab3/conv1d_core/signal_exchange.vhd
+} {} {}} C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Compiling entity signal_exchange
--- Compiling architecture behavior of signal_exchange
+-- Compiling entity mux_2
+-- Compiling architecture Behavioral of mux_2
+
+} {} {}} C:/Users/Titania/Desktop/ms/lab3/conv1d_core/RAM.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Titania/Desktop/ms/lab3/conv1d_core/RAM.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity RAM
+-- Compiling architecture BEH of RAM
 
 } {} {}} C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -37,14 +37,23 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Compiling entity counter
 -- Compiling architecture Behavioral of counter
 
-} {} {}} C:/Users/Titania/Desktop/ms/lab3/conv1d_core/RAM.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Titania/Desktop/ms/lab3/conv1d_core/RAM.vhd
+} {} {}} C:/Users/Titania/Desktop/ms/lab3/conv1d_core/signal_exchange.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Titania/Desktop/ms/lab3/conv1d_core/signal_exchange.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
 -- Loading package STANDARD
 -- Loading package TEXTIO
 -- Loading package std_logic_1164
 -- Loading package NUMERIC_STD
--- Compiling entity RAM
--- Compiling architecture BEH of RAM
+-- Compiling entity signal_exchange
+-- Compiling architecture behavior of signal_exchange
+
+} {} {}} C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2_1b.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2_1b.vhd
+Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity mux_2_1b
+-- Compiling architecture Behavioral of mux_2_1b
 
 } {} {}} C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_4.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_4.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
@@ -55,15 +64,6 @@ Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 
 -- Loading package STD_LOGIC_UNSIGNED
 -- Compiling entity mux_4
 -- Compiling architecture Behavioral of mux_4
-
-} {} {}} C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2_1b.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2_1b.vhd
-Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
--- Loading package STANDARD
--- Loading package TEXTIO
--- Loading package std_logic_1164
--- Loading package NUMERIC_STD
--- Compiling entity mux_2_1b
--- Compiling architecture Behavioral of mux_2_1b
 
 } {} {}} C:/Users/Titania/Desktop/ms/lab3/conv1d_core/reg.vhd {1 {vcom -work work -2002 -explicit -stats=none C:/Users/Titania/Desktop/ms/lab3/conv1d_core/reg.vhd
 Model Technology ModelSim - Intel FPGA Edition vcom 2020.1 Compiler 2020.02 Feb 28 2020
