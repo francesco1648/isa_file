@@ -1,0 +1,3 @@
+﻿  main.c
+C:\Users\Titania\Desktop\ms\lab3\test_conv1_tb\test_conv1_tb\main.c(69,114): warning C4552: '*': risultato dell'espressione non usato
+  test_conv1_tb.vcxproj -> C:\Users\Titania\Desktop\ms\lab3\test_conv1_tb\x64\Debug\test_conv1_tb.exe

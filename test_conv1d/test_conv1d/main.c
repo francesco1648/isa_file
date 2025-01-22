@@ -51,9 +51,9 @@ int main() {
     for (bk = 0; bk < 4; bk++) {
         for (w_c = 0; w_c < 4; w_c++) {
             inc = w_c * 128 + bk * 512;
-            for (w_r = 80; w_r < 80 + 9; w_r++) {
+            for (w_r = 80; w_r < 80 + 8; w_r++) {
 
-                mem[w_r + bk * 9][w_c] = A[inc];
+                mem[w_r + bk * 8][w_c] = A[inc];
                 inc++;
             }
         }
@@ -67,7 +67,7 @@ int main() {
     //print_bin_mem_to_file(mem, "mem_bin.txt");
 
     //remove_spaces("mem_bin.txt", "mem_bin2_SETF2.txt");
- 
+
 
     //---------------------------------------------------------
     // qui faccio la convoluzione
@@ -87,10 +87,10 @@ int main() {
             for (m = 0; m < 4; m++) {
                 for (j = 0; j < 5; j++) {
                     for (i = 0; i < 4; i++) {
-                         R[0 + 4 * i] = mem[i * 5 + j + m * 20][0] * mem[80 + i * 9 + j + s][0] ;
-                         R[1 + 4 * i] = mem[i * 5 + j + m * 20][1] * mem[80 + i * 9 + j + s][1] ;
-                         R[2 + 4 * i] = mem[i * 5 + j + m * 20][2] * mem[80 + i * 9 + j + s][2] ;
-                         R[3 + 4 * i] =  mem[i * 5 + j + m * 20][3] * mem[80 + i * 9 + j + s][3] ;
+                         R[0 + 4 * i] = mem[i * 5 + j + m * 20][0] * mem[80 + i * 8 + j + s][0] ;
+                         R[1 + 4 * i] = mem[i * 5 + j + m * 20][1] * mem[80 + i * 8 + j + s][1] ;
+                         R[2 + 4 * i] = mem[i * 5 + j + m * 20][2] * mem[80 + i * 8 + j + s][2] ;
+                         R[3 + 4 * i] =  mem[i * 5 + j + m * 20][3] * mem[80 + i * 8 + j + s][3] ;
                         acc[i] = R[0 + 4 * i] + R[1 + 4 * i] + R[2 + 4 * i] + R[3 + 4 * i];
                     }
                     app = acc[0] + acc[1] + acc[2] + acc[3];
@@ -114,6 +114,7 @@ int main() {
             print_bin_mem_to_file(mem, "mem_bin.txt");
 
             remove_spaces("mem_bin.txt", "mem_bin2_SETF2.txt");
+          
 
 
         }
@@ -201,9 +202,9 @@ void replace_sample(int sample_block) {
     for (int bk = 0; bk < 4; bk++) {
         for (int w_c = 0; w_c < 4; w_c++) {
             inc = w_c * 128 + bk * 512 + sample_block * 4;
-            for (int w_r = 80; w_r < 80 + 9; w_r++) {
+            for (int w_r = 80; w_r < 80 + 8; w_r++) {
 
-                mem[w_r + bk * 9][w_c] = A[inc];
+                mem[w_r + bk * 8][w_c] = A[inc];
                 inc++;
             }
         }

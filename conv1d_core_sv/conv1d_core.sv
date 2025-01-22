@@ -674,7 +674,7 @@ logic  RESET_BLK_FILTER;
         end
       end
       S1: begin
-        if ((CNT_S == 3'b100)) begin
+        if ((CNT_S == 3'b101)) begin
           N_STATE = S21;
         end else begin
           N_STATE = S2;

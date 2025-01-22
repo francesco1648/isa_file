@@ -1,10 +1,10 @@
 ﻿  main.c
-C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(483,31): warning C4473: 'fscanf_s': sono stati passati argomenti insufficienti per la stringa di formato
-      C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(483,31):
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(484,31): warning C4473: 'fscanf_s': sono stati passati argomenti insufficienti per la stringa di formato
+      C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(484,31):
       con i segnaposto e i relativi parametri sono previsti argomenti variadic 2, ma sono stati specificati quelli 1
-      C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(483,31):
+      C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(484,31):
       l'argomento variadic mancante 2 è richiesto dalla stringa di formato '%c'
-      C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(483,31):
+      C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(484,31):
       questo argomento viene usato come dimensioni del buffer
   
   test_conv1d.vcxproj -> C:\Users\Titania\Desktop\ms\lab3\test_conv1d\x64\Debug\test_conv1d.exe

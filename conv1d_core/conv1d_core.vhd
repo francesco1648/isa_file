@@ -32,7 +32,9 @@ port (
 	accepted_OUT_sample : in std_logic;
 	replaced_IN_sample  : in std_logic;
 	REPLACE_FILTER : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
+	REPLACE_FILTER_REQ : OUT STD_LOGIC;
 	REPLACED_FILTER : IN STD_LOGIC;
+	REPLACE_INPUT_REQ : OUT STD_LOGIC;
 	REPLACE_INPUT: OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
 	
 
@@ -106,7 +108,7 @@ end component mux_2;
 --------------------------------------------------------------------------------------
 SIGNAL LR_BLK_FILTER : STD_LOGIC;  
 SIGNAL BLK_FILTER : std_logic_vector(0 downto 0);
-SIGNAL NOT_BLK_FILTER : std_logic_vector(0 downto 0);
+SIGNAL RESET_BLK_FILTER : STD_LOGIC;
 
 signal M0_A,M0_B,M1_A,M1_B,M2_A,M2_B,M3_A,M3_B : std_logic_vector(7 downto 0);
 signal M0_O,M1_O,M2_O,M3_O : std_logic_vector(31 downto 0);
@@ -237,7 +239,7 @@ R_ADD_M_O : REG generic map(n_bit=>32 ) port map (clk=>clk, rst_n=>rst_n,load=>L
 
 R_OUT_MAT : REG generic map(n_bit=>32 ) port map (clk=>clk, rst_n=>rst_n,load=>LR_OUT_MAT,d_in=>DATA,q_out=>REG_OUT_MAT);
 
-R_BLK_FILTER : REG generic map(n_bit=>1 ) port map (clk=>clk, rst_n=>rst_n,load=>LR_BLK_FILTER,d_in=>NOT_BLK_FILTER,q_out=>BLK_FILTER);
+R_BLK_FILTER : REG generic map(n_bit=>1 ) port map (clk=>clk, rst_n=>RESET_BLK_FILTER,load=>LR_BLK_FILTER,d_in=>"1",q_out=>BLK_FILTER);
 
 R_R0 : REG generic map(n_bit=>32 ) port map (clk=>clk, rst_n=>rst_n,load=>LR_R0,d_in=>M0_O,q_out=>REG_R0_O);
 
@@ -278,7 +280,7 @@ MUX13 : MUX_2 GENERIC MAP (n_bit => 8 ) PORT MAP (SEL=>SEL_M1_B,D0=>"00010100",D
 
 MUX14 : MUX_2 GENERIC MAP (n_bit => 8 ) PORT MAP (SEL=>SEL_M2_A,D0=>CNT_I_8,D1=>DATA(15 DOWNTO 8), Y=> M2_A  );
 
-MUX15 : MUX_2 GENERIC MAP (n_bit => 8 ) PORT MAP (SEL=>SEL_M2_B,D0=>"00001001",D1=>REG_FILTER(15 DOWNTO 8), Y=> M2_B  );
+MUX15 : MUX_2 GENERIC MAP (n_bit => 8 ) PORT MAP (SEL=>SEL_M2_B,D0=>"00001000",D1=>REG_FILTER(15 DOWNTO 8), Y=> M2_B  );
 
 M3_A	<=	DATA( 7 DOWNTO 0 );
 M3_B	<=	REG_FILTER(7 DOWNTO 0);
@@ -308,7 +310,7 @@ CNT_M_32<=("00000000000000000000000000000") & CNT_M;
 CNT_M_8<=("00000") & CNT_M;
 CNT_S_32 <=("00000000000000000000000000000") & CNT_S;
 
-NOT_BLK_FILTER<= NOT(BLK_FILTER);
+
 REPLACE_FILTER<=BLK_FILTER;
 -----------------------------------------------------------------------------------
 
@@ -434,6 +436,7 @@ BEGIN
 	
 		RESET_CNT_FG<='0';	
 		RESET_CNT_Z<='0';
+		RESET_BLK_FILTER<='0';
 
 			LR_R0<='0';
 			LR_R1<='0';
@@ -453,8 +456,8 @@ BEGIN
 			LR_OUT_MAT<='0';
 			LR_BLK_FILTER<='0';
 
-
-
+		REPLACE_FILTER_REQ<='0';
+REPLACE_INPUT_REQ <='0';
 
 CASE P_STATE IS
 	WHEN IDLE => 	
@@ -479,7 +482,12 @@ CASE P_STATE IS
 		--add_i<=(OTHERS=>'');
 			
 			
-
+	WHEN S0 =>	RESET_CNT_I<='1';	
+		RESET_CNT_J<='1';
+		RESET_CNT_S<='1';	
+		RESET_CNT_M<='1';
+	
+		RESET_CNT_FG<='1';
 
 	WHEN S6 =>	SEL_M0_A<='0';
 			SEL_M0_B<='0';
@@ -579,7 +587,7 @@ CASE P_STATE IS
 
 	WHEN S13=>	LR_BLK_FILTER<='1';
  
-	WHEN S14=>	LR_BLK_FILTER<='1';
+	WHEN S14=>	RESET_BLK_FILTER<='1';
 
 	WHEN S15=>	RESET_CNT_M<='1';
 			EN_CNT_FG<='1';
@@ -593,6 +601,8 @@ CASE P_STATE IS
 	WHEN S21=>	EN_CNT_Z<='1';
 
 	WHEN S18=>	RESET_CNT_S<='1';
+			REPLACE_INPUT_REQ <='1';
+	WHEN S16=>	REPLACE_FILTER_REQ<='1';
 			
 
 	WHEN S19=>	done_TOT<='1';
