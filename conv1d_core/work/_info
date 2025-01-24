@@ -10,25 +10,25 @@ z2
 cModel Technology
 dC:/intelFPGA/20.1
 Econv1d_core
-Z0 w1737588502
+Z0 w1737623601
 Z1 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
 Z2 DPx4 ieee 18 std_logic_unsigned 0 22 ;eZjO2D4ZDz<]0>8AL<ne1
 Z3 DPx4 ieee 15 std_logic_arith 0 22 [G314=:2zXJ`VORJe1J@Z1
 Z4 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z5 DPx4 ieee 14 std_logic_1164 0 22 cVAk:aDinOX8^VGI1ekP<3
-!i122 630
+!i122 643
 Z6 dC:/Users/Titania/Desktop/ms/lab3/conv1d_core
 Z7 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd
 Z8 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd
 l0
 L10 1
-VHPz@@lS`h?<5LoKJbj@?E0
-!s100 _9Vg:4QVTSQCS;[O@F1^g2
+V_IlF<4l=_D5A]KhFIBZ5?0
+!s100 30Q7:f[ccNn_Z]8ZS`^6S0
 Z9 OV;C;2020.1;71
 32
-Z10 !s110 1737588978
+Z10 !s110 1737623602
 !i10b 1
-Z11 !s108 1737588978.000000
+Z11 !s108 1737623602.000000
 Z12 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd|
 Z13 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/conv1d_core.vhd|
 !i113 1
@@ -40,12 +40,12 @@ R2
 R3
 R4
 R5
-DEx4 work 11 conv1d_core 0 22 HPz@@lS`h?<5LoKJbj@?E0
-!i122 630
+Z16 DEx4 work 11 conv1d_core 0 22 _IlF<4l=_D5A]KhFIBZ5?0
+!i122 643
 l160
-L48 576
-Vd[k3J8dKWdNa`Sj;31a=63
-!s100 jD65UQoLFhA0bKkXlic9i0
+Z17 L48 581
+VnTQKQ0b81Y6^L[^c0Lodf3
+!s100 <fO1:oNNJl>2=YEelB[II3
 R9
 32
 R10
@@ -57,26 +57,26 @@ R13
 R14
 R15
 Ecounter
-Z16 w1737487879
+Z18 w1737487879
 R2
 R3
 R4
 R5
 !i122 600
 R6
-Z17 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd
-Z18 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd
+Z19 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd
+Z20 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd
 l0
 L7 1
 VM6D9FG6aijim@<Kn9mUXM2
 !s100 1lFmeG]74I;WKOe>^<ERf3
 R9
 32
-Z19 !s110 1737582806
+Z21 !s110 1737582806
 !i10b 1
-Z20 !s108 1737582806.000000
-Z21 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd|
-Z22 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd|
+Z22 !s108 1737582806.000000
+Z23 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd|
+Z24 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/counter.vhd|
 !i113 1
 R14
 R15
@@ -93,39 +93,39 @@ V=e_mg<l@MEB8=L8hSOc5K2
 !s100 ?W:3j23Xf5:dea6AVOY1n2
 R9
 32
-R19
-!i10b 1
-R20
 R21
+!i10b 1
 R22
+R23
+R24
 !i113 1
 R14
 R15
 Emux_2
-R16
-Z23 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
+R18
+Z25 DPx4 ieee 11 numeric_std 0 22 aU^R8eGcicLcUFIaBQSL>3
 R4
 R5
 !i122 601
 R6
-Z24 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd
-Z25 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd
+Z26 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd
+Z27 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd
 l0
 L6 1
 V52BFSUd2jZndJQ;H3lZP32
 !s100 U5]fiJ6UgAfCcmzkVofC61
 R9
 32
-R19
+R21
 !i10b 1
-R20
-Z26 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd|
-Z27 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd|
+R22
+Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd|
+Z29 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2.vhd|
 !i113 1
 R14
 R15
 Abehavioral
-R23
+R25
 R4
 R5
 DEx4 work 5 mux_2 0 22 52BFSUd2jZndJQ;H3lZP32
@@ -136,39 +136,39 @@ VEIUE@EJAKY=lgDn4z_gll2
 !s100 j?P9T360STFb?L3cV6:4>1
 R9
 32
-R19
+R21
 !i10b 1
-R20
-R26
-R27
+R22
+R28
+R29
 !i113 1
 R14
 R15
 Emux_2_1b
-R16
-R23
+R18
+R25
 R4
 R5
 !i122 606
 R6
-Z28 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2_1b.vhd
-Z29 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2_1b.vhd
+Z30 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2_1b.vhd
+Z31 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2_1b.vhd
 l0
 L6 1
 VFMkKjJ0;F]21[WXHSX?on1
 !s100 J29d@F:H=[GnR6T:i[9:I0
 R9
 32
-Z30 !s110 1737582808
+Z32 !s110 1737582808
 !i10b 1
-Z31 !s108 1737582808.000000
-Z32 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2_1b.vhd|
-Z33 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2_1b.vhd|
+Z33 !s108 1737582808.000000
+Z34 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2_1b.vhd|
+Z35 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_2_1b.vhd|
 !i113 1
 R14
 R15
 Abehavioral
-R23
+R25
 R4
 R5
 DEx4 work 8 mux_2_1b 0 22 FMkKjJ0;F]21[WXHSX?on1
@@ -179,35 +179,35 @@ VC6<<LdgMU9ZemnE>=zW1G0
 !s100 ?W9^5YF`hJ7BcCHXga];<0
 R9
 32
-R30
-!i10b 1
-R31
 R32
+!i10b 1
 R33
+R34
+R35
 !i113 1
 R14
 R15
 Emux_4
-R16
+R18
 R2
 R3
 R4
 R5
 !i122 602
 R6
-Z34 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_4.vhd
-Z35 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_4.vhd
+Z36 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_4.vhd
+Z37 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_4.vhd
 l0
 L7 1
 VbNoPi7H>;PaAc]>X=h2N_3
 !s100 jlcSe9@elgAG0[G>dcdDS0
 R9
 32
-Z36 !s110 1737582807
+Z38 !s110 1737582807
 !i10b 1
-R20
-Z37 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_4.vhd|
-Z38 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_4.vhd|
+R22
+Z39 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_4.vhd|
+Z40 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/mux_4.vhd|
 !i113 1
 R14
 R15
@@ -224,39 +224,39 @@ V<kX087[<<_R4B@HHFY@z13
 !s100 VnBl55B1DHRUXJOe6eMYn0
 R9
 32
-R36
-!i10b 1
-R20
-R37
 R38
+!i10b 1
+R22
+R39
+R40
 !i113 1
 R14
 R15
 Eram
-R16
-R23
+R18
+R25
 R4
 R5
 !i122 603
 R6
-Z39 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/RAM.vhd
-Z40 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/RAM.vhd
+Z41 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/RAM.vhd
+Z42 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/RAM.vhd
 l0
 L5 1
 V<agHO5LJ>jlTGcZcL:0WK3
 !s100 B^dZomh^Q2IT_ihEMHnkM3
 R9
 32
-R36
+R38
 !i10b 1
-Z41 !s108 1737582807.000000
-Z42 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/RAM.vhd|
-Z43 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/RAM.vhd|
+Z43 !s108 1737582807.000000
+Z44 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/RAM.vhd|
+Z45 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/RAM.vhd|
 !i113 1
 R14
 R15
 Abeh
-R23
+R25
 R4
 R5
 DEx4 work 3 ram 0 22 <agHO5LJ>jlTGcZcL:0WK3
@@ -267,17 +267,17 @@ VQ4NBT?1SB9cWO><[E9:Cd3
 !s100 AhGnaO1:QCkGLEU2YA3T<3
 R9
 32
-R36
+R38
 !i10b 1
-R41
-R42
 R43
+R44
+R45
 !i113 1
 R14
 R15
 Abehavioral
 R1
-R23
+R25
 R4
 R5
 DEx4 work 3 ram 0 22 Jd^YBnEe;MRi;<P<iI9hL1
@@ -291,37 +291,37 @@ R9
 !s110 1737303048
 !i10b 1
 !s108 1737303048.000000
-R42
-R43
+R44
+R45
 !i113 1
 R14
 R15
 w1737303047
 Ereg
-R16
-R23
+R18
+R25
 R4
 R5
 !i122 604
 R6
-Z44 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/reg.vhd
-Z45 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/reg.vhd
+Z46 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/reg.vhd
+Z47 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/reg.vhd
 l0
 L5 1
 VGolT3fO0Y52EgJ7a<2<gD2
 !s100 NYo2BGgi;lDMiDCQ<_d<@0
 R9
 32
-R36
+R38
 !i10b 1
-R41
-Z46 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/reg.vhd|
-Z47 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/reg.vhd|
+R43
+Z48 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/reg.vhd|
+Z49 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/reg.vhd|
 !i113 1
 R14
 R15
 Abehavioral
-R23
+R25
 R4
 R5
 DEx4 work 3 reg 0 22 GolT3fO0Y52EgJ7a<2<gD2
@@ -332,39 +332,39 @@ V<lD2`hdd7b5lGLN`F?_3d0
 !s100 <DZ]iK=BP?a6zD7dI2P7K2
 R9
 32
-R36
+R38
 !i10b 1
-R41
-R46
-R47
+R43
+R48
+R49
 !i113 1
 R14
 R15
 Esignal_exchange
-R16
-R23
+R18
+R25
 R4
 R5
 !i122 607
 R6
-Z48 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/signal_exchange.vhd
-Z49 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/signal_exchange.vhd
+Z50 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/signal_exchange.vhd
+Z51 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/signal_exchange.vhd
 l0
 L5 1
 VfjIS8zI9`m9^bDdljJm>c1
 !s100 zHMVjH0EjPdo^R;Le;S811
 R9
 32
-R30
+R32
 !i10b 1
-R31
-Z50 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/signal_exchange.vhd|
-Z51 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/signal_exchange.vhd|
+R33
+Z52 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/signal_exchange.vhd|
+Z53 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/signal_exchange.vhd|
 !i113 1
 R14
 R15
 Abehavior
-R23
+R25
 R4
 R5
 DEx4 work 15 signal_exchange 0 22 fjIS8zI9`m9^bDdljJm>c1
@@ -375,56 +375,56 @@ V]_GIDXFA:cmzY5GY3iGib2
 !s100 zRK7bi6JXRh0no1g7J2f_3
 R9
 32
-R30
+R32
 !i10b 1
-R31
-R50
-R51
+R33
+R52
+R53
 !i113 1
 R14
 R15
 Etb_conv
-Z52 w1737589731
+Z54 w1737589731
 R1
-R23
+R25
 R4
 R5
 !i122 638
 R6
-Z53 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd
-Z54 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd
+Z55 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd
+Z56 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd
 l0
 L9 1
 V4iFWE9LJ915hjzQ^KZe3?1
 !s100 Ij[V5QW4EQURPj=^MoV<:1
 R9
 32
-Z55 !s110 1737589733
+Z57 !s110 1737589733
 !i10b 1
-Z56 !s108 1737589733.000000
-Z57 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd|
-Z58 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd|
+Z58 !s108 1737589733.000000
+Z59 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd|
+Z60 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core/tb_conv.vhd|
 !i113 1
 R14
 R15
 Abehavioral
 R1
-R23
+R25
 R4
 R5
-Z59 DEx4 work 7 tb_conv 0 22 4iFWE9LJ915hjzQ^KZe3?1
+DEx4 work 7 tb_conv 0 22 4iFWE9LJ915hjzQ^KZe3?1
 !i122 638
 l116
-Z60 L12 562
+L12 562
 V=UUOBQC`ZEbH7K?_9fHNF1
 !s100 aFo;5<;VHFSNS8:9h7Z862
 R9
 32
-R55
-!i10b 1
-R56
 R57
+!i10b 1
 R58
+R59
+R60
 !i113 1
 R14
 R15

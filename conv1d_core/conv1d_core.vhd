@@ -28,7 +28,7 @@ port (
 	start	: in std_logic;
 	done_tot: out std_logic;
 	done_OUT_SAMPLE : out std_logic;
-	
+	ACCEPTED_DONE_TOT : IN STD_LOGIC;
 	accepted_OUT_sample : in std_logic;
 	replaced_IN_sample  : in std_logic;
 	REPLACE_FILTER : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
@@ -323,7 +323,7 @@ P_STATE<=N_STATE;
 END IF;
 END PROCESS;
 
-N_STATE_COMUTE : PROCESS (P_STATE,START,CNT_Z,CNT_S,CNT_FG,CNT_I,CNT_J,ACCEPTED_OUT_SAMPLE,REPLACED_IN_SAMPLE,REPLACED_FILTER )
+N_STATE_COMUTE : PROCESS (P_STATE,START,CNT_Z,CNT_S,CNT_FG,CNT_I,CNT_J,ACCEPTED_OUT_SAMPLE,REPLACED_IN_SAMPLE,REPLACED_FILTER,ACCEPTED_DONE_TOT )
 BEGIN
 CASE P_STATE IS 
 	WHEN IDLE => IF (START ='1') THEN
@@ -384,7 +384,11 @@ CASE P_STATE IS
 			N_STATE <= S0   ;
 			ELSE N_STATE<= S18;
 			END IF;
- 	WHEN S19 => 	N_STATE <= IDLE  ;
+ 	WHEN S19 =>IF (ACCEPTED_DONE_TOT = '1' ) THEN 
+			N_STATE <= IDLE  ;
+			ELSE N_STATE<= S19;
+			END IF; 	
+
 	WHEN S20 => IF (BLK_FILTER = "0" ) THEN 
 			N_STATE <= S13   ;
 			ELSE N_STATE<= S14;
@@ -479,15 +483,15 @@ CASE P_STATE IS
 		SEL_ADD3_B<="00";
 		SEL_ADD4_A<='0';
 		SEL_ADD4_B<="00";
-		--add_i<=(OTHERS=>'');
+		DONE_TOT<='0';
 			
 			
 	WHEN S0 =>	RESET_CNT_I<='1';	
 		RESET_CNT_J<='1';
 		RESET_CNT_S<='1';	
 		RESET_CNT_M<='1';
-	
 		RESET_CNT_FG<='1';
+		REPLACE_INPUT_REQ <='0';
 
 	WHEN S6 =>	SEL_M0_A<='0';
 			SEL_M0_B<='0';
@@ -606,6 +610,7 @@ CASE P_STATE IS
 			
 
 	WHEN S19=>	done_TOT<='1';
+	
 
 
  
