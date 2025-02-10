@@ -1,0 +1,54 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Titania\\Desktop\\ms\\lab3\\mcutest\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{AD7F2BD3-56AC-42B8-A335-095279B236A2}|mcutest\\mcutest.vcxproj|C:\\Users\\Titania\\Desktop\\ms\\lab3\\mcutest\\mcutest\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AD7F2BD3-56AC-42B8-A335-095279B236A2}|mcutest\\mcutest.vcxproj|solutionrelative:mcutest\\main.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{AD7F2BD3-56AC-42B8-A335-095279B236A2}|mcutest\\mcutest.vcxproj|C:\\Users\\Titania\\Desktop\\ms\\lab3\\mcutest\\mcutest\\data.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{AD7F2BD3-56AC-42B8-A335-095279B236A2}|mcutest\\mcutest.vcxproj|solutionrelative:mcutest\\data.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 79,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "data.c",
+              "DocumentMoniker": "C:\\Users\\Titania\\Desktop\\ms\\lab3\\mcutest\\mcutest\\data.c",
+              "RelativeDocumentMoniker": "mcutest\\data.c",
+              "ToolTip": "C:\\Users\\Titania\\Desktop\\ms\\lab3\\mcutest\\mcutest\\data.c",
+              "RelativeToolTip": "mcutest\\data.c",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAABYAAAA6AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-02-08T15:22:28.027Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "main.c",
+              "DocumentMoniker": "C:\\Users\\Titania\\Desktop\\ms\\lab3\\mcutest\\mcutest\\main.c",
+              "RelativeDocumentMoniker": "mcutest\\main.c",
+              "ToolTip": "C:\\Users\\Titania\\Desktop\\ms\\lab3\\mcutest\\mcutest\\main.c",
+              "RelativeToolTip": "mcutest\\main.c",
+              "ViewState": "AgIAACUAAAAAAAAAAAAAAC4AAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2025-02-08T15:10:34.989Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

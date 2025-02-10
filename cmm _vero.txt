@@ -1,0 +1,67 @@
+#wsl --unregister Ubuntu
+#disinstalla wsl e ubuntu da app e funzionalità
+
+
+wsl --install
+sudo apt update && sudo apt upgrade
+sudo apt-get install ca-certificates curl
+sudo install -m 0755 -d /etc/apt/keyrings
+sudo curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+sudo chmod a+r /etc/apt/keyrings/docker.asc
+
+# Add the repository to Apt sources:
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+sudo apt-get update
+sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+
+sudo docker run hello-world
+
+
+git clone https://github.com/esl-epfl/x-heep
+export X_HEEP_DIR=/home/$USER/x-heep
+sudo docker pull ghcr.io/vlsi-lab/x-heep-toolchain:latest
+sudo docker run -it -v ${X_HEEP_DIR}:/workspace/x-heep ghcr.io/vlsi-lab/x-heep-toolchain:latest
+
+
+git clone https://github.com/Integrated-Systems-Architecture/mcu-lab-group39.git
+export X_HEEP_DIR=/home/$USER/mcu-lab-group39 
+sudo docker pull ghcr.io/vlsi-lab/x-heep-toolchain:latest
+sudo docker run -it -v ${X_HEEP_DIR}:/workspace/mcu-lab-group39  ghcr.io/vlsi-lab/x-heep-toolchain:latest
+
+git clone https://github.com/Integrated-Systems-Architecture/conv1d-accel-group39.git
+export X_HEEP_DIR=/home/$USER/conv1d-accel-group39 
+sudo docker pull ghcr.io/vlsi-lab/x-heep-toolchain:latest
+sudo docker run -it -v ${X_HEEP_DIR}:/workspace/conv1d-accel-group39  ghcr.io/vlsi-lab/x-heep-toolchain:latest
+
+--------dopo aver creato la cartella prog 
+
+
+export X_HEEP_DIR=/home/$USER/prog/mcu-lab-group39 
+docker pull ghcr.io/vlsi-lab/x-heep-toolchain:latest
+docker run -it -v ${X_HEEP_DIR}:/workspace/prog/mcu-lab-group39  ghcr.io/vlsi-lab/x-heep-toolchain:latest
+
+
+export X_HEEP_DIR=/home/$USER/prog/conv1d-accel-group39 
+docker pull ghcr.io/vlsi-lab/x-heep-toolchain:latest
+docker run -it -v ${X_HEEP_DIR}:/workspace/prog/conv1d-accel-group39  ghcr.io/vlsi-lab/x-heep-toolchain:latest
+
+export X_HEEP_DIR=/home/$USER/prog/simple_cnt
+docker pull ghcr.io/vlsi-lab/x-heep-toolchain:latest
+docker run -it -v ${X_HEEP_DIR}:/workspace/prog/simple_cnt  ghcr.io/vlsi-lab/x-heep-toolchain:latest
+
+nella directory mcu-	lab
+conda install -c conda-forge gtkwave
+
+ rtl-simulation-vendor
+-------------------------------------
+                                                          
+make gen-data APP_PARAMS="--in_len 128 --in_ch 16 --k_len 5 --k_num 8"
+
+
+           for ( int i = 0; i < byte_mem; i++) {
+                     
+                        F_index = i * KERNEL_LEN + j + filter_number * KERNEL_LEN * byte_mem + FILTER_BLOCK * KERNEL_LEN * INPUT_CH * byte_mem;
+                        appoggio |= (uint32_t)(F[F_index] & 0xFF) << (24 - (i * 8));    
+                       
+                        }
+
