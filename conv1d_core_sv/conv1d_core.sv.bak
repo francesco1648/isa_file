@@ -1,31 +1,31 @@
 module conv1d_core (
-  /* verilator lint_off UNUSED */
-  /* verilator lint_off LATCH */
-  /* verilator lint_off BLKSEQ */
-  input  logic               clk,
-  input  logic               rst_n,
-  output logic               ext_mem_gnt,
-  //int_mem_req
-  output logic               req_i,
-  output logic               we_i,
-  output logic        [ 3:0] be,
-  output logic        [ 6:0] add_i,
-  output logic  [31:0] wdata, //SIGED
-  //  writing on memory
-  //mem_rsp
-  input  logic  [31:0] data,  //signed
-  //  reading from memory
-  input  logic               START,
-  output logic               DONE_TOT,
-  output logic               DONE_OUT_SAMPLE,
-  input  logic               ACCEPTED_OUT_SAMPLE,
-  input  logic               REPLACED_IN_SAMPLE,
-  output logic               REPLACE_FILTER,
-  output logic               REPLACE_FILTER_REQ,
-  input  logic               REPLACED_FILTER,
-  output logic        [ 4:0] REPLACE_INPUT,
-  output logic               REPLACE_INPUT_REQ,
-  input  logic               ACCEPTED_DONE_TOT
+    /* verilator lint_off UNUSED */
+    /* verilator lint_off LATCH */
+    /* verilator lint_off BLKSEQ */
+    input  logic        clk,
+    input  logic        rst_n,
+    output logic        ext_mem_gnt,
+    //int_mem_req
+    output logic        req_i,
+    output logic        we_i,
+    output logic [ 3:0] be,
+    output logic [ 6:0] add_i,
+    output logic [31:0] wdata,                //SIGED
+    //  writing on memory
+    //mem_rsp
+    input  logic [31:0] data,                 //signed
+    //  reading from memory
+    input  logic        START,
+    output logic        DONE_TOT,
+    output logic        DONE_OUT_SAMPLE,
+    input  logic        ACCEPTED_OUT_SAMPLE,
+    input  logic        REPLACED_IN_SAMPLE,
+    output logic        REPLACE_FILTER,
+    output logic        REPLACE_FILTER_REQ,
+    input  logic        REPLACED_FILTER,
+    output logic [ 4:0] REPLACE_INPUT,
+    output logic        REPLACE_INPUT_REQ,
+    input  logic        ACCEPTED_DONE_TOT
 
 );
 
@@ -69,10 +69,28 @@ module conv1d_core (
   S29 = 29,
   S30 = 30,
  S31 = 31,
+S32 = 32,
 S33=33,
-S32 = 32;
-  logic        [ 5:0] P_STATE;
-  logic        [ 5:0] N_STATE;
+S34 = 34,
+S35=35,
+S36=36,
+S37=37,
+S38=38,
+S39=39,
+S40=40,
+S41=41,
+S42=42,
+S43=43,
+S44=44,
+S45=45,
+S46=46,
+S47=47,
+S48=48,
+S49=49,
+S50=50;
+
+  logic [5:0] P_STATE;
+  logic [5:0] N_STATE;
   //----------------------------------------------------------------------------------
   //-----------------------------------------------------------------------------------
   //-----------------------------------------------------------------------------------
@@ -82,146 +100,173 @@ S32 = 32;
   //-----------------------------------------------------------------------------------
   //------------------------------------------------------------------------------------
 
-  logic               RESET_REPLACE_FILTER;
-  logic               LR_REPLACE_FILTER;
-logic LR_TS;
-logic RESET_TS;
-logic TS;
-logic LR_MS;
-logic RESET_MS;
-logic MS;
-logic [31:0] SHIFT_MS;
+  logic RESET_REPLACE_FILTER;
+  logic LR_REPLACE_FILTER;
+  logic LR_TS;
+  logic RESET_TS;
+  logic TS;
+  logic LR_MS;
+  logic RESET_MS;
+  logic MS;
+  logic [31:0] SHIFT_MS;
 
 
-logic SEL_MUX_MEM;
+  logic [1:0] SEL_MUX_MEM;
 
+  logic [31:0] CNT_SHIFT_SAMPLE_80;                 //AGGIUNTO N BIT IN PIU PERCHE I SOMMATORI SONO TUTTI SIGNED IN MODO CHE HO RISULTATI CORRETTI
+  logic [31:0] CNT_SHIFT_SAMPLE_84;
+  logic [31:0] CNT_SHIFT_SAMPLE_BLOCK_8;
 
-  logic  [ 7:0] M0_A;  //signed
-  logic  [ 7:0] M0_B;  //signed
-  logic  [ 7:0] M1_A;  //signed
-  logic  [ 7:0] M1_B;  //signed
-  logic  [ 7:0] M2_A;  //signed
-  logic  [ 7:0] M2_B;
-  logic  [ 7:0] M3_A;
-  logic  [ 7:0] M3_B;
-  logic  [31:0] M0_O;
-  logic  [31:0] M1_O;
-  logic  [31:0] M2_O;
-  logic  [31:0] M3_O;
-  logic  [15:0] M0_O_SHORT;
-  logic  [15:0] M1_O_SHORT;
-  logic  [15:0] M2_O_SHORT;
-  logic  [15:0] M3_O_SHORT;
-  logic  [31:0] ADD0_A;
-  logic  [31:0] ADD0_B;
-  logic  [31:0] ADD1_A;
-  logic  [31:0] ADD1_B;
-  logic  [31:0] ADD2_A;
-  logic  [31:0] ADD2_B;
-  logic  [31:0] ADD3_A;
-  logic  [31:0] ADD3_B;
-  logic  [31:0] ADD4_A;
-  logic  [31:0] ADD4_B;
-  logic  [31:0] ADD0_O;
-  logic  [31:0] ADD1_O;
-  logic  [31:0] ADD2_O;
-  logic  [31:0] ADD3_O;
-  logic  [31:0] ADD4_O;          // FINO 	QUI signed
-  logic               LR_ADD_CH;
-  logic               LR_ADD_FIL;
-  logic               LR_FILTER;
-  logic               LR_APP;
-  logic               LR_R0;
-  logic               LR_R1;
-  logic               LR_R2;
-  logic               LR_R3;
-  logic               lr_ACC_0;
-  logic               lr_ACC_1;
-  logic               LR_ACC_2;
-  logic               lr_ACC_3;
-  logic               LR_ADD_M_O;
-  logic               LR_OUT_MAT;
-  logic  [31:0] REG_ADD_CH;  //signed
-  logic        [31:0] REG_ADD_FIL;
-  logic  [31:0] REG_FILTER;  //signed DA QUI
-  logic  [31:0] REG_APP_O; 
-  logic  [31:0] REG_OUT_MAT;
-  logic  [31:0] REG_ACC_0;
-  logic  [31:0] REG_ACC_1;
-  logic  [31:0] REG_ACC_2;
-  logic  [31:0] REG_ACC_3;
-  logic  [31:0] REG_ADD_M_O;
-  logic  [31:0] REG_R0_O;
-  logic  [31:0] REG_R1_O;
-  logic  [31:0] REG_R2_O;
-  logic  [31:0] REG_R3_O;   // FINO QUI signed
-  logic               SEL_ADD4_A;
-  logic        [ 1:0] SEL_ADD1_B;
-  logic        [ 1:0] SEL_ADD1_A;
-  logic        [ 1:0] SEL_ADD2_A;
-  logic        [ 1:0] SEL_ADD2_B;
-  logic        [ 1:0] SEL_ADD3_A;
-  logic        [ 1:0] SEL_ADD3_B;
-  logic        [ 1:0] SEL_ADD0_A;
-  logic        [ 1:0] SEL_ADD0_B;
-  logic        [ 1:0] SEL_ADD4_B;
-  logic               SEL_M0_A;
-  logic               SEL_M0_B;
-  logic               SEL_M1_A;
-  logic               SEL_M1_B;
-  logic               SEL_M2_A;
-  logic               SEL_M2_B;
-  logic               SEL_M3_A;
-  logic               SEL_M3_B;
-  logic               RESET_CNT_I;
-  logic               EN_CNT_I;
-  logic               TC_I;
-  logic        [ 2:0] CNT_I;
-  logic        [ 7:0] CNT_I_8;
+  logic [7:0] M0_A;  //signed
+  logic [7:0] M0_B;  //signed
+  logic [7:0] M1_A;  //signed
+  logic [7:0] M1_B;  //signed
+  logic [7:0] M2_A;  //signed
+  logic [7:0] M2_B;
+  logic [7:0] M3_A;
+  logic [7:0] M3_B;
+  logic [31:0] M0_O;
+  logic [31:0] M1_O;
+  logic [31:0] M2_O;
+  logic [31:0] M3_O;
+  logic [15:0] M0_O_SHORT;
+  logic [15:0] M1_O_SHORT;
+  logic [15:0] M2_O_SHORT;
+  logic [15:0] M3_O_SHORT;
+  logic [31:0] ADD0_A;
+  logic [31:0] ADD0_B;
+  logic [31:0] ADD1_A;
+  logic [31:0] ADD1_B;
+  logic [31:0] ADD2_A;
+  logic [31:0] ADD2_B;
+  logic [31:0] ADD3_A;
+  logic [31:0] ADD3_B;
+  logic [31:0] ADD4_A;
+  logic [31:0] ADD4_B;
+  logic [31:0] ADD0_O;
+  logic [31:0] ADD1_O;
+  logic [31:0] ADD2_O;
+  logic [31:0] ADD3_O;
+  logic [31:0] ADD4_O;  // FINO 	QUI signed
+  logic LR_ADD_CH;
+  logic LR_ADD_FIL;
+  logic LR_FILTER;
+  logic LR_APP;
+  logic LR_R0;
+  logic LR_R1;
+  logic LR_R2;
+  logic LR_R3;
+  logic lr_ACC_0;
+  logic lr_ACC_1;
+  logic LR_ACC_2;
+  logic lr_ACC_3;
+  logic LR_ADD_M_O;
+  logic LR_OUT_MAT;
+  logic [31:0] REG_ADD_CH;  //signed
+  logic [31:0] REG_ADD_FIL;
+  logic [31:0] REG_FILTER;  //signed DA QUI
+  logic [31:0] REG_APP_O;
+  logic [31:0] REG_OUT_MAT;
+  logic [31:0] REG_ACC_0;
+  logic [31:0] REG_ACC_1;
+  logic [31:0] REG_ACC_2;
+  logic [31:0] REG_ACC_3;
+  logic [31:0] REG_ADD_M_O;
+  logic [31:0] REG_R0_O;
+  logic [31:0] REG_R1_O;
+  logic [31:0] REG_R2_O;
+  logic [31:0] REG_R3_O;  // FINO QUI signed
+  logic [1:0] SEL_ADD4_A;
+  logic [1:0] SEL_ADD1_B;
+  logic [1:0] SEL_ADD1_A;
+  logic [1:0] SEL_ADD2_A;
+  logic [1:0] SEL_ADD2_B;
+  logic [1:0] SEL_ADD3_A;
+  logic [1:0] SEL_ADD3_B;
+  logic [1:0] SEL_ADD0_A;
+  logic [1:0] SEL_ADD0_B;
+  logic [1:0] SEL_ADD4_B;
+  logic SEL_M0_A;
+  logic SEL_M0_B;
+  logic SEL_M1_A;
+  logic SEL_M1_B;
+  logic SEL_M2_A;
+  logic SEL_M2_B;
+  logic SEL_M3_A;
+  logic SEL_M3_B;
+  logic RESET_CNT_I;
+  logic EN_CNT_I;
+  logic TC_I;
+  logic [2:0] CNT_I;
+  logic [7:0] CNT_I_8;
   //------------------------------------------------
-  logic               RESET_CNT_J;
-  logic               EN_CNT_J;
-  logic               TC_J;
-  logic        [ 2:0] CNT_J;
-  logic        [31:0] CNT_J_32;
+  logic RESET_CNT_J;
+  logic EN_CNT_J;
+  logic TC_J;
+  logic [2:0] CNT_J;
+  logic [31:0] CNT_J_32;
   //------------------------------------------------
-  logic               RESET_CNT_M;
-  logic               EN_CNT_M;
-  logic               TC_M;
-  logic        [ 2:0] CNT_M;
-  logic        [31:0] CNT_M_32;
-  logic        [ 7:0] CNT_M_8;
+  logic RESET_CNT_M;
+  logic EN_CNT_M;
+  logic TC_M;
+  logic [2:0] CNT_M;
+  logic [31:0] CNT_M_32;
+  logic [7:0] CNT_M_8;
   //------------------------------------------------
-  logic               RESET_CNT_S;
-  logic               EN_CNT_S;
-  logic               TC_S;
-  logic        [ 2:0] CNT_S;
-  logic        [31:0] CNT_S_32;
+  logic RESET_CNT_S;
+  logic EN_CNT_S;
+  logic TC_S;
+  logic [2:0] CNT_S;
+  logic [31:0] CNT_S_32;
   //------------------------------------------------
-  logic               RESET_CNT_FG;
-  logic               EN_CNT_FG;
-  logic               TC_FG;
-  logic        [ 1:0] CNT_FG;
-  logic        [31:0] CNT_FG_SHIFT;
+  logic RESET_CNT_FG;
+  logic EN_CNT_FG;
+  logic TC_FG;
+  logic [1:0] CNT_FG;
+  logic [31:0] CNT_FG_SHIFT;
   //-------------------------------------------------
-  logic               RESET_CNT_Z;
-  logic               EN_CNT_Z;
-  logic               TC_Z;
-  logic        [ 4:0] CNT_Z;
+  logic RESET_CNT_Z;
+  logic EN_CNT_Z;
+  logic TC_Z;
+  logic [4:0] CNT_Z;
   //------------------------------------------------------
-    logic               RESET_CNT_CM;
-  logic               EN_CNT_CM;
-  logic               TC_CM;
-  logic        [ 3:0] CNT_CM_SHORT;
-logic [ 6:0] CNT_CM;
+  logic RESET_CNT_SHIFT_SAMPLE_BLOCK;
+  logic EN_CNT_SHIFT_SAMPLE_BLOCK;
+  logic TC_SHIFT_SAMPLE_BLOCK;
+  logic [2:0] CNT_SHIFT_SAMPLE_BLOCK;
+
+  //-------------------------------------------------------
+  logic RESET_CNT_SHIFT_SAMPLE;
+  logic EN_CNT_SHIFT_SAMPLE;
+  logic TC_SHIFT_SAMPLE;
+  logic [2:0] CNT_SHIFT_SAMPLE;
+  //------------------------------------------------------
+  logic RESET_CNT_CM;
+  logic EN_CNT_CM;
+  logic TC_CM;
+  logic [3:0] CNT_CM_SHORT;
+  logic [6:0] CNT_CM;
   //-------------------------------------------------
-  logic        [31:0] zeri;
-  logic        [31:0] VAL_120;
-  logic        [31:0] VAL_80;
-  logic        [ 7:0] VAL_5;
-  logic        [ 7:0] VAL_20;
-  logic        [ 7:0] VAL_8;
+  logic [31:0] zeri;
+  logic [31:0] VAL_120;
+  logic [31:0] VAL_80;
+  logic [7:0] VAL_5;
+  logic [7:0] VAL_20;
+  logic [7:0] VAL_8;
   //assign add_i=9'b000000000;
+
+  logic RESET_SHIFT_ADD;
+  logic LR_SHIFT_ADD;
+  logic [31:0] REG_SHIFT_ADD;
+
+  logic LR_SHIFT_SAMPLE;
+  logic [31:0] REG_SHIFT_SAMPLE0;
+  logic [31:0] REG_SHIFT_SAMPLE1;
+  logic [31:0] REG_SHIFT_SAMPLE2;
+  logic [31:0] REG_SHIFT_SAMPLE3;
+
+
+
   //---------------------------------------------------------------------------------DP
   // Processo per ADD0
   always @(*) begin
@@ -272,35 +317,100 @@ logic [ 6:0] CNT_CM;
   assign be   = 4'b1111;
 
   //--------------------
- // assign M0_O = {{16{M0_O_SHORT[15]}}, M0_O_SHORT};
+  // assign M0_O = {{16{M0_O_SHORT[15]}}, M0_O_SHORT};
   //assign M1_O = {{16{M1_O_SHORT[15]}}, M1_O_SHORT}; //DA CAMBIARE
   //assign M2_O = {{16{M2_O_SHORT[15]}}, M2_O_SHORT};
- // assign M3_O = {{16{M3_O_SHORT[15]}}, M3_O_SHORT};
-assign M0_O = {16'b0, M0_O_SHORT};
-assign M1_O = {16'b0, M1_O_SHORT};                        // DA CAMBIARE
-assign M2_O = {16'b0, M2_O_SHORT};
-assign M3_O = {16'b0, M3_O_SHORT};
+  // assign M3_O = {{16{M3_O_SHORT[15]}}, M3_O_SHORT};
+  assign M0_O = {16'b0, M0_O_SHORT};
+  assign M1_O = {16'b0, M1_O_SHORT};  // DA CAMBIARE
+  assign M2_O = {16'b0, M2_O_SHORT};
+  assign M3_O = {16'b0, M3_O_SHORT};
+
+
+
+
+
+  //--------------------------------------
+
+
+  REG1 #(
+      .N_BIT(32)
+  ) R_SHIFT_ADD (
+      .clk  (clk),
+      .rst_n(RESET_SHIFT_ADD),
+      .load (LR_SHIFT_ADD),
+      .d_in (ADD4_O),
+      .q_out(REG_SHIFT_ADD)
+  );
 
 
 
   REG1 #(
-    .N_BIT(1)
+      .N_BIT(32)
+  ) R_SHIFT_SAMPLE0 (
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (LR_SHIFT_SAMPLE),
+      .d_in (data),
+      .q_out(REG_SHIFT_SAMPLE0)
+  );
+
+
+
+  REG1 #(
+      .N_BIT(32)
+  ) R_SHIFT_SAMPLE1 (
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (LR_SHIFT_SAMPLE),
+      .d_in (REG_SHIFT_SAMPLE0),
+      .q_out(REG_SHIFT_SAMPLE1)
+  );
+
+  REG1 #(
+      .N_BIT(32)
+  ) R_SHIFT_SAMPLE2 (
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (LR_SHIFT_SAMPLE),
+      .d_in (REG_SHIFT_SAMPLE1),
+      .q_out(REG_SHIFT_SAMPLE2)
+  );
+
+  REG1 #(
+      .N_BIT(32)
+  ) R_SHIFT_SAMPLE3 (
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (LR_SHIFT_SAMPLE),
+      .d_in (REG_SHIFT_SAMPLE2),
+      .q_out(REG_SHIFT_SAMPLE3)
+  );
+
+
+  //--------------------------------------
+
+
+
+
+  REG1 #(
+      .N_BIT(1)
   ) R_TS (
-    .clk  (clk),
-    .rst_n(RESET_TS),
-    .load (LR_TS),
-    .d_in (1'b1),
-    .q_out(TS)
+      .clk  (clk),
+      .rst_n(RESET_TS),
+      .load (LR_TS),
+      .d_in (1'b1),
+      .q_out(TS)
   );
 
   REG1 #(
-    .N_BIT(1)
+      .N_BIT(1)
   ) R_MS (
-    .clk  (clk),
-    .rst_n(RESET_MS),
-    .load (LR_MS),
-    .d_in (1'b1),
-    .q_out(MS)
+      .clk  (clk),
+      .rst_n(RESET_MS),
+      .load (LR_MS),
+      .d_in (1'b1),
+      .q_out(MS)
   );
 
 
@@ -309,418 +419,452 @@ assign M3_O = {16'b0, M3_O_SHORT};
 
 
   REG1 #(
-    .N_BIT(32)
+      .N_BIT(32)
   ) R_ADD_CH (
-    .clk  (clk),
-    .rst_n(rst_n),
-    .load (LR_ADD_CH),
-    .d_in (ADD4_O),
-    .q_out(REG_ADD_CH)
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (LR_ADD_CH),
+      .d_in (ADD4_O),
+      .q_out(REG_ADD_CH)
   );
 
   REG1 #(
-    .N_BIT(32)
+      .N_BIT(32)
   ) R_ADD_FIL (
-    .clk  (clk),
-    .rst_n(rst_n),
-    .load (LR_ADD_FIL),
-    .d_in (ADD1_O),
-    .q_out(REG_ADD_FIL)
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (LR_ADD_FIL),
+      .d_in (ADD1_O),
+      .q_out(REG_ADD_FIL)
   );
 
   REG1 #(
-    .N_BIT(32)
+      .N_BIT(32)
   ) R_FILTER (
-    .clk  (clk),
-    .rst_n(rst_n),
-    .load (LR_FILTER),
-    .d_in (data),
-    .q_out(REG_FILTER)
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (LR_FILTER),
+      .d_in (data),
+      .q_out(REG_FILTER)
   );
 
   REG1 #(
-    .N_BIT(32)
+      .N_BIT(32)
   ) REGISTER_ACC_0 (
-    .clk  (clk),
-    .rst_n(rst_n),
-    .load (lr_ACC_0),
-    .d_in (ADD4_O),
-    .q_out(REG_ACC_0)
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (lr_ACC_0),
+      .d_in (ADD4_O),
+      .q_out(REG_ACC_0)
   );
 
   REG1 #(
-    .N_BIT(32)
+      .N_BIT(32)
   ) REGISTER_ACC_1 (
-    .clk  (clk),
-    .rst_n(rst_n),
-    .load (lr_ACC_1),
-    .d_in (REG_ACC_0),
-    .q_out(REG_ACC_1)
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (lr_ACC_1),
+      .d_in (REG_ACC_0),
+      .q_out(REG_ACC_1)
   );
 
   REG1 #(
-    .N_BIT(32)
+      .N_BIT(32)
   ) REGISTER_ACC_2 (
-    .clk  (clk),
-    .rst_n(rst_n),
-    .load (LR_ACC_2),
-    .d_in (REG_ACC_1),
-    .q_out(REG_ACC_2)
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (LR_ACC_2),
+      .d_in (REG_ACC_1),
+      .q_out(REG_ACC_2)
   );
 
   REG1 #(
-    .N_BIT(32)
+      .N_BIT(32)
   ) REGISTER_ACC_3 (
-    .clk  (clk),
-    .rst_n(rst_n),
-    .load (lr_ACC_3),
-    .d_in (REG_ACC_2),
-    .q_out(REG_ACC_3)
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (lr_ACC_3),
+      .d_in (REG_ACC_2),
+      .q_out(REG_ACC_3)
   );
 
   REG1 #(
-    .N_BIT(32)
+      .N_BIT(32)
   ) R_APP (
-    .clk  (clk),
-    .rst_n(rst_n),
-    .load (LR_APP),
-    .d_in (ADD4_O),
-    .q_out(REG_APP_O)
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (LR_APP),
+      .d_in (ADD4_O),
+      .q_out(REG_APP_O)
   );
 
   REG1 #(
-    .N_BIT(32)
+      .N_BIT(32)
   ) R_ADD_M_O (
-    .clk  (clk),
-    .rst_n(rst_n),
-    .load (LR_ADD_M_O),
-    .d_in (ADD1_O),
-    .q_out(REG_ADD_M_O)
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (LR_ADD_M_O),
+      .d_in (ADD1_O),
+      .q_out(REG_ADD_M_O)
   );
 
   REG1 #(
-    .N_BIT(32)
+      .N_BIT(32)
   ) R_OUT_MAT (
-    .clk  (clk),
-    .rst_n(rst_n),
-    .load (LR_OUT_MAT),
-    .d_in (data),
-    .q_out(REG_OUT_MAT)
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (LR_OUT_MAT),
+      .d_in (data),
+      .q_out(REG_OUT_MAT)
   );
 
   REG1 #(
-    .N_BIT(1)
+      .N_BIT(1)
   ) R_REPLACE_FILTER (
-    .clk  (clk),
-    .rst_n(RESET_REPLACE_FILTER),
-    .load (LR_REPLACE_FILTER),
-    .d_in (1'b1),
-    .q_out(REPLACE_FILTER)
+      .clk  (clk),
+      .rst_n(RESET_REPLACE_FILTER),
+      .load (LR_REPLACE_FILTER),
+      .d_in (1'b1),
+      .q_out(REPLACE_FILTER)
   );
 
   REG1 #(
-    .N_BIT(32)
+      .N_BIT(32)
   ) R_R0 (
-    .clk  (clk),
-    .rst_n(rst_n),
-    .load (LR_R0),
-    .d_in (M0_O),
-    .q_out(REG_R0_O)
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (LR_R0),
+      .d_in (M0_O),
+      .q_out(REG_R0_O)
   );
 
   REG1 #(
-    .N_BIT(32)
+      .N_BIT(32)
   ) R_R1 (
-    .clk  (clk),
-    .rst_n(rst_n),
-    .load (LR_R1),
-    .d_in (M1_O),
-    .q_out(REG_R1_O)
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (LR_R1),
+      .d_in (M1_O),
+      .q_out(REG_R1_O)
   );
 
   REG1 #(
-    .N_BIT(32)
+      .N_BIT(32)
   ) R_R2 (
-    .clk  (clk),
-    .rst_n(rst_n),
-    .load (LR_R2),
-    .d_in (M2_O),
-    .q_out(REG_R2_O)
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (LR_R2),
+      .d_in (M2_O),
+      .q_out(REG_R2_O)
   );
 
   REG1 #(
-    .N_BIT(32)
+      .N_BIT(32)
   ) R_R3 (
-    .clk  (clk),
-    .rst_n(rst_n),
-    .load (LR_R3),
-    .d_in (M3_O),
-    .q_out(REG_R3_O)
+      .clk  (clk),
+      .rst_n(rst_n),
+      .load (LR_R3),
+      .d_in (M3_O),
+      .q_out(REG_R3_O)
   );
 
   MUX_4 #(
-    .N(32)
+      .N(32)
   ) MUX0 (
-    .sel(SEL_ADD0_A),
-    .in0(M0_O),
-    .in1(REG_APP_O),
-    .in2(REG_ACC_1),
-    .in3(zeri),
-    .y  (ADD0_A)
+      .sel(SEL_ADD0_A),
+      .in0(M0_O),
+      .in1(REG_APP_O),
+      .in2(REG_ACC_1),
+      .in3(zeri),
+      .y  (ADD0_A)
   );
 
   MUX_4 #(
-    .N(32)
+      .N(32)
   ) MUX1 (
-    .sel(SEL_ADD0_B),
-    .in0(M1_O),
-    .in1(REG_OUT_MAT),
-    .in2(REG_ACC_0),
-    .in3(zeri),
-    .y  (ADD0_B)
+      .sel(SEL_ADD0_B),
+      .in0(M1_O),
+      .in1(REG_OUT_MAT),
+      .in2(REG_ACC_0),
+      .in3(zeri),
+      .y  (ADD0_B)
   );
 
   MUX_4 #(
-    .N(32)
+      .N(32)
   ) MUX2 (
-    .sel(SEL_ADD1_A),
-    .in0(ADD0_O),
-    .in1(M2_O),
-    .in2(ADD2_O),
-    .in3(zeri),
-    .y  (ADD1_A)
+      .sel(SEL_ADD1_A),
+      .in0(ADD0_O),
+      .in1(M2_O),
+      .in2(ADD2_O),
+      .in3(zeri),
+      .y  (ADD1_A)
   );
 
   MUX_4 #(
-    .N(32)
+      .N(32)
   ) MUX3 (
-    .sel(SEL_ADD1_B),
-    .in0(CNT_J_32),
-    .in1(M3_O),
-    .in2(VAL_120),
-    .in3(zeri),
-    .y  (ADD1_B)
+      .sel(SEL_ADD1_B),
+      .in0(CNT_J_32),
+      .in1(M3_O),
+      .in2(VAL_120),
+      .in3(zeri),
+      .y  (ADD1_B)
   );
 
   MUX_4 #(
-    .N(32)
+      .N(32)
   ) MUX4 (
-    .sel(SEL_ADD2_A),
-    .in0(M2_O),
-    .in1(REG_R2_O),
-    .in2(CNT_M_32),
-    .in3(zeri),
-    .y  (ADD2_A)
+      .sel(SEL_ADD2_A),
+      .in0(M2_O),
+      .in1(REG_R2_O),
+      .in2(CNT_M_32),
+      .in3(zeri),
+      .y  (ADD2_A)
   );
 
   MUX_4 #(
-    .N(32)
+      .N(32)
   ) MUX5 (
-    .sel(SEL_ADD2_B),
-    .in0(VAL_80),
-    .in1(REG_R3_O),
-    .in2(SHIFT_MS),
-    .in3(zeri),
-    .y  (ADD2_B)
+      .sel(SEL_ADD2_B),
+      .in0(VAL_80),
+      .in1(REG_R3_O),
+      .in2(SHIFT_MS),
+      .in3(zeri),
+      .y  (ADD2_B)
   );
 
   MUX_4 #(
-    .N(32)
+      .N(32)
   ) MUX6 (
-    .sel(SEL_ADD3_A),
-    .in0(CNT_J_32),
-    .in1(REG_ACC_2),
-    .in2(REG_R0_O),
-    .in3(zeri),
-    .y  (ADD3_A)
+      .sel(SEL_ADD3_A),
+      .in0(CNT_J_32),
+      .in1(REG_ACC_2),
+      .in2(REG_R0_O),
+      .in3(zeri),
+      .y  (ADD3_A)
   );
 
   MUX_4 #(
-    .N(32)
+      .N(32)
   ) MUX7 (
-    .sel(SEL_ADD3_B),
-    .in0(CNT_S_32),
-    .in1(REG_ACC_3),
-    .in2(REG_R1_O),
-    .in3(zeri),
-    .y  (ADD3_B)
-  );
-
-  MUX_2 #(
-    .N_BIT(32)
-  ) MUX8 (
-    .sel(SEL_ADD4_A),
-    .d0 (ADD0_O),
-    .d1 (ADD2_O),
-    .y  (ADD4_A)
+      .sel(SEL_ADD3_B),
+      .in0(CNT_S_32),
+      .in1(REG_ACC_3),
+      .in2(REG_R1_O),
+      .in3(zeri),
+      .y  (ADD3_B)
   );
 
   MUX_4 #(
-    .N(32)
+      .N(32)
+  ) MUX8 (
+      .sel(SEL_ADD4_A),
+      .in0(ADD0_O),
+      .in1(ADD2_O),
+      .in2(CNT_SHIFT_SAMPLE_BLOCK_8),
+      .in3(CNT_SHIFT_SAMPLE_BLOCK_8),
+      .y  (ADD4_A)
+  );
+
+  MUX_4 #(
+      .N(32)
   ) MUX9 (
-    .sel(SEL_ADD4_B),
-    .in0(ADD1_O),
-    .in1(ADD3_O),
-    .in2(zeri),
-    .in3(zeri),
-    .y  (ADD4_B)
+      .sel(SEL_ADD4_B),
+      .in0(ADD1_O),
+      .in1(ADD3_O),
+      .in2(CNT_SHIFT_SAMPLE_84),
+      .in3(CNT_SHIFT_SAMPLE_80),
+      .y  (ADD4_B)
   );
 
   MUX_2 #(
-    .N_BIT(8)
+      .N_BIT(8)
   ) MUX10 (
-    .sel(SEL_M0_A),
-    .d0 (CNT_I_8),
-    .d1 (data[31:24]),
-    .y  (M0_A)
+      .sel(SEL_M0_A),
+      .d0 (CNT_I_8),
+      .d1 (data[31:24]),
+      .y  (M0_A)
   );
 
   MUX_2 #(
-    .N_BIT(8)
+      .N_BIT(8)
   ) MUX11 (
-    .sel(SEL_M0_B),
-    .d0 (VAL_5),
-    .d1 (REG_FILTER[31:24]),
-    .y  (M0_B)
+      .sel(SEL_M0_B),
+      .d0 (VAL_5),
+      .d1 (REG_FILTER[31:24]),
+      .y  (M0_B)
   );
 
   MUX_2 #(
-    .N_BIT(8)
+      .N_BIT(8)
   ) MUX12 (
-    .sel(SEL_M1_A),
-    .d0 (CNT_M_8),
-    .d1 (data[23:16]),
-    .y  (M1_A)
+      .sel(SEL_M1_A),
+      .d0 (CNT_M_8),
+      .d1 (data[23:16]),
+      .y  (M1_A)
   );
 
   MUX_2 #(
-    .N_BIT(8)
+      .N_BIT(8)
   ) MUX13 (
-    .sel(SEL_M1_B),
-    .d0 (VAL_20),
-    .d1 (REG_FILTER[23:16]),
-    .y  (M1_B)
+      .sel(SEL_M1_B),
+      .d0 (VAL_20),
+      .d1 (REG_FILTER[23:16]),
+      .y  (M1_B)
   );
 
   MUX_2 #(
-    .N_BIT(8)
+      .N_BIT(8)
   ) MUX14 (
-    .sel(SEL_M2_A),
-    .d0 (CNT_I_8),
-    .d1 (data[15:8]),
-    .y  (M2_A)
+      .sel(SEL_M2_A),
+      .d0 (CNT_I_8),
+      .d1 (data[15:8]),
+      .y  (M2_A)
   );
 
   MUX_2 #(
-    .N_BIT(8)
+      .N_BIT(8)
   ) MUX15 (
-    .sel(SEL_M2_B),
-    .d0 (VAL_8),
-    .d1 (REG_FILTER[15:8]),
-    .y  (M2_B)
+      .sel(SEL_M2_B),
+      .d0 (VAL_8),
+      .d1 (REG_FILTER[15:8]),
+      .y  (M2_B)
   );
-  
-    MUX_2 #(
-    .N_BIT(32)
+
+  MUX_4 #(
+      .N(32)
   ) MUX_MEM (
-    .sel(SEL_MUX_MEM),
-    .d0 (ADD0_O),
-    .d1 (32'b00000000000000000000000000000000),
-    .y  (wdata)
+      .sel(SEL_MUX_MEM),
+      .in0(ADD0_O),
+      .in1(32'b00000000000000000000000000000000),
+      .in2(REG_SHIFT_SAMPLE3),
+      .in3(zeri),
+      .y  (wdata)
   );
+
+
 
   assign M3_A = data[7:0];
   assign M3_B = REG_FILTER[7:0];
   COUNTER #(
-    .N(3)
+      .N(3)
   ) COUNTER_I (
-    .clk           (clk),
-    .reset         (RESET_CNT_I),
-    .enable        (EN_CNT_I),
-    .terminal_count(TC_I),
-    .count         (CNT_I)
+      .clk           (clk),
+      .reset         (RESET_CNT_I),
+      .enable        (EN_CNT_I),
+      .terminal_count(TC_I),
+      .count         (CNT_I)
   );
 
   COUNTER #(
-    .N(3)
+      .N(3)
   ) COUNTER_J (
-    .clk           (clk),
-    .reset         (RESET_CNT_J),
-    .enable        (EN_CNT_J),
-    .terminal_count(TC_J),
-    .count         (CNT_J)
+      .clk           (clk),
+      .reset         (RESET_CNT_J),
+      .enable        (EN_CNT_J),
+      .terminal_count(TC_J),
+      .count         (CNT_J)
   );
 
   COUNTER #(
-    .N(3)
+      .N(3)
   ) COUNTER_M (
-    .clk           (clk),
-    .reset         (RESET_CNT_M),
-    .enable        (EN_CNT_M),
-    .terminal_count(TC_M),
-    .count         (CNT_M)
+      .clk           (clk),
+      .reset         (RESET_CNT_M),
+      .enable        (EN_CNT_M),
+      .terminal_count(TC_M),
+      .count         (CNT_M)
   );
 
   COUNTER #(
-    .N(3)
+      .N(3)
   ) COUNTER_S (
-    .clk           (clk),
-    .reset         (RESET_CNT_S),
-    .enable        (EN_CNT_S),
-    .terminal_count(TC_S),
-    .count         (CNT_S)
+      .clk           (clk),
+      .reset         (RESET_CNT_S),
+      .enable        (EN_CNT_S),
+      .terminal_count(TC_S),
+      .count         (CNT_S)
   );
 
   COUNTER #(
-    .N(5)
+      .N(5)
   ) COUNTER_Z (
-    .clk           (clk),
-    .reset         (RESET_CNT_Z),
-    .enable        (EN_CNT_Z),
-    .terminal_count(TC_Z),
-    .count         (CNT_Z)
+      .clk           (clk),
+      .reset         (RESET_CNT_Z),
+      .enable        (EN_CNT_Z),
+      .terminal_count(TC_Z),
+      .count         (CNT_Z)
   );
 
   COUNTER #(
-    .N(2)
+      .N(2)
   ) COUNTER_FG (
-    .clk           (clk),
-    .reset         (RESET_CNT_FG),
-    .enable        (EN_CNT_FG),
-    .terminal_count(TC_FG),
-    .count         (CNT_FG)
+      .clk           (clk),
+      .reset         (RESET_CNT_FG),
+      .enable        (EN_CNT_FG),
+      .terminal_count(TC_FG),
+      .count         (CNT_FG)
   );
-  
-    COUNTER #(
-    .N(4)
+
+  COUNTER #(
+      .N(4)
   ) COUNTER_CM (
-    .clk           (clk),
-    .reset         (RESET_CNT_CM),
-    .enable        (EN_CNT_CM),
-    .terminal_count(TC_CM),
-    .count         (CNT_CM_SHORT)
+      .clk           (clk),
+      .reset         (RESET_CNT_CM),
+      .enable        (EN_CNT_CM),
+      .terminal_count(TC_CM),
+      .count         (CNT_CM_SHORT)
+  );
+
+
+
+  COUNTER #(
+      .N(3)
+  ) COUNTER_SHIFT_SAMPLE_BLOCK (
+      .clk           (clk),
+      .reset         (RESET_CNT_SHIFT_SAMPLE_BLOCK),
+      .enable        (EN_CNT_SHIFT_SAMPLE_BLOCK),
+      .terminal_count(TC_SHIFT_SAMPLE_BLOCK),
+      .count         (CNT_SHIFT_SAMPLE_BLOCK)
+  );
+
+
+
+  COUNTER #(
+      .N(3)
+  ) COUNTER_SHIFT_SAMPLE (
+      .clk           (clk),
+      .reset         (RESET_CNT_SHIFT_SAMPLE),
+      .enable        (EN_CNT_SHIFT_SAMPLE),
+      .terminal_count(TC_SHIFT_SAMPLE),
+      .count         (CNT_SHIFT_SAMPLE)
   );
 
 
   //wdata=REG_APP_O;
   assign REPLACE_INPUT = CNT_Z;
-  assign SHIFT_MS  = {(29'b00000000000000000000000000000), MS, 2'b00};
-  assign CNT_I_8       = {(5'b00000), CNT_I};
-  assign CNT_J_32      = {(29'b00000000000000000000000000000), CNT_J};
-  assign CNT_M_32      = {(29'b00000000000000000000000000000), CNT_M};
-  assign CNT_M_8       = {(5'b00000), CNT_M};
-  assign CNT_S_32      = {(29'b00000000000000000000000000000), CNT_S};
+  assign SHIFT_MS = {(29'b00000000000000000000000000000), MS, 2'b00};
+  assign CNT_I_8 = {(5'b00000), CNT_I};
+  assign CNT_J_32 = {(29'b00000000000000000000000000000), CNT_J};
+  assign CNT_M_32 = {(29'b00000000000000000000000000000), CNT_M};
+  assign CNT_M_8 = {(5'b00000), CNT_M};
+  assign CNT_S_32 = {(29'b00000000000000000000000000000), CNT_S};
 
-assign CNT_CM = {4'b1111, CNT_CM_SHORT[2:0]};
+  assign CNT_CM = {4'b1111, CNT_CM_SHORT[2:0]};
 
+  assign CNT_SHIFT_SAMPLE_80 = {30'b000000000000000000000000010100, CNT_SHIFT_SAMPLE[1:0]};
+  assign CNT_SHIFT_SAMPLE_84 = {30'b0000000000000000000000010101, CNT_SHIFT_SAMPLE[1:0]};
+  assign CNT_SHIFT_SAMPLE_BLOCK_8 = {
+    27'b0000000000000000000000000, CNT_SHIFT_SAMPLE_BLOCK[1:0], 3'b000
+  };
 
-
-  assign zeri          = 32'b00000000000000000000000000000000;
-  assign VAL_120       = 32'b00000000000000000000000001111000;
-  assign VAL_80        = 32'b00000000000000000000000001010000;
-  assign VAL_5         = 8'b00000101;
-  assign VAL_20        = 8'b00010100;
-  assign VAL_8         = 8'b00001000;
+  assign zeri = 32'b00000000000000000000000000000000;
+  assign VAL_120 = 32'b00000000000000000000000001111000;
+  assign VAL_80 = 32'b00000000000000000000000001010000;
+  assign VAL_5 = 8'b00000101;
+  assign VAL_20 = 8'b00010100;
+  assign VAL_8 = 8'b00001000;
   //---------------------------------------------------------------------------------
   //---------------------------------------------------------------------------------CU
   always @(posedge clk or posedge rst_n) begin
@@ -732,9 +876,9 @@ assign CNT_CM = {4'b1111, CNT_CM_SHORT[2:0]};
   end
 
   always @(P_STATE or START or CNT_Z or CNT_S or
-  CNT_FG or CNT_I or CNT_J or ACCEPTED_OUT_SAMPLE or REPLACED_IN_SAMPLE or REPLACED_FILTER or 
+  CNT_FG or CNT_I or CNT_J or ACCEPTED_OUT_SAMPLE or REPLACED_IN_SAMPLE or REPLACED_FILTER or
 ACCEPTED_DONE_TOT or REPLACE_FILTER or
-TS or MS) begin
+TS or MS or CNT_SHIFT_SAMPLE or CNT_SHIFT_SAMPLE_BLOCK) begin
 
     case (P_STATE)
       IDLE: begin
@@ -833,30 +977,30 @@ TS or MS) begin
       end
       S15: begin
         N_STATE = S16;
-		
-		
+
+
       end
-	  
-	  
+
+
       S24: begin
         N_STATE = S33;
       end
-	  
-	    S31: begin
+
+      S31: begin
         N_STATE = S32;
       end
-	    S32: begin
+      S32: begin
         N_STATE = S33;
       end
-	  
-	        S33: begin
+
+      S33: begin
         if ((CNT_CM_SHORT == 4'b1000)) begin
           N_STATE = S1;
         end else begin
           N_STATE = S31;
         end
       end
-	  
+
       S16: begin
         if ((REPLACED_FILTER == 1'b1)) begin
           N_STATE = S2;
@@ -878,6 +1022,66 @@ TS or MS) begin
           N_STATE = S18;
         end
       end
+      S34: begin
+        if ((CNT_SHIFT_SAMPLE_BLOCK == 3'b100)) begin
+          N_STATE = S18;
+        end else begin
+
+          N_STATE = S35;
+        end
+      end
+      S35: begin
+        if ((CNT_SHIFT_SAMPLE == 3'b100)) begin
+          N_STATE = S40;
+        end else begin
+
+          N_STATE = S36;
+        end
+      end
+
+
+      S36: begin
+        N_STATE = S37;
+      end
+      S37: begin
+        N_STATE = S38;
+      end
+      S38: begin
+        N_STATE = S39;
+      end
+      S39: begin
+        N_STATE = S35;
+      end
+      S40: begin
+        N_STATE = S41;
+      end
+
+      S41: begin
+        if ((CNT_SHIFT_SAMPLE == 3'b100)) begin
+          N_STATE = S46;
+        end else begin
+
+          N_STATE = S42;
+        end
+      end
+
+      S42: begin
+        N_STATE = S43;
+      end
+
+      S43: begin
+        N_STATE = S44;
+      end
+      S44: begin
+        N_STATE = S45;
+      end
+      S45: begin
+        N_STATE = S41;
+      end
+      S46: begin
+        N_STATE = S34;
+      end
+
       S19: begin
         if ((ACCEPTED_DONE_TOT == 1'b1)) begin
           N_STATE = IDLE;
@@ -887,25 +1091,25 @@ TS or MS) begin
       end
 
       S20: begin
-	if (TS==1'b1) begin
-        if ((REPLACE_FILTER == 1'b0)) begin
-          N_STATE = S13;
+        if (TS == 1'b1) begin
+          if ((REPLACE_FILTER == 1'b0)) begin
+            N_STATE = S13;
+          end else begin
+            N_STATE = S14;
+          end
         end else begin
-          N_STATE = S14;
-       end
-	end else begin
-	 N_STATE = S30;
-		end
+          N_STATE = S30;
+        end
 
       end
-S30: begin
+      S30: begin
         N_STATE = S2;
       end
-      S21: begin
+      S21: begin 
         N_STATE = S29;
       end
       S29: begin
-        N_STATE = S18;
+        N_STATE = S34;
       end
 
 
@@ -917,7 +1121,7 @@ S30: begin
 
 
   always @(P_STATE) begin
-  SEL_MUX_MEM =1'b0;
+    SEL_MUX_MEM          = 2'b00;
     we_i                 = 1'b0;
     SEL_M0_A             = 1'b0;
     SEL_M0_B             = 1'b0;
@@ -933,7 +1137,7 @@ S30: begin
     SEL_ADD2_B           = 2'b00;
     SEL_ADD3_A           = 2'b00;
     SEL_ADD3_B           = 2'b00;
-    SEL_ADD4_A           = 1'b0;
+    SEL_ADD4_A           = 2'b00;
     SEL_ADD4_B           = 2'b00;
     ext_mem_gnt          = 1'b1;
     EN_CNT_I             = 1'b0;
@@ -942,14 +1146,14 @@ S30: begin
     EN_CNT_M             = 1'b0;
     EN_CNT_FG            = 1'b0;
     EN_CNT_Z             = 1'b0;
-	EN_CNT_CM             = 1'b0;
+    EN_CNT_CM            = 1'b0;
     RESET_CNT_I          = 1'b1;
     RESET_CNT_J          = 1'b1;
     RESET_CNT_S          = 1'b1;
     RESET_CNT_M          = 1'b1;
     RESET_CNT_FG         = 1'b1;
     RESET_CNT_Z          = 1'b1;
-	RESET_CNT_CM          = 1'b1;
+    RESET_CNT_CM         = 1'b1;
     LR_R0                = 1'b0;
     LR_R1                = 1'b0;
     LR_R2                = 1'b0;
@@ -970,12 +1174,23 @@ S30: begin
     REPLACE_FILTER_REQ   = 1'b0;
     REPLACE_INPUT_REQ    = 1'b0;
     req_i                = 1'b0;
-        RESET_TS          = 1'b1;
-        RESET_MS          = 1'b1;
-        LR_MS         = 1'b0;
-        LR_TS         = 1'b0;
+    RESET_TS             = 1'b1;
+    RESET_MS             = 1'b1;
+    LR_MS                = 1'b0;
+    LR_TS                = 1'b0;
+    LR_SHIFT_ADD         = 1'b0;
+    LR_SHIFT_SAMPLE      = 1'b0;
+    RESET_SHIFT_ADD      = 1'b1;
+RESET_CNT_SHIFT_SAMPLE =1'b1;
+EN_CNT_SHIFT_SAMPLE = 1'b0;
+EN_CNT_SHIFT_SAMPLE_BLOCK =1'b0;
+RESET_CNT_SHIFT_SAMPLE_BLOCK=1'b1;
+
     case (P_STATE)
       IDLE: begin
+RESET_CNT_SHIFT_SAMPLE_BLOCK =1'b0;
+  RESET_CNT_SHIFT_SAMPLE = 1'b0;
+        RESET_SHIFT_ADD      = 1'b0;
         req_i                = 1'b0;
         RESET_REPLACE_FILTER = 1'b0;
         we_i                 = 1'b0;
@@ -993,7 +1208,7 @@ S30: begin
         SEL_ADD2_B           = 2'b00;
         SEL_ADD3_A           = 2'b00;
         SEL_ADD3_B           = 2'b00;
-        SEL_ADD4_A           = 1'b0;
+        SEL_ADD4_A           = 2'b00;
         SEL_ADD4_B           = 2'b00;
         ext_mem_gnt          = 1'b1;
         EN_CNT_I             = 1'b0;
@@ -1001,7 +1216,7 @@ S30: begin
         EN_CNT_S             = 1'b0;
         EN_CNT_M             = 1'b0;
         EN_CNT_FG            = 1'b0;
-		 EN_CNT_CM           = 1'b0;
+        EN_CNT_CM            = 1'b0;
         EN_CNT_Z             = 1'b0;
         RESET_CNT_I          = 1'b0;
         RESET_CNT_J          = 1'b0;
@@ -1009,7 +1224,7 @@ S30: begin
         RESET_CNT_M          = 1'b0;
         RESET_CNT_FG         = 1'b0;
         RESET_CNT_Z          = 1'b0;
-		RESET_CNT_CM          = 1'b0;
+        RESET_CNT_CM         = 1'b0;
 
 
         LR_R0                = 1'b0;
@@ -1033,12 +1248,12 @@ S30: begin
         DONE_TOT             = 1'b0;
 
       end
-	  
-	     S1: begin
-        RESET_CNT_CM      = 1'b0;
-        
+
+      S1: begin
+        RESET_CNT_CM = 1'b0;
+
       end
-	  
+
       S6: begin
         SEL_M0_A   = 1'b0;
         SEL_M0_B   = 1'b0;
@@ -1056,7 +1271,7 @@ S30: begin
         SEL_ADD2_B = 2'b00;
         SEL_ADD3_A = 2'b00;
         SEL_ADD3_B = 2'b00;
-        SEL_ADD4_A = 1'b1;
+        SEL_ADD4_A = 2'b01;
         SEL_ADD4_B = 2'b01;
       end
       S7: begin
@@ -1090,7 +1305,7 @@ S30: begin
         SEL_ADD2_B = 2'b01;
         SEL_ADD3_A = 2'b10;
         SEL_ADD3_B = 2'b10;
-        SEL_ADD4_A = 1'b1;
+        SEL_ADD4_A = 2'b01;
         SEL_ADD4_B = 2'b01;
         lr_ACC_0   = 1'b1;
         lr_ACC_1   = 1'b1;
@@ -1100,7 +1315,7 @@ S30: begin
       S10: begin
         SEL_ADD2_A = 2'b10;
         SEL_ADD2_B = 2'b10;
-        SEL_ADD4_A = 1'b0;
+        SEL_ADD4_A = 2'b00;
         SEL_ADD4_B = 2'b01;
         LR_ADD_M_O = 1'b1;
         SEL_ADD0_A = 2'b10;
@@ -1154,19 +1369,19 @@ S30: begin
       end
       S15: begin
         RESET_CNT_M = 1'b0;
-        EN_CNT_FG   = 1'b1;
-	TS = 1'b0;
-	if(MS==1'b1)begin
-	RESET_MS=1'b0;
-	end else begin
-	LR_MS= 1'b1;
-	end
+        EN_CNT_FG = 1'b1;
+        TS = 1'b0;
+        if (MS == 1'b1) begin
+          RESET_MS = 1'b0;
+        end else begin
+          LR_MS = 1'b1;
+        end
       end
-	S30 : begin
-	RESET_CNT_M = 1'b0;
-        EN_CNT_FG   = 1'b1;
-	TS = 1'b1;
-	end
+      S30: begin
+        RESET_CNT_M = 1'b0;
+        EN_CNT_FG = 1'b1;
+        TS = 1'b1;
+      end
       S17: begin
         RESET_CNT_FG    = 1'b0;
         DONE_OUT_SAMPLE = 1'b1;
@@ -1183,38 +1398,106 @@ S30: begin
         REPLACE_INPUT_REQ = 1'b1;
       end
       S0: begin
-        RESET_CNT_I       = 1'b0;
-        RESET_CNT_J       = 1'b0;
-        RESET_CNT_S       = 1'b0;
-        RESET_CNT_M       = 1'b0;
-        RESET_CNT_FG      = 1'b0;
-        REPLACE_INPUT_REQ = 1'b0;
-	LR_TS = 1'b1;
-	RESET_MS = 1'b0;
+        RESET_CNT_I                  = 1'b0;
+        RESET_CNT_J                  = 1'b0;
+        RESET_CNT_S                  = 1'b0;
+        RESET_CNT_M                  = 1'b0;
+        RESET_CNT_FG                 = 1'b0;
+        REPLACE_INPUT_REQ            = 1'b0;
+        LR_TS                        = 1'b1;
+        RESET_MS                     = 1'b0;
+        RESET_CNT_SHIFT_SAMPLE_BLOCK = 1'b0;
       end
       S19: begin
         DONE_TOT = 1'b1;
       end
-	  
-	   S31: begin
+
+      S31: begin
+        we_i        = 1'b1;
+        req_i       = 1'b1;
+        ext_mem_gnt = 1'b0;
+        SEL_MUX_MEM = 2'b01;
+        add_i[6:0]  = CNT_CM;
+      end
+
+      S32: begin
+        we_i        = 1'b1;
+        req_i       = 1'b1;
+        ext_mem_gnt = 1'b0;
+        SEL_MUX_MEM = 2'b01;
+        add_i[6:0]  = CNT_CM;
+        EN_CNT_CM   = 1'b1;
+
+      end
+      S36: begin
+        LR_SHIFT_ADD = 1'b1;
+        SEL_ADD4_A   = 2'b10;
+        SEL_ADD4_B   = 2'b10;
+
+      end
+      S37: begin
         we_i        = 1'b0;
         req_i       = 1'b1;
         ext_mem_gnt = 1'b0;
-		SEL_MUX_MEM = 1'b1;
-		add_i[6:0]  = CNT_CM;
+
+
       end
-	  
-	  	   S32: begin
-        we_i        = 1'b0;
+
+      S38: begin
+        we_i            = 1'b0;
+        req_i           = 1'b1;
+        ext_mem_gnt     = 1'b0;
+        LR_SHIFT_SAMPLE = 1'b1;
+        add_i[6:0]      = REG_SHIFT_ADD[6:0];
+
+
+      end
+      S39: begin
+        EN_CNT_SHIFT_SAMPLE = 1'b1;
+
+
+      end
+      S40: begin
+        RESET_CNT_SHIFT_SAMPLE = 1'b0;
+
+
+      end
+
+      S42: begin
+        LR_SHIFT_ADD = 1'b1;
+        SEL_ADD4_A   = 2'b11;
+        SEL_ADD4_B   = 2'b11;
+
+      end
+
+      S43: begin
+
         req_i       = 1'b1;
         ext_mem_gnt = 1'b0;
-		SEL_MUX_MEM = 1'b1;
-		add_i[6:0]  = CNT_CM;
-		EN_CNT_CM = 1'b1;
-		
+
+
+
       end
-	  
-	  
+      S44: begin
+        we_i            = 1'b1;
+        req_i           = 1'b1;
+        ext_mem_gnt     = 1'b0;
+        LR_SHIFT_SAMPLE = 1'b1;
+        add_i[6:0]      = REG_SHIFT_ADD[6:0];
+	SEL_MUX_MEM =2'b10;
+
+
+      end
+      S45: begin
+        EN_CNT_SHIFT_SAMPLE = 1'b1;
+
+      end
+      S46: begin
+        RESET_CNT_SHIFT_SAMPLE = 1'b0;
+        EN_CNT_SHIFT_SAMPLE_BLOCK = 1'b1;
+
+      end
+
       default: begin
       end
     endcase
@@ -1223,3 +1506,4 @@ S30: begin
   //--------------------------------------------------------------------------------
 
 endmodule
+

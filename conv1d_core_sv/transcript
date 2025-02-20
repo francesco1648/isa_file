@@ -1,9 +1,26 @@
 # Reading pref.tcl
 # OpenFile C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core_sv.mpf
 # Loading project conv1d_core_sv
+# Compile of conv1d_core.sv was successful.
+# Compile of conv1d_core.sv was successful.
+# Compile of conv1d_core.sv failed with 1 errors.
+# Error opening C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/(vlog-13069) C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv
+# Path name 'C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/(vlog-13069) C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv' doesn't exist.
+# Compile of conv1d_core.sv failed with 1 errors.
+# Error opening C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/(vlog-13069) C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv
+# Path name 'C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/(vlog-13069) C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv' doesn't exist.
+# Compile of conv1d_core.sv was successful.
+# Compile of conv1d_core.sv was successful.
+# Compile of conv1d_core.sv was successful.
+# Compile of conv1d_core.sv was successful.
+# Compile of conv1d_core.sv was successful.
+# Compile of conv1d_core.sv was successful.
+# Compile of conv1d_core.sv was successful.
+# Compile of conv1d_core.sv was successful.
+# Compile of conv1d_core.sv was successful.
 vsim -gui work.tb_conv1d
 # vsim -gui work.tb_conv1d 
-# Start time: 11:10:13 on Feb 20,2025
+# Start time: 12:18:02 on Feb 20,2025
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -18,86 +35,39 @@ vsim -gui work.tb_conv1d
 # Loading work.REG1
 # Loading work.MUX_4
 # Loading work.COUNTER
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'count'. The port definition is at: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/counter.sv(15).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv1d/conv1d_uut/COUNTER_SHIFT_SAMPLE_BLOCK File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv Line: 824
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'count'. The port definition is at: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/counter.sv(15).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv1d/conv1d_uut/COUNTER_SHIFT_SAMPLE File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv Line: 836
 run
 run
+quit -sim
+# End time: 12:18:20 on Feb 20,2025, Elapsed time: 0:00:18
+# Errors: 0, Warnings: 16
+# Compile of conv1d_core.sv was successful.
+# Compile of conv1d_core.sv was successful.
+vsim -gui work.tb_conv1d
+# vsim -gui work.tb_conv1d 
+# Start time: 12:35:32 on Feb 20,2025
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading ieee.std_logic_textio(body)
+# Loading work.tb_conv1d(behavioral)
+# Loading sv_std.std
+# Loading work.MUX_2
+# Loading work.mux_2_1b
+# Loading work.ram(beh)
+# Loading work.conv1d_core
+# Loading work.REG1
+# Loading work.MUX_4
+# Loading work.COUNTER
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'count'. The port definition is at: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/counter.sv(15).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv1d/conv1d_uut/COUNTER_SHIFT_SAMPLE_BLOCK File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv Line: 824
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'count'. The port definition is at: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/counter.sv(15).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv1d/conv1d_uut/COUNTER_SHIFT_SAMPLE File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv Line: 836
 run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv1d/R1
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv1d/R1
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# GetModuleFileName: Impossibile trovare il modulo specificato.
-# 
-# 
 run
 run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -122,6 +92,37 @@ run
 run
 run
 run
+# Compile of conv1d_core.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.conv1d_core
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'count'. The port definition is at: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/counter.sv(15).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv1d/conv1d_uut/COUNTER_SHIFT_SAMPLE_BLOCK File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv Line: 824
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'count'. The port definition is at: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/counter.sv(15).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv1d/conv1d_uut/COUNTER_SHIFT_SAMPLE File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv Line: 836
+run
+run
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/P_STATE
 run
 run
 run
@@ -171,6 +172,69 @@ run
 run
 run
 run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/CNT_S
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'count'. The port definition is at: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/counter.sv(15).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv1d/conv1d_uut/COUNTER_SHIFT_SAMPLE_BLOCK File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv Line: 824
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'count'. The port definition is at: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/counter.sv(15).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv1d/conv1d_uut/COUNTER_SHIFT_SAMPLE File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv Line: 836
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'count'. The port definition is at: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/counter.sv(15).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv1d/conv1d_uut/COUNTER_SHIFT_SAMPLE_BLOCK File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv Line: 824
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'count'. The port definition is at: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/counter.sv(15).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv1d/conv1d_uut/COUNTER_SHIFT_SAMPLE File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv Line: 836
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
 run
 run
 run
@@ -258,13 +322,437 @@ run
 run
 run
 add wave -position insertpoint  \
-sim:/tb_conv1d/conv1d_uut/P_STATE
+sim:/tb_conv1d/conv1d_uut/CNT_SHIFT_SAMPLE_BLOCK
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'count'. The port definition is at: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/counter.sv(15).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv1d/conv1d_uut/COUNTER_SHIFT_SAMPLE_BLOCK File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv Line: 824
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'count'. The port definition is at: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/counter.sv(15).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv1d/conv1d_uut/COUNTER_SHIFT_SAMPLE File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv Line: 836
+run
+run
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'count'. The port definition is at: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/counter.sv(15).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv1d/conv1d_uut/COUNTER_SHIFT_SAMPLE_BLOCK File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv Line: 824
+# ** Warning: (vsim-3015) [PCDPC] - Port size (4) does not match connection size (1) for port 'count'. The port definition is at: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/counter.sv(15).
+#    Time: 0 ps  Iteration: 0  Instance: /tb_conv1d/conv1d_uut/COUNTER_SHIFT_SAMPLE File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core.sv Line: 836
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# Compile of conv1d_core.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.conv1d_core
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/REG_SHIFT_ADD
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 run
-# GetModuleFileName: Impossibile trovare il modulo specificato.
-# 
-# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/CNT_SHIFT_SAMPLE_BLOCK_8
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/CNT_SHIFT_SAMPLE_80
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/CNT_SHIFT_SAMPLE_84
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/CNT_SHIFT_SAMPLE
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# Compile of conv1d_core.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.conv1d_core
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+restart
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/tb_conv1d/add_i
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+run
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/REG_SHIFT_ADD
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/REG_SHIFT_SAMPLE3
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/REG_SHIFT_SAMPLE0
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/LR_SHIFT_SAMPLE
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+# Compile of conv1d_core.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.conv1d_core
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+# Compile of conv1d_core.sv was successful.
+# Compile of tb_conv1d.vhd was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.conv1d_core
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+# Compile of conv1d_core.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.conv1d_core
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+# Compile of conv1d_core.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.conv1d_core
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -287,9 +775,6 @@ run
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 run
-# GetModuleFileName: Impossibile trovare il modulo specificato.
-# 
-# 
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -320,6 +805,581 @@ run
 run
 run
 run
-quit -sim
-# End time: 11:27:28 on Feb 20,2025, Elapsed time: 0:17:15
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/CNT_SHIFT_SAMPLE
+# Compile of conv1d_core.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.conv1d_core
+# Compile of conv1d_core.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.conv1d_core
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/EN_CNT_SHIFT_SAMPLE
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+# Compile of conv1d_core.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.conv1d_core
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+run
+run
+run
+run
+run
+# Compile of conv1d_core.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.conv1d_core
+run
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/CNT_SHIFT_SAMPLE_BLOCK
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/EN_CNT_SHIFT_SAMPLE
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/RESET_CNT_SHIFT_SAMPLE_BLOCK
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+run
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/EN_CNT_SHIFT_SAMPLE_BLOCK
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+# Compile of conv1d_core.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.conv1d_core
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+run
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/CNT_SHIFT_SAMPLE_80
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/CNT_SHIFT_SAMPLE_84
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/CNT_SHIFT_SAMPLE_BLOCK_8
+# Compile of conv1d_core.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.conv1d_core
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+run
+run
+run
+run
+# Compile of conv1d_core.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.conv1d_core
+run
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/tb_conv1d/wdata
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+run
+run
+run
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/SEL_MUX_MEM
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/ADD0_O
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/REG_SHIFT_SAMPLE3
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/REG_SHIFT_SAMPLE0
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/REG_SHIFT_SAMPLE1
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/REG_SHIFT_SAMPLE2
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+add wave -position insertpoint  \
+sim:/tb_conv1d/conv1d_uut/data
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+# Compile of conv1d_core.sv was successful.
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# Loading work.conv1d_core
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+# End time: 20:05:58 on Feb 20,2025, Elapsed time: 7:30:26
 # Errors: 0, Warnings: 10
