@@ -17,12 +17,12 @@ architecture Behavioral of tb_conv is
 
     -- Segnali per il DUT (Device Under Test)
     signal clk              : std_logic := '0';
-    signal RST_n            : std_logic := '0';
+    signal RST_n            : std_logic := '1';
 
     signal ext_mem_gnt       : std_logic;
     signal req_i             : std_logic;
     signal  we_i             : std_logic;
-
+	
     signal be                : std_logic_vector(3 downto 0);
     signal add_i             : std_logic_vector(31 downto 0);
     signal wdata             : std_logic_vector(31 downto 0);
@@ -30,17 +30,19 @@ architecture Behavioral of tb_conv is
 --    signal data            : std_logic_vector(31 downto 0);
 
     signal start             : std_logic := '0';
+signal toggle             : std_logic := '1';
     signal done_tot          : std_logic;
     signal done_OUT_SAMPLE          : std_logic;
-
+signal REPLACE_FILTER_REQ : std_logic;
     	signal accepted_OUT_sample :  std_logic;
 	signal replaced_IN_sample  :  std_logic;
 	signal REPLACE_FILTER :   STD_LOGIC_VECTOR(0 DOWNTO 0);
 	 signal REPLACED_FILTER :  STD_LOGIC;
 	signal REPLACE_INPUT:  STD_LOGIC_VECTOR(4 DOWNTO 0);
-	SIGNAL SEL_MUX_DATA : STD_LOGIC;
-	SIGNAL SEL_MUX_ADD : STD_LOGIC;
-	SIGNAL SEL_MUX_we_i,we_i_conv1d,we_i_process: STD_LOGIC;
+	SIGNAL SEL_MUX_DATA : STD_LOGIC:= '1';
+	SIGNAL SEL_MUX_ADD : STD_LOGIC:= '1';
+	SIGNAL SEL_MUX_we_i :STD_LOGIC := '1';
+signal we_i_conv1d,we_i_process: STD_LOGIC;
 	SIGNAL add_i_CONV1D : STD_LOGIC_VECTOR(6 DOWNTO 0 );
 	signal add_i_PROCESS,add_i_CONV1D_32 : STD_LOGIC_VECTOR(31 DOWNTO 0 );
 	signal wdata_PROCESS: STD_LOGIC_VECTOR(31 DOWNTO 0 );
@@ -81,6 +83,7 @@ END COMPONENT;
 	replaced_IN_sample  : in std_logic;
 	REPLACE_FILTER : OUT STD_LOGIC_VECTOR(0 DOWNTO 0);
 	REPLACED_FILTER : IN STD_LOGIC;
+	REPLACE_FILTER_REQ : out std_logic;
 	REPLACE_INPUT: OUT STD_LOGIC_VECTOR(4 DOWNTO 0)
         );
     end component;
@@ -123,17 +126,26 @@ mux_we_i : MUX_2_1b GENERIC MAP (n_bit => 1 ) PORT MAP (SEL=>SEL_MUX_we_i,D0=>we
 ---------------------------------------------------------------
     -- Processo di scrittura in RAM dal file
 
-  WriteData_proc: process
-	variable var_data3     :std_logic_vector(31 downto 0);
-   	variable fstatus       :file_open_status;
-   	variable file_line     :line;
-	VARIABLE CARICAMENTO : INTEGER :=0;
- begin
+
+SEL_MUX_DATA<=ext_mem_gnt;
+SEL_MUX_ADD<=ext_mem_gnt;
+SEL_MUX_we_i<=ext_mem_gnt;
+
+   
+proce1 : process 
+    variable var_data3 : std_logic_vector(31 downto 0);
+    variable fstatus   : file_open_status;
+    variable file_line : line;
+    variable CARICAMENTO : integer := 0;
+    file C_FILE : text;
+begin
+
+if (toggle ='1')then
+
+
 file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s0_f0.txt", READ_mode); -- mettere il punto dove si trova il file
 	---------------------
-	SEL_MUX_DATA<='1';
-	SEL_MUX_ADD<='1';
-	SEL_MUX_we_i<='1';
+
 -----------------------------------
     	we_i_PROCESS<='1';
 	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
@@ -149,237 +161,40 @@ file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d
 	END LOOP;
 	FILE_CLOSE(C_FILE_NAME);
 wait for 350 ns;
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
+
 	start<='1';
+	
+	 
 
-wait until REPLACE_FILTER="1";
 
-	SEL_MUX_DATA<='1';
-	SEL_MUX_ADD<='1';
-	SEL_MUX_we_i<='1';
-CARICAMENTO:=0;
-file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s0_f1.txt", READ_mode); -- mettere il punto dove si trova il file
-	we_i_PROCESS<='1';
-	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
+
+
+toggle<='0';
+end if;
+    if (start='1') then
+if (done_OUT_SAMPLE = '1') then
+
+    for i in 0 to 7 loop
+        add_i_PROCESS  <= std_logic_vector(to_unsigned(i + 120, 32));
+        wdata_PROCESS  <= (others => '0');  -- Assegna 0 a tutti i bit
+        wait for 20 ns;  -- Ritardo tra le iterazioni
+    end loop;
+
+    wait for 200 ns;
+    accepted_OUT_sample <= '1';
+    wait for 200 ns;
+    accepted_OUT_sample <= '0';
+end if;
+
+        if (REPLACE_FILTER_REQ = '1') then
+            case REPLACE_FILTER is
+                when "0" =>
   
- 	READLINE(C_FILE_NAME, file_line);
-	READ(file_line, var_data3);
-   	add_i_PROCESS<=std_logic_vector(to_unsigned(CARICAMENTO, 32));
-	wdata_PROCESS<=var_data3;
-	
-	wait for 20 ns;
-	CARICAMENTO := CARICAMENTO +1;
-	
-	END LOOP;
-	FILE_CLOSE(C_FILE_NAME);
-wait for 200 ns;
-	REPLACED_FILTER<='1';
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
-	
-wait for 500 ns;
-REPLACED_FILTER<='0';
-
-
-wait until REPLACE_FILTER="0";
-	SEL_MUX_DATA<='1';
-	SEL_MUX_ADD<='1';
-	SEL_MUX_we_i<='1';
 CARICAMENTO:=0;
+
 file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s0_f0.txt", READ_mode); -- mettere il punto dove si trova il file
-	we_i_PROCESS<='1';
-	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
-  
- 	READLINE(C_FILE_NAME, file_line);
-	READ(file_line, var_data3);
-   	add_i_PROCESS<=std_logic_vector(to_unsigned(CARICAMENTO, 32));
-	wdata_PROCESS<=var_data3;
-	
-	wait for 20 ns;
-	CARICAMENTO := CARICAMENTO +1;
-	
-	END LOOP;
-	FILE_CLOSE(C_FILE_NAME);
-wait for 200 ns;
-	REPLACED_FILTER<='1';
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
-		
-wait for 500 ns;
-REPLACED_FILTER<='0';
-
-wait until REPLACE_FILTER="1";
-
-	SEL_MUX_DATA<='1';
-	SEL_MUX_ADD<='1';
-	SEL_MUX_we_i<='1';
-CARICAMENTO:=0;
-file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s0_f1.txt", READ_mode); -- mettere il punto dove si trova il file
-	we_i_PROCESS<='1';
-	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
-  
- 	READLINE(C_FILE_NAME, file_line);
-	READ(file_line, var_data3);
-   	add_i_PROCESS<=std_logic_vector(to_unsigned(CARICAMENTO, 32));
-	wdata_PROCESS<=var_data3;
-	
-	wait for 20 ns;
-	CARICAMENTO := CARICAMENTO +1;
-	
-	END LOOP;
-	FILE_CLOSE(C_FILE_NAME);
-wait for 200 ns;
-	REPLACED_FILTER<='1';
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
-	
-wait for 500 ns;
-REPLACED_FILTER<='0';
-wait until REPLACE_FILTER="0";
-	SEL_MUX_DATA<='1';
-	SEL_MUX_ADD<='1';
-	SEL_MUX_we_i<='1';
-CARICAMENTO:=0;
-file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s0_f0.txt", READ_mode); -- mettere il punto dove si trova il file
-	we_i_PROCESS<='1';
-	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
-  
- 	READLINE(C_FILE_NAME, file_line);
-	READ(file_line, var_data3);
-   	add_i_PROCESS<=std_logic_vector(to_unsigned(CARICAMENTO, 32));
-	wdata_PROCESS<=var_data3;
-	
-	wait for 20 ns;
-	CARICAMENTO := CARICAMENTO +1;
-	
-	END LOOP;
-	FILE_CLOSE(C_FILE_NAME);
-wait for 200 ns;
-	REPLACED_FILTER<='1';
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
-		
-wait for 500 ns;
-REPLACED_FILTER<='0';
-
-wait until REPLACE_FILTER="1";
-
-	SEL_MUX_DATA<='1';
-	SEL_MUX_ADD<='1';
-	SEL_MUX_we_i<='1';
-CARICAMENTO:=0;
-file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s0_f1.txt", READ_mode); -- mettere il punto dove si trova il file
-	we_i_PROCESS<='1';
-	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
-  
- 	READLINE(C_FILE_NAME, file_line);
-	READ(file_line, var_data3);
-   	add_i_PROCESS<=std_logic_vector(to_unsigned(CARICAMENTO, 32));
-	wdata_PROCESS<=var_data3;
-	
-	wait for 20 ns;
-	CARICAMENTO := CARICAMENTO +1;
-	
-	END LOOP;
-	FILE_CLOSE(C_FILE_NAME);
-wait for 200 ns;
-	REPLACED_FILTER<='1';
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
-	
-wait for 500 ns;
-REPLACED_FILTER<='0';
-
-wait until REPLACE_FILTER ="0";
---replace_input="00001";
-	SEL_MUX_DATA<='1';
-	SEL_MUX_ADD<='1';
-	SEL_MUX_we_i<='1';
-CARICAMENTO:=0;
-file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s0_f0.txt", READ_mode); -- mettere il punto dove si trova il file
-	we_i_PROCESS<='1';
-	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
-  
- 	READLINE(C_FILE_NAME, file_line);
-	READ(file_line, var_data3);
-   	add_i_PROCESS<=std_logic_vector(to_unsigned(CARICAMENTO, 32));
-	wdata_PROCESS<=var_data3;
-	
-	wait for 20 ns;
-	CARICAMENTO := CARICAMENTO +1;
-	
-	END LOOP;
-	FILE_CLOSE(C_FILE_NAME);
-wait for 200 ns;
-	REPLACED_FILTER<='1';
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
-		
-wait for 500 ns;
-REPLACED_FILTER<='0';
-
-wait until REPLACE_FILTER="1";
-
-	SEL_MUX_DATA<='1';
-	SEL_MUX_ADD<='1';
-	SEL_MUX_we_i<='1';
-CARICAMENTO:=0;
-file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s0_f1.txt", READ_mode); -- mettere il punto dove si trova il file
-	we_i_PROCESS<='1';
-	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
-  
- 	READLINE(C_FILE_NAME, file_line);
-	READ(file_line, var_data3);
-   	add_i_PROCESS<=std_logic_vector(to_unsigned(CARICAMENTO, 32));
-	wdata_PROCESS<=var_data3;
-	
-	wait for 20 ns;
-	CARICAMENTO := CARICAMENTO +1;
-	
-	END LOOP;
-	FILE_CLOSE(C_FILE_NAME);
-wait for 200 ns;
-	REPLACED_FILTER<='1';
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
-	--replaced_in_sample<='1';
-	
-wait for 500 ns;
-REPLACED_FILTER<='0';
---replaced_in_sample<='0';
-
-WAIT UNTIL REPLACE_FILTER ="0";
-wait for 200 ns;
-	REPLACED_FILTER<='1';
-wait for 500 ns;
-REPLACED_FILTER<='0';
-
-WAIT FOR 20000 NS; 
-
-
-wait for 200 ns;
-	REPLACED_FILTER<='1';
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
-
-
-CARICAMENTO:=0;
-------------------------------------------------
-file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s1_f0.txt", READ_mode); -- mettere il punto dove si trova il file
 	---------------------
-	SEL_MUX_DATA<='1';
-	SEL_MUX_ADD<='1';
-	SEL_MUX_we_i<='1';
+
 -----------------------------------
     	we_i_PROCESS<='1';
 	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
@@ -395,21 +210,14 @@ file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d
 	END LOOP;
 	FILE_CLOSE(C_FILE_NAME);
 wait for 350 ns;
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
-	start<='1';
-	REPLACED_IN_SAMPLE<='1';
-WAIT FOR 100 NS;
-REPLACED_IN_SAMPLE<='0';
+	REPLACED_FILTER<='1';
 
-wait until REPLACE_FILTER="1";
 
-	SEL_MUX_DATA<='1';
-	SEL_MUX_ADD<='1';
-	SEL_MUX_we_i<='1';
+
+                when "1" =>
+
 CARICAMENTO:=0;
-file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s1_f1.txt", READ_mode); -- mettere il punto dove si trova il file
+file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s0_f1.txt", READ_mode); -- mettere il punto dove si trova il file
 	we_i_PROCESS<='1';
 	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
   
@@ -425,228 +233,29 @@ file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d
 	FILE_CLOSE(C_FILE_NAME);
 wait for 200 ns;
 	REPLACED_FILTER<='1';
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
-	
-wait for 500 ns;
-REPLACED_FILTER<='0';
 
-
-wait until REPLACE_FILTER="0";
-	SEL_MUX_DATA<='1';
-	SEL_MUX_ADD<='1';
-	SEL_MUX_we_i<='1';
-CARICAMENTO:=0;
-file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s1_f0.txt", READ_mode); -- mettere il punto dove si trova il file
-	we_i_PROCESS<='1';
-	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
-  
- 	READLINE(C_FILE_NAME, file_line);
-	READ(file_line, var_data3);
-   	add_i_PROCESS<=std_logic_vector(to_unsigned(CARICAMENTO, 32));
-	wdata_PROCESS<=var_data3;
-	
-	wait for 20 ns;
-	CARICAMENTO := CARICAMENTO +1;
-	
-	END LOOP;
-	FILE_CLOSE(C_FILE_NAME);
-wait for 200 ns;
-	REPLACED_FILTER<='1';
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
 		
-wait for 500 ns;
-REPLACED_FILTER<='0';
 
-wait until REPLACE_FILTER="1";
 
-	SEL_MUX_DATA<='1';
-	SEL_MUX_ADD<='1';
-	SEL_MUX_we_i<='1';
-CARICAMENTO:=0;
-file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s1_f1.txt", READ_mode); -- mettere il punto dove si trova il file
-	we_i_PROCESS<='1';
-	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
+                when others =>     NULL;
+            end case;
+
+        end if; 
   
- 	READLINE(C_FILE_NAME, file_line);
-	READ(file_line, var_data3);
-   	add_i_PROCESS<=std_logic_vector(to_unsigned(CARICAMENTO, 32));
-	wdata_PROCESS<=var_data3;
-	
-	wait for 20 ns;
-	CARICAMENTO := CARICAMENTO +1;
-	
-	END LOOP;
-	FILE_CLOSE(C_FILE_NAME);
-wait for 200 ns;
-	REPLACED_FILTER<='1';
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
-	
-wait for 500 ns;
-REPLACED_FILTER<='0';
-wait until REPLACE_FILTER="0";
-	SEL_MUX_DATA<='1';
-	SEL_MUX_ADD<='1';
-	SEL_MUX_we_i<='1';
-CARICAMENTO:=0;
-file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s1_f0.txt", READ_mode); -- mettere il punto dove si trova il file
-	we_i_PROCESS<='1';
-	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
-  
- 	READLINE(C_FILE_NAME, file_line);
-	READ(file_line, var_data3);
-   	add_i_PROCESS<=std_logic_vector(to_unsigned(CARICAMENTO, 32));
-	wdata_PROCESS<=var_data3;
-	
-	wait for 20 ns;
-	CARICAMENTO := CARICAMENTO +1;
-	
-	END LOOP;
-	FILE_CLOSE(C_FILE_NAME);
-wait for 200 ns;
-	REPLACED_FILTER<='1';
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
-		
-wait for 500 ns;
-REPLACED_FILTER<='0';
 
-wait until REPLACE_FILTER="1";
+    end if;
 
-	SEL_MUX_DATA<='1';
-	SEL_MUX_ADD<='1';
-	SEL_MUX_we_i<='1';
-CARICAMENTO:=0;
-file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s1_f1.txt", READ_mode); -- mettere il punto dove si trova il file
-	we_i_PROCESS<='1';
-	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
-  
- 	READLINE(C_FILE_NAME, file_line);
-	READ(file_line, var_data3);
-   	add_i_PROCESS<=std_logic_vector(to_unsigned(CARICAMENTO, 32));
-	wdata_PROCESS<=var_data3;
-	
-	wait for 20 ns;
-	CARICAMENTO := CARICAMENTO +1;
-	
-	END LOOP;
-	FILE_CLOSE(C_FILE_NAME);
-wait for 200 ns;
-	REPLACED_FILTER<='1';
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
-	
-wait for 500 ns;
-REPLACED_FILTER<='0';
-
-wait until REPLACE_FILTER ="0";
---replace_input="00001";
-	SEL_MUX_DATA<='1';
-	SEL_MUX_ADD<='1';
-	SEL_MUX_we_i<='1';
-CARICAMENTO:=0;
-file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s1_f0.txt", READ_mode); -- mettere il punto dove si trova il file
-	we_i_PROCESS<='1';
-	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
-  
- 	READLINE(C_FILE_NAME, file_line);
-	READ(file_line, var_data3);
-   	add_i_PROCESS<=std_logic_vector(to_unsigned(CARICAMENTO, 32));
-	wdata_PROCESS<=var_data3;
-	
-	wait for 20 ns;
-	CARICAMENTO := CARICAMENTO +1;
-	
-	END LOOP;
-	FILE_CLOSE(C_FILE_NAME);
-wait for 200 ns;
-	REPLACED_FILTER<='1';
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
-		
-wait for 500 ns;
-REPLACED_FILTER<='0';
-
-wait until REPLACE_FILTER="1";
-
-	SEL_MUX_DATA<='1';
-	SEL_MUX_ADD<='1';
-	SEL_MUX_we_i<='1';
-CARICAMENTO:=0;
-file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s1_f1.txt", READ_mode); -- mettere il punto dove si trova il file
-	we_i_PROCESS<='1';
-	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
-  
- 	READLINE(C_FILE_NAME, file_line);
-	READ(file_line, var_data3);
-   	add_i_PROCESS<=std_logic_vector(to_unsigned(CARICAMENTO, 32));
-	wdata_PROCESS<=var_data3;
-	
-	wait for 20 ns;
-	CARICAMENTO := CARICAMENTO +1;
-	
-	END LOOP;
-	FILE_CLOSE(C_FILE_NAME);
-wait for 200 ns;
-	REPLACED_FILTER<='1';
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
-	--replaced_in_sample<='1';
-	
-wait for 500 ns;
-REPLACED_FILTER<='0';
---replaced_in_sample<='0';
-
-wait until REPLACE_FILTER="0"; 
-
-SEL_MUX_DATA<='1';
-	SEL_MUX_ADD<='1';
-	SEL_MUX_we_i<='1';
-CARICAMENTO:=0;
-file_open(C_FILE_NAME, "C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\mem_s1_f0.txt", READ_mode); -- mettere il punto dove si trova il file
-	we_i_PROCESS<='1';
-	WHILE NOT ENDFILE(C_FILE_NAME) LOOP
-  
- 	READLINE(C_FILE_NAME, file_line);
-	READ(file_line, var_data3);
-   	add_i_PROCESS<=std_logic_vector(to_unsigned(CARICAMENTO, 32));
-	wdata_PROCESS<=var_data3;
-	
-	wait for 20 ns;
-	CARICAMENTO := CARICAMENTO +1;
-	
-	END LOOP;
-	FILE_CLOSE(C_FILE_NAME);
-wait for 200 ns;
-	REPLACED_FILTER<='1';
-	SEL_MUX_DATA<='0';
-	SEL_MUX_ADD<='0';
-	SEL_MUX_we_i<='0';
-		
-wait for 500 ns;
-REPLACED_FILTER<='0';
-
-	
------------------------------------------------
-
-WAIT ;
-
-END PROCESS;
----------------------------------------------------------------
-      
+wait for 0.1 ns;
+end process;
 
 
 
---------------------------------------------------------------
+-------------
+
+
+
+
+
 -- Clock generation
 
 process
@@ -684,12 +293,13 @@ conv1d_uut: conv1d_core     port map (
 
 	start	=>start,
 	done_tot=>done_tot,
-	done_OUT_SAMPLE=> done_OUT_SAMPLE,
+	  done_OUT_SAMPLE=> done_OUT_SAMPLE,
 	
 	accepted_OUT_sample =>accepted_OUT_sample,
 	replaced_IN_sample  =>replaced_IN_sample,
 	REPLACE_FILTER=>REPLACE_FILTER,
 	REPLACED_FILTER =>REPLACED_FILTER,
+	REPLACE_FILTER_REQ=>REPLACE_FILTER_REQ,
 	REPLACE_INPUT=>REPLACE_INPUT
         );
 
@@ -702,5 +312,5 @@ conv1d_uut: conv1d_core     port map (
 --SEL_MUX_ADD<='1', '0' AFTER 2800 NS,'1' AFTER 17500 NS, '0' AFTER 23270 NS,'1' AFTER 40000 NS, '0' AFTER 40100 NS;
 --SEL_MUX_we_i<='1', '0' AFTER 2800 NS,'1' AFTER 17500 NS, '0' AFTER 23270 NS,'1' AFTER 40000 NS, '0' AFTER 40100 NS;
 
-accepted_OUT_sample<='1';
+
 end Behavioral;

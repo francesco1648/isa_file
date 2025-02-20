@@ -1,16 +1,18 @@
+
+
 module COUNTER #(
-  parameter N = 8
+  parameter int N = 8
 ) (
   // Numero di bit del contatore (default 8 bit)
-  input  logic           clk,
+  input  logic            clk,
   // Clock
-  input  logic           reset,
+  input  logic            reset,
   // Reset asincrono
-  input  logic           enable,
+  input  logic            enable,
   // Abilitazione contatore
-  output logic           terminal_count,
+  output logic            terminal_count,
   // Segnale terminal count (TC)
-  output logic [N - 1:0] count
+  output signed [N - 1:0] count
   // Contatore in uscita
 );
 
@@ -27,20 +29,20 @@ module COUNTER #(
   // Puoi cambiare questo valore come desiderato (es. "00000100" per 4)
   // Processo del contatore
   always @(posedge clk or posedge reset) begin
-    if (reset == 1'b1) begin
-      counter = {(((N - 1)) - ((0)) + 1) {1'b0}};
+    if (reset == 1'b0) begin
+      counter <= {(((N - 1)) - ((0)) + 1) {1'b0}};
       // Reset del contatore
       terminal_count = 1'b0;
       // TC a 0 durante il reset
     end else begin
       if (enable == 1'b1) begin
         if (counter == max_count) begin
-          counter = {(((N - 1)) - ((0)) + 1) {1'b0}};
+          counter <= {(((N - 1)) - ((0)) + 1) {1'b0}};
           // Reset del contatore quando raggiunge TC
           terminal_count = 1'b1;
           // Impostiamo TC a 1
         end else begin
-          counter = counter + 1;
+          counter <= counter + 1;
           // Incrementiamo il contatore
           terminal_count = 1'b0;
           // TC a 0 durante il conteggio
@@ -53,3 +55,4 @@ module COUNTER #(
   assign count = counter;
 
 endmodule
+

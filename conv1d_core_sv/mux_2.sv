@@ -1,14 +1,14 @@
 module MUX_2 #(
-  parameter n_bit = 8
+  parameter N_BIT = 8
 ) (
   // Numero di bit dei segnali in ingresso, valore di default 8
   input  logic               sel,
   // Segnale di selezione
-  input  logic [n_bit - 1:0] d0,
+  input  logic [N_BIT - 1:0] d0,
   // Ingresso 0
-  input  logic [n_bit - 1:0] d1,
+  input  logic [N_BIT - 1:0] d1,
   // Ingresso 1
-  output logic [n_bit - 1:0] y
+  output logic [N_BIT - 1:0] y
   // Uscita del multiplexer
 );
 

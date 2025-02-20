@@ -1,12 +1,13 @@
 ﻿  main.c
-C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(265,5): warning C4098: 'conv1d_testa_chat': la funzione 'void' restituisce un valore
-C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(220,9): warning C4101: 'err': variabile locale senza riferimenti
-C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(579,31): warning C4473: 'fscanf_s': sono stati passati argomenti insufficienti per la stringa di formato
-      C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(579,31):
-      con i segnaposto e i relativi parametri sono previsti argomenti variadic 2, ma sono stati specificati quelli 1
-      C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(579,31):
-      l'argomento variadic mancante 2 è richiesto dalla stringa di formato '%c'
-      C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(579,31):
-      questo argomento viene usato come dimensioni del buffer
-  
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(384,5): warning C4098: 'conv1d_sw_s': la funzione 'void' restituisce un valore
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(341,9): warning C4101: 'err': variabile locale senza riferimenti
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(501,36): warning C4244: '=': conversione da 'float' a 'uint32_t'. Possibile perdita di dati.
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(415,10): warning C4101: 'pr_acc': variabile locale senza riferimenti
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(428,9): warning C4101: 'cm1': variabile locale senza riferimenti
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(428,29): warning C4101: 'cm5': variabile locale senza riferimenti
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(428,14): warning C4101: 'cm2': variabile locale senza riferimenti
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(428,19): warning C4101: 'cm3': variabile locale senza riferimenti
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(428,24): warning C4101: 'cm4': variabile locale senza riferimenti
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(544,25): warning C4028: parametro formale 1 differente dalla dichiarazione
+C:\Users\Titania\Desktop\ms\lab3\test_conv1d\test_conv1d\main.c(630,29): warning C4028: parametro formale 1 differente dalla dichiarazione
   test_conv1d.vcxproj -> C:\Users\Titania\Desktop\ms\lab3\test_conv1d\x64\Debug\test_conv1d.exe

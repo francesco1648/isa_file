@@ -7,23 +7,99 @@
 #define COLONNE_MEM 4
 #define RIGHE_MEM 128
 
-int mem[RIGHE_MEM][COLONNE_MEM] = { 0 };
+#define NUM_FILTERS 8  // Numero di filtri f0, f1, ..., f7
+#define FILTER_SIZE 5   // Ogni filtro ha 5 colonne
+#define ROWS 16
+#define COLS 124
 
-void conv1d_testa(); // Dichiarazione della funzione
-void conv1d_testa_chat();
-void replace_sample(int sample_block);
-void replace_filter(int filter_block); // il blocco di filti puo essere o 0 o 1 nel caso in cui sto usando i primi 4 filtri o gli                                                                                                                       altri 4
-void print_out(uint32_t matrix[8][124], int rows, int cols);
-void print_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename);
-void print_hex_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename);
-void print_bin_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename);
-void remove_spaces(const char* filename1, const char* filename2);
-void decimalToBinary(int num, char* binaryStr);
+uint8_t mem[RIGHE_MEM][COLONNE_MEM] = { 0 };
+
+/**
+ * @brief Calculate the convolution in software with unsigned data and print the results in a file output_sw_unsigned.txt
+ * @param 
+ * @param 
+ * @return 
+ */
+void conv1d_sw_u(); 
+
+/**
+ * @brief Calculate the convolution in software with signed data and print the results in a file output_sw_signed.txt
+ * @param 
+ * @param 
+ * @return 
+ */
+void conv1d_sw_s();
+
+/**
+ * @brief Perform the replacement of samples based on the specified sample_block.
+ * @param sample_block.
+ * @param 
+ * @return 
+ */
+void replace_sample(int sample_block); 
+
+/**
+ * @brief Perform the replacement of filters based on the specified filter_block.
+ * @param a filter_block
+ * @param  
+ * @return
+ */
+void replace_filter(int filter_block); 
+
+/**
+ * @brief Somma due numeri interi.
+ * @param a Il primo numero.
+ * @param b Il secondo numero.
+ * @return La somma di a e b.
+ */
+void print_out(uint8_t matrix[128][4], int rows, int cols);
+
+
+/**
+ * @brief Print the current state of memory to a file in decimal format.
+ * @param mem[RIGHE_MEM][COLONNE_MEM].
+ * @param filename.
+ * @return 
+ */
+void print_mem_to_file(uint8_t mem[RIGHE_MEM][COLONNE_MEM], const char* filename);
+
+/**
+ * @brief Print the current state of memory to a file in hexadecimal format.
+ * @param mem[RIGHE_MEM][COLONNE_MEM].
+ * @param filename
+ * @return 
+ */
+void print_hex_mem_to_file(uint8_t mem[RIGHE_MEM][COLONNE_MEM], const char* filename);
+
+/**
+ * @brief Print the current state of memory to a file in binary format.
+ * @param mem[RIGHE_MEM][COLONNE_MEM].
+ * @param filename
+ * @return 
+ */
+void print_bin_mem_to_file(uint8_t mem[RIGHE_MEM][COLONNE_MEM], const char* filename);
+
+
+/**
+ * @brief Remove spaces from a filename1 and write the result to filename2.
+ * @param filename1.
+ * @param filename2.
+ * @return 
+ */
+void remove_spaces(const char* filename1, const char* filename2); //
+
+/**
+ * @brief Convert decimal to binary.
+ * @param num decimal
+ * @param num binary.
+ * @return 
+ */
+void decimalToBinary(int num, char* binaryStr);                        
 
 int main() {
     int seq_filter = 0;
     int s=0, fg=0, m=0, j,z, i = 0;
-    int inc = 0;  // Indice per accedere a F
+    int inc = 0;  
     int bk = 0;
     int w_c = 0;
     int w_r = 0;
@@ -35,10 +111,11 @@ int main() {
     int out_mat[8] = { 0 };
     int conv1d_calcolato[8][128];
     int col = 0;
-    // Dichiarazione della matrice mem con le dimensioni definite
-  
+    int flag_s0_f1=1;  //flag for write s0_f1 in a file 
+    int flag_s1_f0 = 1;
+    int flag_s1_f1 = 0;
 
-    // Ciclo per copiare i dati dalla matrice F a mem
+    // Loop to copy data from matrix F to mem.
     for (int bk = 0; bk < 16; bk++) {
         for (int w_c = 0; w_c < 4; w_c++) {
             for (int w_r = 0; w_r < 5; w_r++) {
@@ -51,6 +128,9 @@ int main() {
     inc = 0;
     bk = 0;
     w_c = 0;
+
+
+    //Loop to copy data from matrix A to mem.
     for (bk = 0; bk < 4; bk++) {
         for (w_c = 0; w_c < 4; w_c++) {
             inc = w_c * 128 + bk * 512;
@@ -64,19 +144,29 @@ int main() {
     }
     j = 0;
     i = 0;
-    conv1d_testa(); // calcolo via sw la convoluzione e la salvo in un file outpiut.txt
-    conv1d_testa_chat();
-    print_mem_to_file(mem, "mem.txt");
 
-    print_hex_mem_to_file(mem, "mem_hex.txt");
+    conv1d_sw_u(); //Calculate the convolution via software and save it in a file output_sw_unsigned.txt.
 
-    print_bin_mem_to_file(mem, "mem_bin.txt");
+    conv1d_sw_s(); //Calculate the convolution via software and save it in a file output_sw_signed.txt.
 
-    remove_spaces("mem_bin.txt", "mem_bin2_SETF2.txt");
+    print_mem_to_file(mem, "mem_s0_f0_dec_spaces.txt");
+
+    print_hex_mem_to_file(mem, "mem_s0_f0_hex_spaces.txt");
+
+    print_bin_mem_to_file(mem, "mem_s0_f0_bin_spaces.txt");
+
+    remove_spaces("mem_s0_f0_bin_spaces.txt", "mem_s0_f0.txt");
 
 
     //---------------------------------------------------------
-    // qui faccio la convoluzione
+     z=0;
+     s = 0; fg = 0;
+
+     m = 0; j = 0;
+     i = 0;
+
+
+     //Perform the convolution by executing the same algorithm that the hardware runs
     for(z=0;z<16;z++){
     for (s = 0; s < 4; s++) {
         out_mat[0] =  0 ;
@@ -115,8 +205,28 @@ int main() {
             replace_filter(seq_filter);
 
             m = 0;
- 
+            if (flag_s0_f1 == 1) {
+                print_mem_to_file(mem, "mem_s0_f1_dec_spaces.txt");
+
+                print_hex_mem_to_file(mem, "mem_s0_f1_hex_spaces.txt");
+
+                print_bin_mem_to_file(mem, "mem_s0_f1_bin_spaces.txt");
+
+                remove_spaces("mem_s0_f1_bin_spaces.txt", "mem_s0_f1.txt");
+                flag_s0_f1 = 0;
+            }
+            if (flag_s1_f1 == 1) {
+                print_mem_to_file(mem, "mem_s1_f1_dec_spaces.txt");
+
+                print_hex_mem_to_file(mem, "mem_s1_f1_hex_spaces.txt");
+
+                print_bin_mem_to_file(mem, "mem_s1_f1_bin_spaces.txt");
+
+                remove_spaces("mem_s1_f1_bin_spaces.txt", "mem_s1_f1.txt");
           
+                flag_s1_f1 = 0;
+            }
+
 
 
         }
@@ -132,6 +242,17 @@ int main() {
  
 
     replace_sample(z+1);
+    if (flag_s1_f0 == 1) {
+        print_mem_to_file(mem, "mem_s1_f0_dec_spaces.txt");
+
+        print_hex_mem_to_file(mem, "mem_s1_f0_hex_spaces.txt");
+
+        print_bin_mem_to_file(mem, "mem_s1_f0_bin_spaces.txt");
+
+        remove_spaces("mem_s1_f0_bin_spaces.txt", "mem_s1_f0.txt");
+        flag_s1_f0 = 0;
+        flag_s1_f1 = 1;
+    }
 
   
 }
@@ -144,27 +265,27 @@ int main() {
     //---------------------------------------------------------
 
 
-    /*
-    FILE* filePtr;
-    filePtr = fopen("matrice_risultante.txt", "w");  // Apre il file in modalità scrittura
+    
+   /* FILE* filePtr1;
+    filePtr1 = fopen("output_hw_signed.txt", "w");  // Apre il file in modalità scrittura
 
-    if (filePtr == NULL) {
+    if (filePtr1 == NULL) {
         printf("Errore: impossibile aprire il file.\n");
         return 1;  // Esce con codice di errore
     }
 
     // Scrive la matrice nel file
-    fprintf(filePtr, "Matrice risultante:\n");
+    fprintf(filePtr1, "output_hw_signed:\n");
     for (int i = 0; i < 8; i++) {
         for (int j = 0; j < 128; j++) {
-            fprintf(filePtr, "%d ", conv1d_calcolato[i][j]);
+            fprintf(filePtr1, "%d ", conv1d_calcolato[i][j]);
         }
-        fprintf(filePtr, "\n");
+        fprintf(filePtr1, "\n");
     }
 
-    fclose(filePtr);  // Chiude il file
-    */
-
+    fclose(filePtr1);  // Chiude il file
+  
+  */
  
 
     return 0;
@@ -172,7 +293,7 @@ int main() {
 
 
 
-//faccio scambio i filtri
+
 void replace_filter(int filter_block) {
     int inc = 0;
     if (filter_block == 0) {
@@ -198,7 +319,7 @@ void replace_filter(int filter_block) {
         }
     }
 }
-//scambio i sample
+
 void replace_sample(int sample_block) {
     int inc=0;
     for (int bk = 0; bk < 4; bk++) {
@@ -214,16 +335,14 @@ void replace_sample(int sample_block) {
     }
 }
 
-void conv1d_testa_chat() {
+void conv1d_sw_s() {
 int i = 0;
 
 errno_t err;
 int8_t sample[16][128] = { 0 };
 int8_t f[16][16][5] = { 0 };
 int32_t R[8][124] = { 0 };
-// Utilizza fopen_s per aprire il file in modalità scrittura
 
-//stampa nel file output.txt il risultato della convoluzione calcolato via sw
 int cnt = 0;
 for (int j = 0; j < 16; j++) {
     for (int i = 0; i < 128; i++) {
@@ -257,10 +376,10 @@ for (int m = 0; m < 8; m++) { // Per ogni filtro
     }
 }
 
-FILE* file = fopen("output_hex.txt", "w");
+FILE* filePtr2 = fopen("output_sw_signed.txt", "w");
 
 // Verifica se il file è stato aperto correttamente
-if (file == NULL) {
+if (filePtr2 == NULL) {
     printf("Errore nell'aprire il file.\n");
     return 1; // Uscita con errore
 }
@@ -269,24 +388,24 @@ if (file == NULL) {
 for (int i = 0; i < 8; i++) {
     for (int j = 0; j < 124; j++) {
         // Scrive ogni valore in esadecimale nel file con il formato 0xXXXXXXXX
-        fprintf(file, "R[%d][%d] = 0x%08" PRIx32 "\n", i, j, R[i][j]);
+        fprintf(filePtr2, "R[%d][%d] = 0x%08" PRIx32 "\n", i, j, R[i][j]);
     }
 }
 
 // Chiudi il file
-fclose(file);
+fclose(filePtr2);
 }
 
 
 
 
-void conv1d_testa() {
+void conv1d_sw_u() {
     int i=0;
-    FILE* filePtr5;
+    FILE* filePtr3;
     errno_t err;
 
     // Utilizza fopen_s per aprire il file in modalità scrittura
-    err = fopen_s(&filePtr5, "output_sbagliato_hex.txt", "w");
+    err = fopen_s(&filePtr3, "output_sw_unsigned.txt", "w");
 
     if (err != 0) {
         // Se fopen_s fallisce, restituisce un errore
@@ -295,15 +414,15 @@ void conv1d_testa() {
     }
     int  pr_acc[16];
     int cnt = 0;
-    int sample[16][128] = { 0 };
-    int f0[16][5] = { 0 };
-    int f1[16][5] = { 0 };
-    int f2[16][5] = { 0 };
-    int f3[16][5] = { 0 };
-    int f4[16][5] = { 0 };
-    int f5[16][5] = { 0 };
-    int f6[16][5] = { 0 };
-    int f7[16][5] = { 0 };
+    uint32_t sample[16][128] = { 0 };
+    uint32_t f0[16][5] = { 0 };
+    uint32_t f1[16][5] = { 0 };
+    uint32_t f2[16][5] = { 0 };
+    uint32_t f3[16][5] = { 0 };
+    uint32_t f4[16][5] = { 0 };
+    uint32_t f5[16][5] = { 0 };
+    uint32_t f6[16][5] = { 0 };
+    uint32_t filters[8][16][5] = { 0 };
     uint32_t out_matrix[8][124] = { 0 };
     
     int cm1, cm2, cm3, cm4, cm5;
@@ -317,52 +436,12 @@ void conv1d_testa() {
     }
     cnt = 0;
     // Riempie il campione con i dati da A
-    for (int j = 0; j < 16; j++) {
-        for (int i = 0; i < 5; i++) {
-            f0[j][i] = F[cnt];
-            cnt++;
-        }
-    }
-    for (int j = 0; j < 16; j++) {
-        for (int i = 0; i < 5; i++) {
-            f1[j][i] = F[cnt];
-            cnt++;
-        }
-    }
-    for (int j = 0; j < 16; j++) {
-        for (int i = 0; i < 5; i++) {
-            f2[j][i] = F[cnt];
-            cnt++;
-        }
-    }
-    for (int j = 0; j < 16; j++) {
-        for (int i = 0; i < 5; i++) {
-            f3[j][i] = F[cnt];
-            cnt++;
-        }
-    }
-    for (int j = 0; j < 16; j++) {
-        for (int i = 0; i < 5; i++) {
-            f4[j][i] = F[cnt];
-            cnt++;
-        }
-    }
-    for (int j = 0; j < 16; j++) {
-        for (int i = 0; i < 5; i++) {
-            f5[j][i] = F[cnt];
-            cnt++;
-        }
-    }
-    for (int j = 0; j < 16; j++) {
-        for (int i = 0; i < 5; i++) {
-            f6[j][i] = F[cnt];
-            cnt++;
-        }
-    }
-    for (int j = 0; j < 16; j++) {
-        for (int i = 0; i < 5; i++) {
-            f7[j][i] = F[cnt];
-            cnt++;
+    for (int k = 0; k < 8; k++) {
+        for (int j = 0; j < 16; j++) {
+            for (int i = 0; i < 5; i++) {
+                filters[k][j][i] = F[cnt];
+                cnt++;
+            }
         }
     }
 
@@ -370,6 +449,7 @@ void conv1d_testa() {
     //---------------------------
     
 //convoluzione
+/*
     for (int j = 0; j < 124; j++) {
         for (int i = 0; i < 16; i++) {
             cm1 = f0[i][0] * sample[i][0 + j];
@@ -412,7 +492,32 @@ void conv1d_testa() {
         }
 
         i = 0;
+    }*/
+
+    {
+        // Azzeriamo la matrice di output per evitare problemi
+        for (int k = 0; k < NUM_FILTERS; k++) {
+            for (int j = 0; j < COLS; j++) {
+                out_matrix[k][j] = 0.0f;
+            }
+        }
+
+        // Scorriamo tutti i filtri f0, f1, ..., f7
+        for (int k = 0; k < NUM_FILTERS; k++) {
+            for (int j = 0; j < COLS; j++) {
+                for (int i = 0; i < ROWS; i++) {
+                    for (int f = 0; f < FILTER_SIZE; f++) {
+                        out_matrix[k][j] += filters[k][i][f] * sample[i][j + f];
+                    }
+                }
+            }
+        }
     }
+
+
+
+
+
 
     //----------------------------
 
@@ -423,14 +528,14 @@ void conv1d_testa() {
   
     for (int i = 0; i < 8; i++) {  // Righe di out_matrix
         for (int j = 0; j < 128; j++) {  // Colonne di out_matrix
-            fprintf(filePtr5, " 0x%08" PRIx32, out_matrix[i][j]);
-           // fprintf(filePtr5, "%d ", out_matrix[i][j]);
+            fprintf(filePtr3, " 0x%08" PRIx32, out_matrix[i][j]);
+           // fprintf(filePtr3, "%d ", out_matrix[i][j]);
         }
-        // Non c'è bisogno di fprintf(filePtr, "\n"); per scrivere una nuova riga nel formato binario
+         fprintf(filePtr3, "\n");
     }
 
     // Chiude il file
-    fclose(filePtr5);
+    fclose(filePtr3);
 
 
 }
@@ -448,14 +553,13 @@ void print_out(uint32_t matrix[8][124], int rows, int cols) {
 }
 
 
-//scrivo la matrice in un file.txt; mi serve per, attraverso matlab, scrivo l'excel che mi mostra come è organizzata attualmente 
-//la memoria del mio conv1d
-void print_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename) {
-    FILE* filePtr;
+
+void print_mem_to_file(uint8_t mem[RIGHE_MEM][COLONNE_MEM], const char* filename) {
+    FILE* filePtr4;
     errno_t err;
 
     // Apri il file in modalità scrittura
-    err = fopen_s(&filePtr, filename, "w");
+    err = fopen_s(&filePtr4, filename, "w");
 
     if (err != 0) {
         // Se fopen_s fallisce, mostra un errore
@@ -465,24 +569,24 @@ void print_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename) {
 
     // Scrivi i dati di mem nel file
     for (int i = 0; i < RIGHE_MEM; i++) {
-        for (int j = 0; j < COLONNE_MEM; j++) {
-            fprintf(filePtr, "%d ", mem[i][j]);  // Scrive ogni valore
+        for (int j = 0; j < COLONNE_MEM - 8; j++) {
+            fprintf(filePtr4, "%4d ", mem[i][j]);  // Scrive ogni valore
         }
-        fprintf(filePtr, "\n");  // Nuova riga dopo ogni riga della matrice
+        fprintf(filePtr4, "\n");  // Nuova riga dopo ogni riga della matrice
     }
 
     // Chiudi il file
-    fclose(filePtr);
+    fclose(filePtr4);
     printf("Matrice mem scritta correttamente nel file %s\n", filename);
 }
 
 
-void print_hex_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename) {
-    FILE* filePtr;
+void print_hex_mem_to_file(uint8_t mem[RIGHE_MEM][COLONNE_MEM], const char* filename) {
+    FILE* filePtr5;
     errno_t err;
 
     // Apri il file in modalità scrittura
-    err = fopen_s(&filePtr, filename, "w");
+    err = fopen_s(&filePtr5, filename, "w");
 
     if (err != 0) {
         // Se fopen_s fallisce, mostra un errore
@@ -492,20 +596,20 @@ void print_hex_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename
 
     // Scrivi i dati di mem nel file
     for (int i = 0; i < RIGHE_MEM; i++) {
-        for (int j = 0; j < COLONNE_MEM; j++) {
-            fprintf(filePtr, " 0x%08" PRIx32 , mem[i][j]);
+        for (int j = 0; j < COLONNE_MEM -8 ; j++) {
+            fprintf(filePtr5, " 0x%02" PRIx32 , mem[i][j]);
            
         }
-        fprintf(filePtr, "\n");  // Nuova riga dopo ogni riga della matrice
+        fprintf(filePtr5, "\n");  // Nuova riga dopo ogni riga della matrice
     }
 
     // Chiudi il file
-    fclose(filePtr);
+    fclose(filePtr5);
     printf("Matrice mem scritta correttamente nel file %s\n", filename);
 }
 
 
-
+/*
 void decimalToBinary(int num, char* binaryStr) {
     // Conversione di un numero in binario e memorizzazione in una stringa
     binaryStr[8] = '\0'; // Aggiunge il terminatore di stringa
@@ -521,14 +625,21 @@ void decimalToBinary(int num, char* binaryStr) {
         binaryStr[len - i - 1] = temp;
     }
     
+}*/
+
+void decimalToBinary(int8_t num, char* binaryStr) {
+    for (int i = 7; i >= 0; i--) {
+        binaryStr[i] = ((num >> (7 - i)) & 1) + '0';
+    }
+    binaryStr[8] = '\0';
 }
 
-void print_bin_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename) {
-    FILE* filePtr;
+void print_bin_mem_to_file(uint8_t mem[RIGHE_MEM][COLONNE_MEM], const char* filename) {
+    FILE* filePtr6;
     errno_t err;
 
     // Apri il file in modalità scrittura
-    err = fopen_s(&filePtr, filename, "w");
+    err = fopen_s(&filePtr6, filename, "w");
 
     if (err != 0) {
         // Se fopen_s fallisce, mostra un errore
@@ -539,56 +650,51 @@ void print_bin_mem_to_file(int mem[RIGHE_MEM][COLONNE_MEM], const char* filename
     // Scrivi i dati di mem nel file in formato binario
     char binaryStr[9] = { 0 };
     for (int i = 0; i < RIGHE_MEM; i++) {
-        for (int j = 0; j < COLONNE_MEM; j++) {
+        for (int j = 0; j < COLONNE_MEM -8 ; j++) {
             decimalToBinary(mem[i][j], binaryStr); // Converte il numero in binario
-            fprintf(filePtr, "%s ", binaryStr);  // Scrive il valore binario
+            fprintf(filePtr6, "%s ", binaryStr);  // Scrive il valore binario
         }
-        fprintf(filePtr, "\n");  // Nuova riga dopo ogni riga della matrice
+        fprintf(filePtr6, "\n");  // Nuova riga dopo ogni riga della matrice
     }
 
     // Chiudi il file
-    fclose(filePtr);
+    fclose(filePtr6);
     printf("Matrice mem scritta correttamente nel file %s\n", filename);
    
 }
+
+
+
+
 void remove_spaces(const char* filename1, const char* filename2) {
-   
-    char ch;
-    FILE* filePtr1;
-    FILE* filePtr2;
+    FILE* filePtr11;
+    FILE* filePtr22;
     errno_t err;
+    char ch;
 
-    // Apri il primo file in modalità lettura
-    err = fopen_s(&filePtr1, filename1, "r");
-    if (err != 0) {
-        // Se fopen_s fallisce, mostra un errore
-        printf("Impossibile aprire il file di input.\n");
+    // Apri il file di input
+    err = fopen_s(&filePtr11, filename1, "r");
+    if (err != 0 || filePtr11 == NULL) {
+        printf("Errore: impossibile aprire il file di input '%s'.\n", filename1);
         return;
     }
 
-    // Apri il secondo file in modalità scrittura
-    err = fopen_s(&filePtr2, filename2, "w");
-    if (err != 0) {
-        // Se fopen_s fallisce, mostra un errore
-        printf("Impossibile aprire il file di output.\n");
-        fclose(filePtr1); // Chiudi il primo file se il secondo fallisce
+    // Apri il file di output
+    err = fopen_s(&filePtr22, filename2, "w");
+    if (err != 0 || filePtr22 == NULL) {
+        printf("Errore: impossibile aprire il file di output '%s'.\n", filename2);
+        fclose(filePtr11); // Chiudi il file di input se il secondo fallisce
         return;
     }
-  
-    // Leggi ogni carattere dal file di input
-    while (fscanf_s(filePtr1, "%c", &ch) != EOF) {
-        //printf("Lettura carattere: %c\n", ch);  // Debug: stampa ogni carattere letto
+
+    // Leggi un carattere alla volta e scrivilo se non è uno spazio
+    while ((ch = fgetc(filePtr11)) != EOF) {
         if (ch != ' ') {
-            // Scrivi il carattere nel file di output se non è uno spazio
-            fprintf(filePtr2, "%c", ch);
+            fputc(ch, filePtr22);
         }
     }
 
-    // Controllo se il file di output contiene qualcosa
-    fflush(filePtr2);  // Assicurati che tutti i dati siano scritti nel file
-    printf("Scrittura completata.\n");
-
-    // Chiudi entrambi i file
-    fclose(filePtr1);
-    fclose(filePtr2);
+    // Chiudi i file
+    fclose(filePtr11);
+    fclose(filePtr22);
 }

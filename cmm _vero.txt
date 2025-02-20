@@ -65,3 +65,13 @@ make gen-data APP_PARAMS="--in_len 128 --in_ch 16 --k_len 5 --k_num 8"
                        
                         }
 
+
+ for (size_t i = 0; i < 4; i++)
+            {
+
+                dma_copy(
+                    (
+                    &in_data[i * input_len + j + k * input_len * 4 + 4 * sample_block],
+                    CONV1D_ACCEL_START_ADDRESS +480 + i*4),
+                    1, 0, DMA_DATA_TYPE_WORD, DMA_DATA_TYPE_WORD, 0);
+            }
