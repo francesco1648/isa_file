@@ -6,7 +6,7 @@
 // Definizione corretta delle costanti
 #define COLONNE_MEM 4
 #define RIGHE_MEM 128
-
+#define RIGHE_MEM_8 119
 #define NUM_FILTERS 8  // Numero di filtri f0, f1, ..., f7
 #define FILTER_SIZE 5   // Ogni filtro ha 5 colonne
 #define ROWS 16
@@ -164,6 +164,7 @@ int main() {
 
      m = 0; j = 0;
      i = 0;
+
 
 
      //Perform the convolution by executing the same algorithm that the hardware runs
@@ -553,7 +554,6 @@ void print_out(uint32_t matrix[8][124], int rows, int cols) {
 }
 
 
-
 void print_mem_to_file(uint8_t mem[RIGHE_MEM][COLONNE_MEM], const char* filename) {
     FILE* filePtr4;
     errno_t err;
@@ -563,13 +563,13 @@ void print_mem_to_file(uint8_t mem[RIGHE_MEM][COLONNE_MEM], const char* filename
 
     if (err != 0) {
         // Se fopen_s fallisce, mostra un errore
-        printf("Impossibile aprire il file per la scrittura.\n");
+        printf("Impossibile aprire il file per la scrittura. Errore %d\n", err);
         return;
     }
 
     // Scrivi i dati di mem nel file
-    for (int i = 0; i < RIGHE_MEM; i++) {
-        for (int j = 0; j < COLONNE_MEM - 8; j++) {
+    for (int i = 0; i < RIGHE_MEM_8; i++) {
+        for (int j = 0; j < COLONNE_MEM; j++) {
             fprintf(filePtr4, "%4d ", mem[i][j]);  // Scrive ogni valore
         }
         fprintf(filePtr4, "\n");  // Nuova riga dopo ogni riga della matrice
@@ -579,6 +579,7 @@ void print_mem_to_file(uint8_t mem[RIGHE_MEM][COLONNE_MEM], const char* filename
     fclose(filePtr4);
     printf("Matrice mem scritta correttamente nel file %s\n", filename);
 }
+
 
 
 void print_hex_mem_to_file(uint8_t mem[RIGHE_MEM][COLONNE_MEM], const char* filename) {
@@ -595,8 +596,8 @@ void print_hex_mem_to_file(uint8_t mem[RIGHE_MEM][COLONNE_MEM], const char* file
     }
 
     // Scrivi i dati di mem nel file
-    for (int i = 0; i < RIGHE_MEM; i++) {
-        for (int j = 0; j < COLONNE_MEM -8 ; j++) {
+    for (int i = 0; i < RIGHE_MEM_8; i++) {
+        for (int j = 0; j < COLONNE_MEM ; j++) {
             fprintf(filePtr5, " 0x%02" PRIx32 , mem[i][j]);
            
         }
@@ -627,6 +628,8 @@ void decimalToBinary(int num, char* binaryStr) {
     
 }*/
 
+
+// Funzione per convertire un numero in formato binario (8 bit)
 void decimalToBinary(int8_t num, char* binaryStr) {
     for (int i = 7; i >= 0; i--) {
         binaryStr[i] = ((num >> (7 - i)) & 1) + '0';
@@ -641,16 +644,15 @@ void print_bin_mem_to_file(uint8_t mem[RIGHE_MEM][COLONNE_MEM], const char* file
     // Apri il file in modalità scrittura
     err = fopen_s(&filePtr6, filename, "w");
 
-    if (err != 0) {
-        // Se fopen_s fallisce, mostra un errore
-        printf("Impossibile aprire il file per la scrittura.\n");
+    if (err != 0 || filePtr6 == NULL) {
+        printf("Impossibile aprire il file per la scrittura. Errore %d\n", err);
         return;
     }
 
     // Scrivi i dati di mem nel file in formato binario
     char binaryStr[9] = { 0 };
-    for (int i = 0; i < RIGHE_MEM; i++) {
-        for (int j = 0; j < COLONNE_MEM -8 ; j++) {
+    for (int i = 0; i < RIGHE_MEM_8; i++) {
+        for (int j = 0; j < COLONNE_MEM; j++) {
             decimalToBinary(mem[i][j], binaryStr); // Converte il numero in binario
             fprintf(filePtr6, "%s ", binaryStr);  // Scrive il valore binario
         }
@@ -660,7 +662,6 @@ void print_bin_mem_to_file(uint8_t mem[RIGHE_MEM][COLONNE_MEM], const char* file
     // Chiudi il file
     fclose(filePtr6);
     printf("Matrice mem scritta correttamente nel file %s\n", filename);
-   
 }
 
 
@@ -687,14 +688,27 @@ void remove_spaces(const char* filename1, const char* filename2) {
         return;
     }
 
-    // Leggi un carattere alla volta e scrivilo se non è uno spazio
+    // Leggi ogni carattere dal file di input
+    printf("Inizio la lettura del file '%s'...\n", filename1);
     while ((ch = fgetc(filePtr11)) != EOF) {
+       
+
+        // Se il carattere non è uno spazio, scrivilo nel file di output
         if (ch != ' ') {
             fputc(ch, filePtr22);
         }
     }
 
+    if (feof(filePtr11)) {
+        printf("Fine del file '%s' raggiunta.\n", filename1);
+    }
+    else {
+        printf("Errore nella lettura del file '%s'.\n", filename1);
+    }
+
     // Chiudi i file
     fclose(filePtr11);
     fclose(filePtr22);
+
+    printf("Gli spazi sono stati rimossi dal file '%s' e scritti nel file '%s'.\n", filename1, filename2);
 }

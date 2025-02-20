@@ -208,12 +208,12 @@ R5
 R6
 n@r@e@g1
 Etb_conv
-Z22 w1740036943
+Z22 w1740043431
 Z23 DPx4 ieee 16 std_logic_textio 0 22 ^l:n6VFdg74Q?CKDhjD]D3
 R10
 R11
 R12
-!i122 65
+!i122 68
 R3
 Z24 8C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv1d.vhd
 Z25 FC:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv1d.vhd
@@ -223,9 +223,9 @@ V4iFWE9LJ915hjzQ^KZe3?1
 !s100 Ij[V5QW4EQURPj=^MoV<:1
 R15
 32
-Z26 !s110 1740036952
+Z26 !s110 1740043435
 !i10b 1
-Z27 !s108 1740036952.000000
+Z27 !s108 1740043434.000000
 Z28 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv1d.vhd|
 Z29 !s107 C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/tb_conv1d.vhd|
 !i113 1
@@ -237,11 +237,11 @@ R10
 R11
 R12
 Z30 DEx4 work 7 tb_conv 0 22 4iFWE9LJ915hjzQ^KZe3?1
-!i122 65
+!i122 68
 l116
-L12 601
-VfeakZO`HChE>XeSP[j@S:3
-!s100 GO7;[14FTWnn`2mTPV6`j1
+Z31 L12 695
+Z32 V?CoeDQ<1MHGMLP`IRabTR1
+Z33 !s100 E6Q>4<^XdDJ?6?jVL<MKK1
 R15
 32
 R26
@@ -253,7 +253,7 @@ R29
 R20
 R21
 Etb_conv1d
-Z31 w1740035565
+Z34 w1740035565
 R23
 R10
 R11
@@ -268,9 +268,9 @@ VnZWTA`eGK46hX7VQ?YP833
 !s100 HDS`PoK7dJnO:;?eMF?3z1
 R15
 32
-Z32 !s110 1740036337
+Z35 !s110 1740036337
 !i10b 1
-Z33 !s108 1740036336.000000
+Z36 !s108 1740036336.000000
 R28
 R29
 !i113 1
@@ -289,9 +289,9 @@ V2fUbAgBa`z>13;lHXjh;d0
 !s100 M8l?aXecW5Ji6jR7^@0L_2
 R15
 32
-R32
+R35
 !i10b 1
-R33
+R36
 R28
 R29
 !i113 1

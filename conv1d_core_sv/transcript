@@ -1,10 +1,9 @@
 # Reading pref.tcl
 # OpenFile C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/conv1d_core_sv.mpf
 # Loading project conv1d_core_sv
-# Compile of tb_conv1d.vhd was successful.
 vsim -gui work.tb_conv1d
 # vsim -gui work.tb_conv1d 
-# Start time: 08:25:46 on Feb 20,2025
+# Start time: 11:10:13 on Feb 20,2025
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
@@ -19,259 +18,296 @@ vsim -gui work.tb_conv1d
 # Loading work.REG1
 # Loading work.MUX_4
 # Loading work.COUNTER
+run
+run
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2930 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2950 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2970 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2990 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3010 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3030 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3050 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3070 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 3090 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+run
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
+run
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
+run
 add wave -position insertpoint  \
 sim:/tb_conv1d/conv1d_uut/P_STATE
-add wave -position insertpoint  \
-sim:/tb_conv1d/conv1d_uut/REPLACE_FILTER
-run
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 0 ps  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2260 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2280 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2300 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2320 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2340 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2360 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2380 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2400 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2420 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2440 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2460 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2480 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2500 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2520 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2540 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2560 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2580 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2600 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2620 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Fatal: (vsim-3734) Index value 131 is out of range 0 to 130.
-#    Time: 2630 ns  Iteration: 1  Process: /tb_conv1d/R1/line__21 File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/RAM.vhd
-# Fatal error in Process line__21 at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/RAM.vhd line 26
-# 
-# HDL call sequence:
-# Stopped at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/RAM.vhd 26 Process line__21
-# 
-run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/RAM.vhd 26 Process line__21
-# 
-run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/RAM.vhd 26 Process line__21
-# 
-run
-# Cannot continue because of fatal error.
-# HDL call sequence:
-# Stopped at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/RAM.vhd 26 Process line__21
-# 
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 run
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2240 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2260 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2280 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2300 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2320 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2340 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2360 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2380 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2400 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2420 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2440 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2460 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2480 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2500 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2520 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2540 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2560 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2580 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2600 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2620 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Fatal: (vsim-3734) Index value 131 is out of range 0 to 130.
-#    Time: 2630 ns  Iteration: 1  Process: /tb_conv1d/R1/line__21 File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/RAM.vhd
-# Fatal error in Process line__21 at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/RAM.vhd line 26
+# GetModuleFileName: Impossibile trovare il modulo specificato.
 # 
-# HDL call sequence:
-# Stopped at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/RAM.vhd 26 Process line__21
 # 
-# Compile of tb_conv1d.vhd was successful.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-restart
-run
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2240 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2260 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2280 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2300 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2320 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2340 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2360 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2380 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2400 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2420 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2440 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2460 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2480 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2500 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2520 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2540 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2560 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2580 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2600 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 2620 ns  Iteration: 0  Instance: /tb_conv1d
-# ** Fatal: (vsim-3734) Index value 131 is out of range 0 to 130.
-#    Time: 2630 ns  Iteration: 1  Process: /tb_conv1d/R1/line__21 File: C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/RAM.vhd
-# Fatal error in Process line__21 at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/RAM.vhd line 26
-# 
-# HDL call sequence:
-# Stopped at C:/Users/Titania/Desktop/ms/lab3/conv1d_core_sv/RAM.vhd 26 Process line__21
-# 
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2610 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2630 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2650 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2670 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2690 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2710 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2730 ns  Iteration: 1  Instance: /tb_conv1d/R1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 135670 ns  Iteration: 0  Instance: /tb_conv1d
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
 run
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# Compile of tb_conv1d.vhd was successful.
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2610 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2630 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2650 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2670 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2690 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2710 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2730 ns  Iteration: 1  Instance: /tb_conv1d/R1
+# GetModuleFileName: Impossibile trovare il modulo specificato.
+# 
+# 
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
-run
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2610 ns  Iteration: 1  Instance: /tb_conv1d/R1
+#    Time: 2790 ns  Iteration: 1  Instance: /tb_conv1d/R1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2630 ns  Iteration: 1  Instance: /tb_conv1d/R1
+#    Time: 2810 ns  Iteration: 1  Instance: /tb_conv1d/R1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2650 ns  Iteration: 1  Instance: /tb_conv1d/R1
+#    Time: 2830 ns  Iteration: 1  Instance: /tb_conv1d/R1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2670 ns  Iteration: 1  Instance: /tb_conv1d/R1
+#    Time: 2850 ns  Iteration: 1  Instance: /tb_conv1d/R1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2690 ns  Iteration: 1  Instance: /tb_conv1d/R1
+#    Time: 2870 ns  Iteration: 1  Instance: /tb_conv1d/R1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2710 ns  Iteration: 1  Instance: /tb_conv1d/R1
+#    Time: 2890 ns  Iteration: 1  Instance: /tb_conv1d/R1
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2730 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
+#    Time: 2910 ns  Iteration: 1  Instance: /tb_conv1d/R1
 run
 run
 run
@@ -284,100 +320,6 @@ run
 run
 run
 run
-run
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 135670 ns  Iteration: 0  Instance: /tb_conv1d
-run
-run
-run
-run
-run
-# ** Error: (vsim-3953) STD_LOGIC_1164.READ(STD_ULOGIC_VECTOR) End of string encountered
-#    Time: 182150 ns  Iteration: 4  Instance: /tb_conv1d
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-run
-run
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2610 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2630 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2650 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2670 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2690 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2710 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2730 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2750 ns  Iteration: 1  Instance: /tb_conv1d/R1
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 2770 ns  Iteration: 1  Instance: /tb_conv1d/R1
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-run
-# End time: 09:15:09 on Feb 20,2025, Elapsed time: 0:49:23
+quit -sim
+# End time: 11:27:28 on Feb 20,2025, Elapsed time: 0:17:15
 # Errors: 0, Warnings: 10

@@ -268,7 +268,6 @@ wait for 200 ns;
 wait for 500 ns;
 REPLACED_FILTER<='0';
 
-
 WAIT FOR 20000 NS; 
 
 
